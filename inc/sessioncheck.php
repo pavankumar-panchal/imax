@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 if((imaxgetcookie('sessionkind') <> false) && (imaxgetcookie('userid') <> false) && (imaxgetcookie('checkpermission') <> false))
 {

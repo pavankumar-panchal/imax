@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_credits <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,9 +7,9 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/credit.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/credit.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td valign="top" width="23%" style="border-bottom:#1f4f66 1px solid;border-right:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -52,7 +52,7 @@ include("../inc/eventloginsert.php");
     <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
     <td width="60%"  align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
       <option value="">All</option>
-      <? 
+      <?php 
 											include('../inc/region.php');
 											?>
     </select></td>
@@ -140,7 +140,7 @@ include("../inc/eventloginsert.php");
                                         <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                                             <tr bgcolor="#f7faff">
                                               <td align="left" valign="top">Date:</td>
-                                              <td align="left" valign="top"><input name="creditdate" type="text" class="swiftselect-readonly" id="creditdate" size="30"  autocomplete="off" value="<? echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>"/>
+                                              <td align="left" valign="top"><input name="creditdate" type="text" class="swiftselect-readonly" id="creditdate" size="30"  autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>"/>
                                                 <input type="hidden" name="lastslno" id="lastslno"></td>
                                             </tr>
                                             <tr bgcolor="#f7faff">
@@ -208,4 +208,4 @@ include("../inc/eventloginsert.php");
 <script>
 refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

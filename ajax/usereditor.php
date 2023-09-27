@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start("ob_gzhandler");
 include('../inc/ajax-referer-security.php');
 include('../functions/phpfunctions.php');

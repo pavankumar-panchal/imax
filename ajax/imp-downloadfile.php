@@ -1,4 +1,4 @@
-<? 
+<?php 
 	include('../functions/phpfunctions.php');
 	$id = $_GET['id'];
 	$filename = 'filepath'.$id;

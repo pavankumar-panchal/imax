@@ -1,4 +1,4 @@
-<?
+<?php
 ini_set('memory_limit', '4048M');
 
 include('../functions/phpfunctions.php');

@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT slno,servicename FROM inv_mas_service order by servicename;";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

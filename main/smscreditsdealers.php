@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_smscreditstodealer <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,9 +6,9 @@ if($p_smscreditstodealer <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/smscreditsdealers.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/smscreditsdealers.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -73,7 +73,7 @@ else
                       <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #308ebc; border-top:none;">
                           <tr class="header-line">
                             <td width="100px" align="left"  style="padding:0">&nbsp;&nbsp;Enter / Edit / View Details</td>
-                            <td width="100px" style="padding-right:7px; text-align:right;"><? if($p_smsaccounttodealer == 'yes') { ?>To Activate SMS Gateway<a href="./index.php?a_link=smsaccountdealers" class="textlink"> Click Here</a> <? } ?></td>
+                            <td width="100px" style="padding-right:7px; text-align:right;"><?php if($p_smsaccounttodealer == 'yes') { ?>To Activate SMS Gateway<a href="./index.php?a_link=smsaccountdealers" class="textlink"> Click Here</a> <?php } ?></td>
                           </tr>
                           <tr>
                             <td colspan="2" valign="top"><div id="maindiv">
@@ -126,7 +126,7 @@ else
                                         </tr>
                                         <tr bgcolor="#f7faff">
                                           <td width="34%" align="left" valign="top" bgcolor="#EDF4FF"> Date:</td>
-                                          <td width="66%" align="left" valign="top" bgcolor="#EDF4FF"  id="crediteddate"  ><? echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?></td>
+                                          <td width="66%" align="left" valign="top" bgcolor="#EDF4FF"  id="crediteddate"  ><?php echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?></td>
                                         </tr>
                                         <tr bgcolor="#f7faff">
                                           <td align="left" valign="top" bgcolor="#EDF4FF"> Credits Available:</td>
@@ -221,4 +221,4 @@ else
 <script>
 refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "(select distinct CONCAT(inv_logs_eventtype.pagesshortname,'^[U]') as slno,CONCAT(UPPER(inv_logs_eventtype.pagesshortname) ,'  [U]') as name 
 from inv_logs_eventtype where inv_logs_eventtype.modulename = 'USER' order by inv_logs_eventtype.pagesshortname)
 UNION ALL

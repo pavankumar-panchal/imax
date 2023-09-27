@@ -1,9 +1,9 @@
-<?
+<?php
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/cusinteraction.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/cusinteraction.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="23%" valign="top" style="border-right:#1f4f66 1px solid;border-bottom:#1f4f66 1px solid;" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -85,7 +85,7 @@ include("../inc/eventloginsert.php");
                                           <tr bgcolor="#EDF4FF">
                                             <td align="left" valign="top">Interaction Category:</td>
                                             <td align="left" valign="top" bgcolor="#EDF4FF" ><select name="interaction" class="swiftselect-mandatory" id="interaction" style="width:200px">
-                                                <? 
+                                                <?php 
 											include('../inc/interactiontype.php');
 											?>
                                               </select><input type="hidden" name="lastslno" id="lastslno" />
@@ -98,7 +98,7 @@ include("../inc/eventloginsert.php");
                                       <td width="48%" valign="top"><table width="100%" height="74" border="0" cellpadding="3" cellspacing="0">
                                       <tr >
                                             <td align="left" valign="top" bgcolor="#EDF4FF">Entered By:</td>
-                                            <td align="left" valign="top" id="displayenteredby" bgcolor="#EDF4FF" ><? $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".imaxgetcookie('userid')."'"); echo($fetch['fullname']); ?></td>
+                                            <td align="left" valign="top" id="displayenteredby" bgcolor="#EDF4FF" ><?php $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".imaxgetcookie('userid')."'"); echo($fetch['fullname']); ?></td>
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td align="left" valign="top">Entered Through:</td>
@@ -106,7 +106,7 @@ include("../inc/eventloginsert.php");
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td width="34%" align="left" valign="top" bgcolor="#EDF4FF">Entered Date:</td>
-                                            <td width="66%" align="left" valign="top" bgcolor="#EDF4FF"  id="interactiondate"  ><? echo(datetimelocal('d-m-Y')."  "."(".datetimelocal('H:i')) .")"?></td>
+                                            <td width="66%" align="left" valign="top" bgcolor="#EDF4FF"  id="interactiondate"  ><?php echo(datetimelocal('d-m-Y')."  "."(".datetimelocal('H:i')) .")"?></td>
                                           </tr>
                                           <!--<tr bgcolor="#edf4ff">
                                             <td height="19" valign="top" bgcolor="#F7FAFF">&nbsp;</td>

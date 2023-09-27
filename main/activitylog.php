@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_activitylog <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,7 +7,7 @@ else
 {
 	
 ?>
-<script language="javascript" src="../functions/activitylog.js?dummy=<? echo (rand());?>"></script>
+<script language="javascript" src="../functions/activitylog.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -45,9 +45,9 @@ else
                                             <td width="37%"  valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3" >
                                                 <tr >
                                                   <td width="22%" align="left" valign="top">From Date: </td>
-                                                  <td width="78%" align="left" valign="top"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" />
+                                                  <td width="78%" align="left" valign="top"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" />
                                                     <input type="hidden" name="flag" id="flag" value="true" />
-                                                    <input type="hidden" name="category" id="category" value="<? echo($pagelink) ?>" /></td>
+                                                    <input type="hidden" name="category" id="category" value="<?php echo($pagelink) ?>" /></td>
                                                 </tr>
                                               </table></td>
                                             <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
@@ -58,7 +58,7 @@ else
                                                   <td width="22%" align="left" valign="top" >To Date:</td>
                                                   <td width="78%" align="left" valign="top" ><label for="sto"></label>
                                                     <label for="spp">
-                                                      <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
+                                                      <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
                                                     </label></td>
                                                 </tr>
                                               </table></td>
@@ -140,14 +140,14 @@ else
                                                                   <td height="10" align="left" valign="top">Username:</td>
                                                                   <td height="10" align="left" valign="top"><select name="username" class="swiftselect" id="username" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                  <? include('../inc/username.php');?>
+                                                                  <?php include('../inc/username.php');?>
                                                                   </select></td>
                                                                 </tr>
                                                                 <tr>
                                                                   <td width="21%" height="10" align="left" valign="top">Event Type</td>
                                                                   <td width="79%" height="10" align="left" valign="top"><select name="eventtype" class="swiftselect" id="eventtype" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/eventtype.php');
 											?>
                                                                   </select></td>
@@ -156,7 +156,7 @@ else
                                                                   <td align="left" valign="top" height="10" >Pages Short Name:</td>
                                                                   <td align="left" valign="top" height="10"><select name="pageshortname" class="swiftselect" id="pageshortname"  style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/pageshortname.php'); ?>
+                                                                    <?php include('../inc/pageshortname.php'); ?>
                                                                   </select></td>
                                                                 </tr>
                                                               </table></td>
@@ -257,4 +257,4 @@ else
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_smsaccounttodealer <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,9 +6,9 @@ if($p_smsaccounttodealer <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/smsaccountdealers.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/smsaccountdealers.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -52,7 +52,7 @@ else
     <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
     <td width="60%"  align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
       <option value="">All</option>
-      <? 
+      <?php 
 											include('../inc/region.php');
 											?>
     </select></td>
@@ -115,7 +115,7 @@ else
                       <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #308ebc; border-top:none;">
                           <tr class="header-line">
                             <td width="100px" align="left"  style="padding:0">&nbsp;&nbsp;Enter / Edit / View Details</td>
-                            <td width="100px" style="padding-right:7px; text-align:right;"><? if($p_smsaccounttodealer == 'yes') { ?><a href="./index.php?a_link=smscreditsdealers" class="textlink">SMS Credits Page &gt;&gt;</a> <? } ?></td>
+                            <td width="100px" style="padding-right:7px; text-align:right;"><?php if($p_smsaccounttodealer == 'yes') { ?><a href="./index.php?a_link=smscreditsdealers" class="textlink">SMS Credits Page &gt;&gt;</a> <?php } ?></td>
                           </tr>
                           <tr>
                             <td colspan="2" valign="top"><div id="maindiv">
@@ -237,4 +237,4 @@ else
 refreshdealerarray();
 </script>
 
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_schemepricing <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,11 +7,11 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/schemepricing.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/schemepricing.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 
-<? $userid = imaxgetcookie('userid');?>
+<?php $userid = imaxgetcookie('userid');?>
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
   <tr>
     <td width="23%" valign="top" style="border-right:#1f4f66 1px solid;border-bottom:#1f4f66 1px solid;" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -95,18 +95,18 @@ include("../inc/eventloginsert.php");
                                         <td  align="left">Product:</td>
 <td  align="left"><select name="productcode" class="swiftselect-mandatory" id="productcode" style="width:198px;" >
                                                                   <option value="">Select a Product</option>
-                                                                  <? include('../inc/firstproduct.php'); ?>
+                                                                  <?php include('../inc/firstproduct.php'); ?>
                                                                 </select> <input type="hidden" name="lastslno" id="lastslno" /><input type="hidden" name="schemelastslno" id="schemelastslno" /></td></tr>
                                       
                                       </table></td>
                                       <td width="40%"  valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
-                                      <? $query = "select * from inv_mas_users where slno = '".$userid."'";
+                                      <?php $query = "select * from inv_mas_users where slno = '".$userid."'";
 									  	 $resultfetch = runmysqlqueryfetch($query);
 										 $enteredby = $resultfetch['fullname'];
 									?>
                                           <tr bgcolor="#EDF4FF">
                                             <td width="36%" height="27" align="left" valign="top" bgcolor="#EDF4FF">Entered By:</td>
-                                            <td width="64%" align="left" valign="top" bgcolor="#EDF4FF" id="enteredby" ><? echo($enteredby); ?></td>
+                                            <td width="64%" align="left" valign="top" bgcolor="#EDF4FF" id="enteredby" ><?php echo($enteredby); ?></td>
                                           </tr>
                                           <tr bgcolor="#EDF4FF">
                                             <td height="19%" align="left" valign="top" bgcolor="#EDF4FF">&nbsp;</td>
@@ -233,4 +233,4 @@ include("../inc/eventloginsert.php");
 <script>
 refreshschemearray();
 </script>
-<? } ?>
+<?php } ?>

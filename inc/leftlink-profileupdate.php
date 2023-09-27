@@ -9,12 +9,12 @@
     
            <tr>
           
-        <td>  <? if($p_customerpendingrequest == 'yes') { ?><a href="./index.php?a_link=customerprofileupdate">Customer Profile Update</a> <? }?></td>
+        <td>  <?php if($p_customerpendingrequest == 'yes') { ?><a href="./index.php?a_link=customerprofileupdate">Customer Profile Update</a> <?php }?></td>
       
       </tr> 
      
       <tr>
-        <td> <? if($p_dealerpendingrequest == 'yes') { ?><a href="./index.php?a_link=dealerprofileupdate">Dealer Profile Update</a></td> <? }?>
+        <td> <?php if($p_dealerpendingrequest == 'yes') { ?><a href="./index.php?a_link=dealerprofileupdate">Dealer Profile Update</a></td> <?php }?>
       </tr>
      
     </table></td>

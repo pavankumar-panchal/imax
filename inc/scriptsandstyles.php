@@ -1,4 +1,4 @@
-<?
+<?php
 		echo('<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
 <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">');
 	if(file_exists("../style/main.css")) echo('<LINK href="../style/main.css" rel=stylesheet>');

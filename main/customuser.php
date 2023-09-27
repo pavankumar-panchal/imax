@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_customuser <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,16 +7,16 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/customuser.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/customuser.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
 
-<script language="javascript" src="../functions/enter_keyshortcut.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/key_shortcut.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/customer-shortkey.js?dummy=<? echo (rand());?>"></script>
+<script language="javascript" src="../functions/enter_keyshortcut.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/key_shortcut.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/customer-shortkey.js?dummy=<?php echo (rand());?>"></script>
 <style>
 .additional table tr th
 {
@@ -156,7 +156,7 @@ include("../inc/eventloginsert.php");
                                                                 <td width="21%" height="10" align="left" valign="top">Region:</td>
                                                                 <td width="79%" height="10" align="left" valign="top"><select name="region2" class="swiftselect" id="region2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? 
+                                                                    <?php 
 										                               	include('../inc/region1.php');
 											                        ?>
                                                                   </select></td>
@@ -166,14 +166,14 @@ include("../inc/eventloginsert.php");
                                                                 <td height="10" align="left"> Dealer:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="currentdealer2" class="swiftselect" id="currentdealer2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/firstdealer1.php');?>
+                                                                    <?php include('../inc/firstdealer1.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td height="10" align="left"> Branch:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="branch2" class="swiftselect" id="branch2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/branch1.php');?>
+                                                                    <?php include('../inc/branch1.php');?>
                                                                   </select></td>
                                                               </tr>
        
@@ -261,7 +261,7 @@ include("../inc/eventloginsert.php");
                                                   </tr>
                                                   <tr>
                                                     <td colspan="4" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8" align="left"><div style="height:230px; overflow:scroll">
-                                                        <? include('../inc/customproduct.php'); ?>
+                                                        <?php include('../inc/customproduct.php'); ?>
                                                       </div></td>
                                                   </tr>
                                                   <tr>
@@ -370,7 +370,7 @@ include("../inc/eventloginsert.php");
                <td valign="top" bgcolor="#EDF4FF" align="left">
                    <select name="dealerid" class="swiftselect-mandatory" id="dealerid" style=" width:225px">
                       <option value="">Select A Dealer</option>
-                       <? include('../inc/firstdealer.php'); ?>
+                       <?php include('../inc/firstdealer.php'); ?>
                     </select>
                </td>
          </tr>
@@ -428,7 +428,7 @@ include("../inc/eventloginsert.php");
     <td>
 	<select name="productnametypes[]" class="swiftselect" style="width:195px;">
           <option value="" selected="selected">Select a Item</option>
-        <? 
+        <?php 
 			include('../inc/productforpurchase.php');
 		?>
     </select>
@@ -451,7 +451,7 @@ include("../inc/eventloginsert.php");
     <td>
 	<select name="productnametypes[]" class="swiftselect" style="width:195px;">
      <option value="" selected="selected">Select a Item</option>
-        <? 
+        <?php 
 			include('../inc/productforpurchase.php');
 		?>
     </select>
@@ -474,7 +474,7 @@ include("../inc/eventloginsert.php");
     <td>
 <select name="productnametypes[]" class="swiftselect" style="width:195px;">
      <option value="" selected="selected">Select a Item</option>
-        <? 
+        <?php 
 			include('../inc/productforpurchase.php');
 		?>
     </select>
@@ -516,7 +516,7 @@ include("../inc/eventloginsert.php");
    <td>
 <select name="servicenametypes[]" class="swiftselect" style="width:195px;">
      <option value="" selected="selected">Select a Item</option>
-        <? include('../inc/services.php'); ?>
+        <?php include('../inc/services.php'); ?>
     </select>
     </td>
     <td>
@@ -530,7 +530,7 @@ include("../inc/eventloginsert.php");
    <td>
 <select name="servicenametypes[]" class="swiftselect" style="width:195px;">
      <option value="" selected="selected">Select a Item</option>
-        <? include('../inc/services.php'); ?>
+        <?php include('../inc/services.php'); ?>
     </select>
     </td>
     <td>
@@ -543,7 +543,7 @@ include("../inc/eventloginsert.php");
    <td>
 <select name="servicenametypes[]" class="swiftselect" style="width:195px;">
      <option value="" selected="selected">Select a Item</option>
-        <? include('../inc/services.php'); ?>
+        <?php include('../inc/services.php'); ?>
     </select>
     </td>
     <td>
@@ -732,6 +732,6 @@ padding-left: 25px;">Service Details</td></tr>
 </table>
 <script>gettotalcustomercount();</script>
 <div id="seztaxuploaddiv" style="display:none;">
-  <? include('../inc/seztaxuploaddiv.php'); ?>
+  <?php include('../inc/seztaxuploaddiv.php'); ?>
 </div>
-<? } ?>
+<?php } ?>

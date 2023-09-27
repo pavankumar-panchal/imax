@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT slno,businessname FROM inv_mas_dealer 
 where slno <> '532568855'  AND inv_mas_dealer.disablelogin = 'no' 
 order by businessname asc;";

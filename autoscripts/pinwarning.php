@@ -1,4 +1,4 @@
-<?
+<?php
 include("../functions/phpfunctions.php");
 //total count of pins
 $query1 = "select count(*) as totalpins from inv_mas_scratchcard";

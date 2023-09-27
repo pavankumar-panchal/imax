@@ -1,4 +1,4 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 //Take all registered cards with their first registration information
@@ -8,7 +8,7 @@ LEFT JOIN inv_customerproduct s2 ON s1.cardid = s2.cardid AND concat(s1.date, ' 
 WHERE s2.cardid IS NULL and s1.cardid > 0 order by s1.cardid";
 $result = runmysqlquery($query);
 
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$cardid = $fetch['cardid'];
 	$date = $fetch['date'];
@@ -24,7 +24,7 @@ while($fetch = mysql_fetch_array($result))
 	$query2 = "SELECT * from inv_customerproduct left join inv_mas_product on inv_mas_product.productcode =  left(inv_customerproduct.computerid,3) where inv_mas_product.group = '".$productgroup."' and inv_customerproduct.date < '".$date."' and inv_customerproduct.customerreference = '".$customerreference."'";
 	$result2 = runmysqlquery($query2);
 	
-	$initialpurchase = (mysql_num_rows($result2) == 0)?'new':'updation';
+	$initialpurchase = (mysqli_num_rows($result2) == 0)?'new':'updation';
 	
 	$query3 = "update inv_dealercard set initialpurchasetype = '".$initialpurchase."' where cardid = '".$cardid."'";
 	$result3 = runmysqlquery($query3);

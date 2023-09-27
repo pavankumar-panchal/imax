@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_addbills <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,13 +6,13 @@ if($p_addbills <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/addbills.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getschemejs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/addbills.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getschemejs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
 
-<script language="javascript" src="../functions/getproductjs.php?dummy=<? echo (rand());?>"></script>
+<script language="javascript" src="../functions/getproductjs.php?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td valign="top" width="23%" style="border-bottom:#1f4f66 1px solid;border-right:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -61,7 +61,7 @@ else
                                 <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
                                 <td width="60%" align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
                                     <option value="">All</option>
-                                    <? 
+                                    <?php 
 											include('../inc/region.php');
 											?>
                                   </select></td>
@@ -321,4 +321,4 @@ else
 </table>
 <script>refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

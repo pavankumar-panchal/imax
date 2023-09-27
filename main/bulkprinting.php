@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_bulkprintinvoice <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,12 +7,12 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/bulkprinting.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<? echo(rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/bulkprinting.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo(rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -50,9 +50,9 @@ include("../inc/eventloginsert.php");
                                             <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3" >
                                                 <tr >
                                                   <td width="22%" align="left" valign="top">From Date: </td>
-                                                  <td width="78%" align="left" valign="top"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" />
+                                                  <td width="78%" align="left" valign="top"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" />
                                                     <input type="hidden" name="onlineslno" id="onlineslno" value="" />
-                                                    <input type="hidden" name="category" id="category" value="<? echo($pagelink) ?>" />
+                                                    <input type="hidden" name="category" id="category" value="<?php echo($pagelink) ?>" />
                                                     <input type="hidden" name="tabvalue" id="tabvalue" value="" /></td>
                                                 </tr>
                                               </table></td>
@@ -64,7 +64,7 @@ include("../inc/eventloginsert.php");
                                                   <td width="22%" align="left" valign="top" >To Date:</td>
                                                   <td width="78%" align="left" valign="top" ><label for="sto"></label>
                                                     <label for="spp">
-                                                      <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
+                                                      <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
                                                       <br/>
                                                     </label></td>
                                                 </tr>
@@ -197,7 +197,7 @@ include("../inc/eventloginsert.php");
                                                                             <td width="39%" height="10" align="left" valign="top">Region:</td>
                                                                             <td width="61%" height="10" align="left" valign="top"><select name="region" class="swiftselect" id="region" style="width:180px;">
                                                                                 <option value="">ALL</option>
-                                                                                <? 
+                                                                                <?php 
 											include('../inc/region.php');
 											?>
                                                                               </select></td>
@@ -206,14 +206,14 @@ include("../inc/eventloginsert.php");
                                                                             <td height="10" align="left"> Branch:</td>
                                                                             <td align="left" valign="top"   height="10" ><select name="branch" class="swiftselect" id="branch" style="width:180px;">
                                                                                 <option value="">ALL</option>
-                                                                                <? include('../inc/branch.php');?>
+                                                                                <?php include('../inc/branch.php');?>
                                                                               </select></td>
                                                                           </tr>
                                                                           <tr>
                                                                             <td align="left" valign="top" height="10" >State:</td>
                                                                             <td align="left" valign="top" height="10"><select name="state2" class="swiftselect" id="state2" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                                                 <option value="">ALL</option>
-                                                                                <? include('../inc/state.php'); ?>
+                                                                                <?php include('../inc/state.php'); ?>
                                                                               </select></td>
                                                                           </tr>
                                                                           <tr>
@@ -226,14 +226,14 @@ include("../inc/eventloginsert.php");
                                                                             <td height="10" align="left"> Dealer:</td>
                                                                             <td align="left" valign="top"   height="10" ><select name="currentdealer" class="swiftselect" id="currentdealer" style="width:180px;">
                                                                                 <option value="">ALL</option>
-                                                                                <? include('../inc/dealer-invoice.php');?>
+                                                                                <?php include('../inc/dealer-invoice.php');?>
                                                                               </select></td>
                                                                           </tr>
                                                                           <tr>
                                                                             <td height="10" align="left"> Generated by:</td>
                                                                             <td align="left" valign="top"   height="10" ><select name="generatedby" class="swiftselect" id="generatedby" style="width:180px;">
                                                                                 <option value="">ALL</option>
-                                                                                <? include('../inc/generatedby.php');?>
+                                                                                <?php include('../inc/generatedby.php');?>
                                                                               </select></td>
                                                                           </tr>
                                                                           <tr>
@@ -301,7 +301,7 @@ include("../inc/eventloginsert.php");
                                                               </tr>
                                                               <tr>
                                                                 <td colspan="4" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8" align="left"><div style="height:172px; overflow:scroll">
-                                                                    <? include('../inc/productdetails.php'); ?>
+                                                                    <?php include('../inc/productdetails.php'); ?>
                                                                   </div></td>
                                                               </tr>
                                                               <tr>
@@ -310,7 +310,7 @@ include("../inc/eventloginsert.php");
                                                                   <select name="selectproduct" class="swiftselect" id="selectproduct" style="width:75px"   >
                                                                     <option value="ALL"  selected="selected">ALL</option>
                                                                     <option value="NONE">NONE</option>
-                                                                    <? include('../inc/productgroup.php') ?>
+                                                                    <?php include('../inc/productgroup.php') ?>
                                                                   </select>
                                                                   </strong></td>
                                                                 <td width="58%" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -325,7 +325,7 @@ include("../inc/eventloginsert.php");
                                                               </tr>
                                                               <tr >
                                                                 <td  colspan="3" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8" align="left"><div style="height:105px; overflow:scroll" >
-                                                                    <? include('../inc/itemlist.php'); ?>
+                                                                    <?php include('../inc/itemlist.php'); ?>
                                                                   </div></td>
                                                               </tr>
                                                               <tr>
@@ -473,4 +473,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_regreports <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,9 +6,9 @@ if($p_regreports <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/registration.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/registration.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -44,12 +44,12 @@ else
                                       <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                                           <tr bgcolor="#f7faff">
                                             <td valign="top" align="left">From Date:</td>
-                                            <td valign="top" bgcolor="#f7faff" align="left"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" />                                              <input type="hidden" name="flag" id="flag" value="true" />
+                                            <td valign="top" bgcolor="#f7faff" align="left"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" />                                              <input type="hidden" name="flag" id="flag" value="true" />
                                             <br /></td>
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td valign="top" bgcolor="#EDF4FF" align="left">To Date:</td>
-                                            <td valign="top" bgcolor="#EDF4FF" align="left"><input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" />                                           </td>
+                                            <td valign="top" bgcolor="#EDF4FF" align="left"><input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" />                                           </td>
                                           </tr>
                                           <tr bgcolor="#edf4ff">
                                             <td colspan="2" valign="top" bgcolor="#F7FAFF">&nbsp;</td>
@@ -64,7 +64,7 @@ else
                                           <td valign="top" align="left">Branch</td>
                                           <td valign="top" bgcolor="#f7faff" align="left"><select name="branch" class="swiftselect" id="branch"  style=" width:225px" >
                                             <option value="" >ALL</option>
-                                            <? include('../inc/branch.php'); ?>
+                                            <?php include('../inc/branch.php'); ?>
                                           </select>
                                             <br /></td></tr>
                                         <tr bgcolor="#f7faff">
@@ -104,4 +104,4 @@ else
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

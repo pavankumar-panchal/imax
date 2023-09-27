@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_schemetodealer <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,10 +7,10 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/schememapping.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/schememapping.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -54,7 +54,7 @@ include("../inc/eventloginsert.php");
     <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
     <td width="60%" align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
       <option value="">All</option>
-      <? 
+      <?php 
 											include('../inc/region.php');
 											?>
     </select></td>
@@ -125,7 +125,7 @@ include("../inc/eventloginsert.php");
                                             <td align="left" valign="top">Scheme:</td>
                                             <td align="left" valign="top" bgcolor="#f7faff"><select name="scheme" class="swiftselect-mandatory" id="scheme" style="width:225px;" >
                                                                   <option value="">Select a Scheme</option>
-                                                                  <? include('../inc/dealerscheme.php'); ?>
+                                                                  <?php include('../inc/dealerscheme.php'); ?>
                                                                 </select><input type="hidden" name="lastslno" id="lastslno"></td>
                                           </tr>
                                           
@@ -133,14 +133,14 @@ include("../inc/eventloginsert.php");
                                       <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                                       <tr bgcolor="#EDF4FF">
                                             <td align="left" valign="top" bgcolor="#EDF4FF">Date:</td>
-                                            <td align="left" valign="top" bgcolor="#EDF4FF"><input name="creditdate" type="text" class="swiftselect-readonly" id="creditdate" size="30"  autocomplete="off" value="<? echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>"/></td>
+                                            <td align="left" valign="top" bgcolor="#EDF4FF"><input name="creditdate" type="text" class="swiftselect-readonly" id="creditdate" size="30"  autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>"/></td>
                                           </tr>
-                                          <? $query = " Select * from inv_mas_users where slno = '".$userid."'";
+                                          <?php $query = " Select * from inv_mas_users where slno = '".$userid."'";
 										  $fetch = runmysqlqueryfetch($query);
 										  $enteredby = $fetch['fullname']; ?>
                                              <tr bgcolor="#f7faff">
                                                <td align="left" valign="top" bgcolor="#f7faff">Entered By:</td>
-                                               <td align="left" valign="top" bgcolor="#f7faff" id="enteredby" ><? echo($enteredby); ?></td>
+                                               <td align="left" valign="top" bgcolor="#f7faff" id="enteredby" ><?php echo($enteredby); ?></td>
                                              </tr>
                                           <!--<tr bgcolor="#edf4ff">
                                             <td height="19" valign="top" bgcolor="#F7FAFF">&nbsp;</td>
@@ -211,4 +211,4 @@ include("../inc/eventloginsert.php");
 <script>
 refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

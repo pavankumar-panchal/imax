@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_newtransferpin <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,9 +7,9 @@ else
 {
   include('../inc/eventloginsert.php');
 ?>
-    <link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-    <script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-    <script language="javascript" src="../functions/transferpin.js?dummy=<? echo (rand());?>"></script>
+    <link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+    <script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+    <script language="javascript" src="../functions/transferpin.js?dummy=<?php echo (rand());?>"></script>
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
         <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -83,7 +83,7 @@ else
                                                       <td  valign="top" align="left"><input type="checkbox" name="ttdealercheck" id="ttdealercheck" onclick="dealercheckbox()" /></td>
                                                       <td  valign="top" align="left"><select name="ttdealerto" class="swiftselect-mandatory" id="ttdealerto" style="width:180px;"  disabled="disabled">
                                                           <option value="">Make A Selection</option>
-                                                          <? 
+                                                          <?php 
                           include('../inc/firstdealer.php');
                           ?>
                                                         </select>
@@ -96,7 +96,7 @@ else
                                                       <td valign="top" align="left"><input type="checkbox" name="ttproductcheck" id="ttproductcheck"  onclick="productcheckbox()"  /></td>
                                                       <td valign="top" align="left"><select name="ttproductto" class="swiftselect-mandatory" id="ttproductto" style="width:180px;" disabled="disabled">
                                                           <option value="">Make A Selection</option>
-                                                          <? 
+                                                          <?php 
                           include('../inc/firstproduct.php');
                           ?>
                                                         </select>
@@ -131,7 +131,7 @@ else
                                                       <td bgcolor="#f7faff" valign="top" align="left"><input type="checkbox" name="ttattachedcustcheck" id="ttattachedcustcheck" onclick="attachedcustcheckbox()" /></td>
                                                       <td bgcolor="#f7faff" valign="top" align="left"><input type="text" name="ttattachedcust" class="swifttext-readonly" id="ttattachedcust" size="25"  disabled="disabled" onchange="checkcustomerid();" >
                                                     <input type="hidden" name="tfregisteration" class="swifttext-readonly" id="tfregisteration" size="30" readonly="readonly" >
-                                                      <?php if($userid == '1' || $userid == '146' || $userid =='150' || $userid =='167'  || $userid =='168'){?><span id="ttmoveregisteration"></span><? ;}?>
+                                                      <?phpphp if($userid == '1' || $userid == '146' || $userid =='150' || $userid =='167'  || $userid =='168'){?><span id="ttmoveregisteration"></span><?php ;}?>
                                                         
                                                         </td>
                                                     </tr>
@@ -141,7 +141,7 @@ else
                                                       <td bgcolor="#EDF4FF" valign="top" align="left"><textarea name="remarks" cols="27" class="swifttextarea" id="remarks"></textarea>
                                                       <td bgcolor="#EDF4FF" valign="top" align="left"></td>
                                                       <td bgcolor="#EDF4FF" valign="top" align="left">Transfer By&nbsp;:
-                                                        <input name="transferby" class="swifttext" id="transferby" style="background:#FEFFE6; width:169px" size="30" maxlength="40" readonly="readonly"  autocomplete="off" value="<? echo $fullname;?>"></td>
+                                                        <input name="transferby" class="swifttext" id="transferby" style="background:#FEFFE6; width:169px" size="30" maxlength="40" readonly="readonly"  autocomplete="off" value="<?php echo $fullname;?>"></td>
                                                     </tr>
                                                     <tr>
                                                       <td colspan="4" height="23" valign="middle"><div id="form-error" align="center"></div></td>
@@ -205,4 +205,4 @@ else
       </tr>
     </table>
 <script>refreshcardarray();</script>
-<? } ?>
+<?php } ?>

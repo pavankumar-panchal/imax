@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_salessummaryreport <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,8 +7,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/salessummary.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/salessummary.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -49,12 +49,12 @@ include("../inc/eventloginsert.php");
                                               <td width="50%"><table width="100%" border="0" cellspacing="0" cellpadding="5px">
                                                 <tr bgcolor="#f7faff">
                                                   <td width="25%" valign="top">From Date:</td>
-                                                  <td width="75%" align="left" valign="top" bgcolor="#f7faff"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" />
+                                                  <td width="75%" align="left" valign="top" bgcolor="#f7faff"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" />
                                                       <br /></td>
                                                 </tr>
                                                 <tr bgcolor="#f7faff">
                                                   <td width="25%" valign="top" bgcolor="#EDF4FF">To Date:</td>
-                                                  <td width="75%" valign="top" bgcolor="#EDF4FF" align="left"><input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" />
+                                                  <td width="75%" valign="top" bgcolor="#EDF4FF" align="left"><input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" />
                                                   </td>
                                                 </tr>
   
@@ -86,7 +86,7 @@ include("../inc/eventloginsert.php");
                                                 <td width="25%" valign="top">Dealer:</td>
                                                 <td width="75%" align="left" valign="top" bgcolor="#f7faff"><select name="dealerid" class="swiftselect" id="dealerid" style=" width:225px">
                                                   <option value="">ALL</option>
-                                                  <? include('../inc/firstdealer.php'); ?>
+                                                  <?php include('../inc/firstdealer.php'); ?>
                                                 </select>
                                                   <br /></td></tr>
                                             </table></td><td >&nbsp;</td></tr>
@@ -118,4 +118,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

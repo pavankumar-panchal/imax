@@ -1,4 +1,4 @@
-<?
+<?php
 function w($a = '')
 {
     if (empty($a)) return array();

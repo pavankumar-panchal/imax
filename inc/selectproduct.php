@@ -2,7 +2,7 @@
 function getcustomerproductlist(divid12,customerid)
 {
 	alert('test')	
-<?
+<?php
 	/*include('../functions/phpfunctions.php');
 	$cuslastslno = $_POST['cuslastslno'];
 	echo('productlist = \'');

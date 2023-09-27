@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT slno, interactiontype FROM inv_mas_interactiontype ORDER BY interactiontype";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

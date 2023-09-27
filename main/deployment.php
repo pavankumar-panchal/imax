@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_masterimplementation <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,10 +7,10 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/deployment.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/deployment.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="23%" valign="top" style="border-right:#1f4f66 1px solid;border-bottom:#1f4f66 1px solid;" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -59,7 +59,7 @@ include("../inc/eventloginsert.php");
                                 <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
                                 <td width="60%" align="left" valign="top"><select name="deployerregion" class="swiftselect-mandatory" id="deployerregion">
                                     <option value="">All</option>
-                                    <? 
+                                    <?php 
 											include('../inc/region.php');
 											?>
                                   </select></td>
@@ -152,7 +152,7 @@ include("../inc/eventloginsert.php");
                                             <td align="left" valign="top" bgcolor="#EDF4FF">State:</td>
                                             <td align="left" valign="top" bgcolor="#EDF4FF"><select name="state" class="swiftselect-mandatory" id="state" onchange="getdistrict('districtcodedisplay',this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);"  style="width:200px;">
                                                 <option value="">Select A State</option>
-                                                <? include('../inc/state.php'); ?>
+                                                <?php include('../inc/state.php'); ?>
                                               </select></td>
                                           </tr>
                                           <tr bgcolor="#f7faff">
@@ -201,7 +201,7 @@ include("../inc/eventloginsert.php");
                                             <td align="left" valign="top" bgcolor="#F7FAFF">Branch :</td>
                                             <td align="left" valign="top" bgcolor="#F7FAFF"><select name="branchid" class="swiftselect" id="branchid">
                                               <option value="all">Not Applicable</option>
-                                              <? 
+                                              <?php 
 											include('../inc/branch.php');
 											?>
                                             </select></td>
@@ -217,7 +217,7 @@ include("../inc/eventloginsert.php");
                                             <td align="left" valign="top" bgcolor="#edf4ff"><label>
                                               <select name="region" class="swiftselect-mandatory" id="region">
                                                 <option value="">Select A Region</option>
-                                                <? 
+                                                <?php 
 											include('../inc/region.php');
 											?>
                                               </select>
@@ -380,7 +380,7 @@ include("../inc/eventloginsert.php");
                                               <td align="left" valign="top">In Region:</td>
                                               <td width="39%" align="left" valign="top"><select name="searchregion" class="swiftselect-mandatory" id="searchregion">
                                                   <option value="">Select A Region</option>
-                                                  <? 
+                                                  <?php 
 											include('../inc/region.php');
 											?>
                                                 </select></td>
@@ -478,4 +478,4 @@ include("../inc/eventloginsert.php");
   </tr>
 </table>
 <script>refreshdeploymentarray()</script>
-<? } ?>
+<?php } ?>

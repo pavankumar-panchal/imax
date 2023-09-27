@@ -1,4 +1,4 @@
-<?
+<?php
 	// $query = "select distinct inv_mas_product.productcode,inv_mas_product.productname 
 	// from inv_mas_product
 	// left join inv_dealercard on inv_mas_product.productcode = inv_dealercard.productcode 

@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT slno,businessname FROM inv_mas_implementer order by businessname;";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

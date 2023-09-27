@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT slno,statusname FROM inv_mas_status ";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

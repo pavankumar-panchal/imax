@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_invoicing <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,13 +7,13 @@ else
 {
 
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
 
-<script language="javascript" src="../functions/javascript.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/invoicing.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
+<script language="javascript" src="../functions/javascript.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/invoicing.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
 
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
   <tr>
@@ -193,7 +193,7 @@ else
                                        <tr>
                                                   <td width="31%"  height="42px;" valign="middle"><select name="dealer" class="swiftselect" id="dealer" style="width:195px;">
                                                       <option value="" selected="selected">Select a Dealer</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/dealer-invoicing.php');
 											?>
                                                   </select></td>
@@ -224,7 +224,7 @@ else
                                                   <td width="15%"><strong>Item</strong>(Software): </td>
                                                   <td width="28%"><select name="product" class="swiftselect" id="product" style="width:195px;">
                                                       <option value="" selected="selected">Select a Item</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/productforpurchase.php');
 											?>
                                                   </select></td>
@@ -232,7 +232,7 @@ else
                                                   <td width="13%"><strong>Item</strong>(others):</td>
                                                   <td width="28%"><select name="product2" class="swiftselect" id="product2" style="width:195px;">
                                                       <option value="" selected="selected">Select a Item</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/services.php');
 											?>
                                                     </select></td>
@@ -501,7 +501,7 @@ Cheque / DD</label><label for="databasefield6">
                                                                                               
                                                                                               <td width="256" valign="top">Due Date:<br />
                                                                                                 <br />
-                                                                                              <input name="DPC_duedate" type="text" class="swifttext-mandatory" id="DPC_duedate" size="20" maxlength="12" autocomplete="off"   value="<? echo(datetimelocal('d-m-Y')); ?>" readonly="readonly"/></td>
+                                                                                              <input name="DPC_duedate" type="text" class="swifttext-mandatory" id="DPC_duedate" size="20" maxlength="12" autocomplete="off"   value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly"/></td>
                                                                                               <td width="420">Reason:<br />
                                                                                                 <br />
                                                                                                 <input name="remarks" type="text" class="swifttextareanew" id="remarks" maxlength="100" style="width:450px"/>                                                                                             </td>
@@ -705,7 +705,7 @@ Cheque / DD</label><label for="databasefield6">
       <td class="td-border-grid" style="text-align: left; "><div align="center"><font color="#ff0000">For <strong>RELYON SOFTECH LTD</strong></font> <br>
           <br>
           <br>
-          <span id="generatedbypreview"><? echo($fullname)?></span></div></td>
+          <span id="generatedbypreview"><?php echo($fullname)?></span></div></td>
     </tr>
   </tbody>
 </table></td>
@@ -737,4 +737,4 @@ Cheque / DD</label><label for="databasefield6">
   </tr>
 </table>
 <script>refreshcustomerarray();</script>
-<? } ?>
+<?php } ?>

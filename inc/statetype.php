@@ -1,4 +1,4 @@
-<?
+<?php
 	 include('../functions/phpfunctions.php');
 
 	$query = "SELECT statecode,statename FROM inv_mas_state order by statename;";

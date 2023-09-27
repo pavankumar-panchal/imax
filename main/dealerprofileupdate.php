@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_dealerpendingrequest <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -9,11 +9,11 @@ else
 include("../inc/eventloginsert.php");
 ?>
 
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/dealerprofileupdate.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictlistjs.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/dealerprofileupdate.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictlistjs.php?dummy=<?php echo (rand());?>"></script>
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" style="text-align:left">
   <tr>
         <td valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -184,7 +184,7 @@ include("../inc/eventloginsert.php");
                                               <tr bgcolor="#f7faff" style="border-left:1px solid #d1dceb">
                                                 <td align="left" valign="top" bgcolor="#EDF4FF"><select name="newstate" class="swiftselect-mandatory" id="newstate" onchange="dealerdistrictcodeFunction();"  style="width: 200px;background:#F1F1F1" disabled="disabled" >
                                                   <option value="">Select A State</option>
-                                                  <? include('../inc/state.php'); ?>
+                                                  <?php include('../inc/state.php'); ?>
                                                 </select></td>
                                                 <td colspan="3" bgcolor="#EDF4FF" style="border-left:1px solid #d1dceb"><label for="dealerstate_none">
                                                   <input type="radio" name="dealerstate_type" id='dealerstate_none'  value="none" checked="checked"  />
@@ -297,7 +297,7 @@ include("../inc/eventloginsert.php");
                                               <tr bgcolor="#edf4ff">
                                                 <td align="left" valign="top" bgcolor="#f7faff"> <select name="newregion" class="swiftselect" id="newregion" style="width:200px;background:#F1F1F1" disabled="disabled" >
                                                       <option value="">Select A Region</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/region.php');
 											?>
                                                     </select></td>
@@ -409,4 +409,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 include('functions/phpfunctions.php');
 
 echo "Remove end to run this code";
@@ -7,7 +7,7 @@ end();
 $query = "select * from dummy_receipt";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$invoiceslno1 = $fetch['slno'];
 	$invoiceno = $fetch['invoiceno'];

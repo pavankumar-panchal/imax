@@ -1,10 +1,10 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 $query = "select * from inv_dealercard where cardid in ('94827','96503','96846','95993','96560','96048','96275','96051','96226','96189','96058','95931','95638','95808','95577','95453','95157','95118','95134','95085','94341','88532','94340','94332','94120','93956','93915','93939','	89840','42522','93547','93497','93528','93518','89739','93285','92558','92925','92991','92885','92601','92506	','92245','92174','92191','89802','89802','92056','89821','91225','88554','91207','89650','89822','89883','89432','90286','90289','90179','90024','89956','89945','89919','89885','89899','89715','89887','89768','89884','89882');";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$oldcard = $fetch['cardid'];
 	$count++;
@@ -60,7 +60,7 @@ left join inv_mas_product on inv_mas_product.productcode = inv_dealercard.produc
 	$query2 = "select * from inv_contactdetails where customerid = '".$result['cusslno']."';";
 	$result2 = runmysqlquery($query2);
 	$contactpersonarray  = ''; $emailidarray = ''; $valuecount = 0;
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		if($valuecount > 0)
 			$contactpersonarray .= ',';

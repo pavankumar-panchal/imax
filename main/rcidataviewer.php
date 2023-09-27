@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_viewrcidata <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,11 +7,11 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/rcidataviewer.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<? $userid = imaxgetcookie('userid');?>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/rcidataviewer.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<?php $userid = imaxgetcookie('userid');?>
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
   <tr>
     <td valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -104,7 +104,7 @@ Computer ID</label>
                                                           <td height="10" align="left" valign="top">Operting System:</td>
                                                           <td height="10" align="left" valign="top"><select name="os" class="swiftselect" id="os" style="width:180px;">
                                                               <option value="">ALL</option>
-                                                              <? 
+                                                              <?php 
 											include('../inc/operatingsystem.php');
 											?>
                                                             </select>
@@ -114,7 +114,7 @@ Computer ID</label>
                                                           <td height="10" align="left" valign="top">Processor:</td>
                                                           <td height="10" align="left" valign="top"><select name="processor" class="swiftselect" id="processor" style="width:180px;">
                                                               <option value="">ALL</option>
-                                                              <? 
+                                                              <?php 
 											include('../inc/processor.php');
 											?>
                                                             </select>
@@ -124,7 +124,7 @@ Computer ID</label>
                                                           <td width="39%" height="10" align="left" valign="top">Region:</td>
                                                           <td width="61%" height="10" align="left" valign="top"><select name="region" class="swiftselect" id="region" style="width:180px;">
                                                               <option value="">ALL</option>
-                                                              <? 
+                                                              <?php 
 											include('../inc/region.php');
 											?>
                                                             </select>
@@ -134,7 +134,7 @@ Computer ID</label>
                                                           <td align="left" valign="top" height="10" >State:</td>
                                                           <td align="left" valign="top" height="10"><select name="state" class="swiftselect" id="state" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                               <option value="">ALL</option>
-                                                              <? include('../inc/state.php'); ?>
+                                                              <?php include('../inc/state.php'); ?>
                                                           </select></td>
                                                         </tr>
                                                         <tr>
@@ -147,7 +147,7 @@ Computer ID</label>
                                                           <td height="10" align="left"> Branch:</td>
                                                           <td align="left" valign="top"   height="10" ><select name="branch" class="swiftselect" id="branch" style="width:180px;">
                                                               <option value="">ALL</option>
-                                                              <? include('../inc/branch.php');?>
+                                                              <?php include('../inc/branch.php');?>
                                                           </select></td>
                                                         </tr>
                                                         <tr>
@@ -155,7 +155,7 @@ Computer ID</label>
                                                           <td align="left" valign="top"   height="10" ><select name="type" class="swiftselect" id="type" style="width:180px;">
                                                               <option value="">ALL</option>
                                                               <option value="Not Selected">Not Selected</option>
-                                                              <? include('../inc/custype.php');?>
+                                                              <?php include('../inc/custype.php');?>
                                                           </select></td>
                                                         </tr>
                                                         <tr>
@@ -163,7 +163,7 @@ Computer ID</label>
                                                           <td align="left" valign="top"   height="10" ><select name="category" class="swiftselect" id="category" style="width:180px;">
                                                               <option value="">ALL</option>
                                                               <option value="Not Selected">Not Selected</option>
-                                                              <? include('../inc/category.php');?>
+                                                              <?php include('../inc/category.php');?>
                                                           </select></td>
                                                         </tr>
                                                       </table></td>
@@ -189,7 +189,7 @@ Computer ID</label>
                                                     </tr>
                                                     <tr>
                                                       <td colspan="4" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8" align="left"><div style="height:200px; overflow:scroll">
-                                                          <? include('../inc/rciproductdetails.php'); ?>
+                                                          <?php include('../inc/rciproductdetails.php'); ?>
                                                       </div></td>
                                                     </tr>
                                                     <tr>
@@ -198,7 +198,7 @@ Computer ID</label>
                                                         <select name="selectproduct" class="swiftselect" id="selectproduct" style="width:120px" >
                                                           <option value="ALL"  selected="selected">ALL</option>
                                                           <option value="NONE">NONE</option>
-                                                          <? include('../inc/productgroup.php') ?>
+                                                          <?php include('../inc/productgroup.php') ?>
                                                         </select>
                                                       </strong></td>
                                                       <td width="52%" align="left"><a onclick="selectdeselectall('one');"><strong class="resendtext">Go &#8250;&#8250;</strong></a>&nbsp;<strong>OR</strong>&nbsp;<a onclick="selectdeselectall('more');"> <span class="reg-text">Add to selection &#8250;&#8250;</span></a></td>
@@ -308,4 +308,4 @@ Computer ID</label>
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

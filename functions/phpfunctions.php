@@ -1,4 +1,4 @@
-<?
+<?php
 //ini_set('error_reporting', E_ALL);
 //ob_start();
 //Include Database Configuration details

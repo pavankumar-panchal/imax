@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "(select distinct CONCAT(inv_mas_users.slno,'^[U]') as slno,CONCAT(UPPER(inv_mas_users.fullname) ,'  [U]') as name 
 from inv_mas_users where inv_mas_users.disablelogin = 'no') 
 UNION ALL

@@ -4,8 +4,8 @@
    // $strQuery = "select`type`, count(*) AS count from inv_customerproduct group by `type`;";
 	$strQuery = "select (select count(*) from inv_customerproduct) as total, `type`, count(*) AS count  from inv_customerproduct  group by `type`;";
 	//$strQuery = "select (select count(*) from inv_customerproduct where date = curdate()) as total, inv_customerproduct.type AS registrationtype, count(*) AS count  from inv_customerproduct  where date = curdate() group by `type`;";
-	$fetch1 = runmysqlqueryfetch($strQuery) or die(mysql_error());
-    $result = runmysqlquery($strQuery) or die(mysql_error());
+	$fetch1 = runmysqlqueryfetch($strQuery) or die(mysqli_error());
+    $result = runmysqlquery($strQuery) or die(mysqli_error());
     if ($result) 
 	{
 			if($fetch1['total'] <> '')
@@ -13,7 +13,7 @@
 				$type = 'Total';
 				$strXML .= "<set name='" . $type . "' value='" . $fetch1['total'] . "' color='AFD8F8'/>";
 			}
-        while($fetch = mysql_fetch_array($result)) 
+        while($fetch = mysqli_fetch_array($result)) 
 		{
 			//if($fetch['total'] <> '')
 			//{

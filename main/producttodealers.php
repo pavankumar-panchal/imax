@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_producttodealers <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,8 +7,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/producttodealers.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/producttodealers.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -155,7 +155,7 @@ include("../inc/eventloginsert.php");
                                  <td align="left" valign="top" bgcolor="#edf4ff"><label>
                                     <select name="region" class="swiftselect-mandatory" disabled="disabled" id="region" style=" width:200px">
                                       <option value="">Select A Region</option>
-                                      <? 
+                                      <?php 
                                               include('../inc/region.php');
                                               ?>
                                     </select>
@@ -163,7 +163,7 @@ include("../inc/eventloginsert.php");
                                   <td align="left" valign="top" bgcolor="#F7FAFF">Branch : </td>
                                   <td align="left" valign="top" bgcolor="#F7FAFF"><select name="branch" class="swiftselect-mandatory" disabled="disabled" id="branch" style=" width:200px">
                                     <option value="">Select A Branch</option>
-                                    <? 
+                                    <?php 
                                               include('../inc/branch.php');
                                               ?>
                                   </select></td>
@@ -198,7 +198,7 @@ include("../inc/eventloginsert.php");
                                            </select>
                                            </div>
                                            
-                                <?php
+                                <?phpphp
 /*                            $query = "SELECT productcode,productname FROM inv_mas_product order by productname;";
                             $result = runmysqlquery($query);
                             $productlistoptions = '';
@@ -301,4 +301,4 @@ include("../inc/eventloginsert.php");
 
 <script>refreshproductarray();
 </script>
-<? } ?>
+<?php } ?>

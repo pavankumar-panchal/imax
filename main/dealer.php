@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_dealer <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,11 +7,11 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/dealer.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-    <script language="javascript" src="../functions/clipboardcopy.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/dealer.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+    <script language="javascript" src="../functions/clipboardcopy.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
 <tr>
             <td width="23%" valign="top" style="border-right:#1f4f66 1px solid;border-bottom:#1f4f66 1px solid;" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -54,7 +54,7 @@ include("../inc/eventloginsert.php");
     <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
     <td width="60%" align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
       <option value="">All</option>
-      <? 
+      <?php 
 											include('../inc/region.php');
 											?>
     </select></td>
@@ -169,7 +169,7 @@ include("../inc/eventloginsert.php");
                                 <td align="left" valign="top" bgcolor="#EDF4FF">State:</td>
                                 <td align="left" valign="top" bgcolor="#EDF4FF"><select name="state" class="swiftselect-mandatory" id="state" onchange="getdistrict('districtcodedisplay',this.value);getgstcode(this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);getgstcode(this.value);"  style="width:200px;">
                                   <option value="">Select A State</option>
-                                  <? include('../inc/state.php'); ?>
+                                  <?php include('../inc/state.php'); ?>
                                 </select></td>
                               </tr>
                               <tr bgcolor="#f7faff">
@@ -224,7 +224,7 @@ include("../inc/eventloginsert.php");
                                 <td width="60%" align="left" valign="top" bgcolor="#edf4ff"><label>
                                   <select name="region" class="swiftselect-mandatory" id="region" style=" width:200px">
                                     <option value="">Select A Region</option>
-                                    <? 
+                                    <?php 
 											include('../inc/region.php');
 											?>
                                   </select>
@@ -233,7 +233,7 @@ include("../inc/eventloginsert.php");
                               <tr> <td width="40%" align="left" valign="top" bgcolor="#F7FAFF">Branch : </td>
                                 <td width="60%" align="left" valign="top" bgcolor="#F7FAFF"><select name="branch" class="swiftselect-mandatory" id="branch" style=" width:200px">
                                   <option value="">Select A Branch</option>
-                                  <? 
+                                  <?php 
 											include('../inc/branch.php');
 											?>
                                 </select></td>
@@ -252,7 +252,7 @@ include("../inc/eventloginsert.php");
 <!--                                <td width="60%" align="left" valign="top" bgcolor="#F7FAFF">-->
 <!--                                    <select name="maindealer" class="swiftselect-mandatory" id="dealerhead" style=" width:200px">-->
 <!--                                      <option value="">Select A Dealer</option>-->
-<!--                                        --><?//
+<!--                                        --><?php//
 //    											 include('../inc/dealerhead.php');
 //    								    ?>
 <!--                                    </select>-->
@@ -470,7 +470,7 @@ include("../inc/eventloginsert.php");
                                   <td align="left" valign="top">In Region:</td>
                                   <td width="39%" align="left" valign="top"><select name="searchregion" class="swiftselect-mandatory" id="searchregion">
                                                 <option value="">Select A Region</option>
-                                                <? 
+                                                <?php 
 											include('../inc/region.php');
 											?>
                                               </select></td>
@@ -520,12 +520,12 @@ include("../inc/eventloginsert.php");
 <!--                      <td width="4"></td>-->
                       <td width="380" align="center" id="tabgroupgridh4" onclick="gridtab4('4','tabgroupgrid','&nbsp;&nbsp; Search Result');" style="cursor:pointer" class="grid-tabclassr6">Search Result</td>
 <!--                      <td width="4"></td>-->
-                        <? $userid = imaxgetcookie('userid');
+                        <?php $userid = imaxgetcookie('userid');
                         if($userid == 146 || $userid == 138 || $userid == 33) { ?>
                             <td width="350" align="center" id="tabgroupgridh5" onclick="gridtab4('5','tabgroupgrid','&nbsp;&nbsp; Dealer Mapping');" style="cursor:pointer;" class="grid-tabclassr6">Dealer Mapping</td>
-                        <? } else { ?>
+                        <?php } else { ?>
                             <td width="350" align="center" id="tabgroupgridh5" onclick="gridtab4('5','tabgroupgrid','&nbsp;&nbsp; Dealer Mapping');" style="cursor:pointer; cursor: not-allowed;" class="grid-tabclassr6">Dealer Mapping</td>
-                        <? } ?>
+                        <?php } ?>
 <!--                      <td width="4"></td>-->
 <!--                      <td width="200" align="center" ></td>-->
                     </tr>
@@ -648,7 +648,7 @@ include("../inc/eventloginsert.php");
 </div></td>
   </tr>
 </table></div>
-                    <? $userid = imaxgetcookie('userid');
+                    <?php $userid = imaxgetcookie('userid');
                     if($userid == 146 || $userid == 138 || $userid == 112 || $userid == 33)
                     {?>
                           <div id="tabgroupgridc5" style="overflow:auto; width:704px; padding:2px; display:none;" align="center">
@@ -697,7 +697,7 @@ include("../inc/eventloginsert.php");
                                               </table></td>
                                       </tr>
                                   </table>
-                              </form></div> <? } ?>
+                              </form></div> <?php } ?>
                           <div id="searchresultgrid" style="display:none;" align="center">&nbsp;</div></div></td>
                     </tr>
                 </table></td>
@@ -713,4 +713,4 @@ include("../inc/eventloginsert.php");
 </table>
 <script>refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

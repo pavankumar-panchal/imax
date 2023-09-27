@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_importinvoices <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,9 +6,9 @@ if($p_importinvoices <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/invoiceimportnew.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/invoiceimportnew.js?dummy=<?php echo (rand());?>"></script>
 
 <SCRIPT language="javascript">
 	function invoice_cat()
@@ -144,4 +144,4 @@ else
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

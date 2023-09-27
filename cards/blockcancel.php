@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_blockcancel <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -8,12 +8,12 @@ else
 include('../inc/eventloginsert.php');
 $enabledid = array('146');
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<link media="screen" rel="stylesheet" href="../style/jquery.dataTables.min.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/jquery-3.3.1.min.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/jquery.dataTables.min.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/blockcancel.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<link media="screen" rel="stylesheet" href="../style/jquery.dataTables.min.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/jquery-3.3.1.min.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/jquery.dataTables.min.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/blockcancel.js?dummy=<?php echo (rand());?>"></script>
 <style rel=stylesheet>
 .progress { position:relative; width:100%; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
 .bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
@@ -99,7 +99,7 @@ $enabledid = array('146');
                                                         <td width="73%"  bgcolor="#EDF4FF" align="left">
                                                             <select name="pinremarksstatus" id="pinremarksstatus" class="swiftselect">
                                                                 <option value=" ">Select PIN Remarks Status</option>
-                                                            <? include('../inc/pinremarks.php'); ?>
+                                                            <?php include('../inc/pinremarks.php'); ?>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -176,7 +176,7 @@ $enabledid = array('146');
                           </tr>
                         </table></td>
                     </tr>
-                      <?php if(in_array($userid, $enabledid, true) ) { ?>
+                      <?phpphp if(in_array($userid, $enabledid, true) ) { ?>
                     <tr>
 											<td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #308ebc; border-top:none;">
 													<tr>
@@ -268,7 +268,7 @@ $enabledid = array('146');
                               </table></td>
                           </tr>
                         </table></td>
-                    </tr> <? } ?>
+                    </tr> <?php } ?>
                   </table></td>
               </tr>
             </table></td>
@@ -277,4 +277,4 @@ $enabledid = array('146');
   </tr>
 </table>
 <!--<script>refreshcardarray();</script>-->
-<? } ?>
+<?php } ?>

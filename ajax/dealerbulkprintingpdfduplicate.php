@@ -1,4 +1,4 @@
-<?
+<?php
 include('../functions/phpfunctions.php');
 //require_once('../pdfbillgeneration/tcpdf/tcpdf.php');
 require_once('../pdfbillgeneration/tcpdf.php');

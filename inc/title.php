@@ -1,4 +1,4 @@
-<? 
+<?php 
 	$query = "SELECT title FROM title ORDER BY title";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

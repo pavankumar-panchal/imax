@@ -1,7 +1,7 @@
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/charts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/highcharts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/excanvas.compiled.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/charts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/highcharts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/excanvas.compiled.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -57,14 +57,14 @@
                                                       <td>Dealer:</td>
                                                       <td><select name="dealerwise" class="swiftselect-mandatory" id="dealerwise" style=" width:225px">
                                                           <option value="">ALL</option>
-                                                          <? include('../inc/firstdealer.php'); ?>
+                                                          <?php include('../inc/firstdealer.php'); ?>
                                                         </select></td>
                                                     </tr>
                                                     <tr>
                                                       <td>State:</td>
                                                       <td><select name="statewise" class="swiftselect-mandatory" id="statewise" style=" width:225px">
                                                           <option value="">ALL</option>
-                                                          <? include('../inc/state.php'); ?>
+                                                          <?php include('../inc/state.php'); ?>
                                                       </select></td>
                                                     </tr>
                                                     
@@ -79,21 +79,21 @@
                                                       <td>Branch:</td>
                                                       <td><select name="branchwise" class="swiftselect-mandatory" id="branchwise" style=" width:225px">
                                                           <option value="">ALL</option>
-                                                          <? include('../inc/branch.php'); ?>
+                                                          <?php include('../inc/branch.php'); ?>
                                                       </select></td>
                                                     </tr>
                                                     <tr>
                                                       <td>Type:</td>
                                                       <td><select name="typewise" class="swiftselect-mandatory" id="typewise" style=" width:225px">
                                                           <option value="">ALL</option>
-                                                          <? include('../inc/custype.php'); ?>
+                                                          <?php include('../inc/custype.php'); ?>
                                                       </select></td>
                                                     </tr>
                                                     <tr>
                                                       <td>Category:</td>
                                                       <td><select name="categorywise" class="swiftselect-mandatory" id="categorywise" style=" width:225px">
                                                           <option value="">ALL</option>
-                                                          <? include('../inc/category.php'); ?>
+                                                          <?php include('../inc/category.php'); ?>
                                                       </select></td>
                                                     </tr>
                                                     <tr><td colspan="2"><fieldset style="border:1px solid #666666; padding:3px;">

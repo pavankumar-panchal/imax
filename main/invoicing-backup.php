@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_invoicing <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,13 +6,13 @@ if($p_invoicing <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
 
-<script language="javascript" src="../functions/javascript.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/invoicing.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
+<script language="javascript" src="../functions/javascript.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/invoicing.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
 
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
   <tr>
@@ -179,7 +179,7 @@ else
                                                   <td width="15%"><strong>Dealer: </strong></td>
                                                   <td width="29%"><select name="dealer" class="swiftselect" id="dealer" style="width:195px;">
                                                       <option value="" selected="selected">Select a Dealer</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/dealer-invoicing.php');
 											?>
                                                   </select></td>
@@ -214,7 +214,7 @@ else
                                                   <td width="15%"><strong>Item</strong>(Software): </td>
                                                   <td width="28%"><select name="product" class="swiftselect" id="product" style="width:195px;">
                                                       <option value="" selected="selected">Select a Item</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/productforpurchase.php');
 											?>
                                                   </select></td>
@@ -222,7 +222,7 @@ else
                                                   <td width="13%"><strong>Item</strong>(others):</td>
                                                   <td width="28%"><select name="product2" class="swiftselect" id="product2" style="width:195px;">
                                                       <option value="" selected="selected">Select a Item</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/services.php');
 											?>
                                                     </select></td>
@@ -610,4 +610,4 @@ Cheque / DD</label><label for="databasefield6">
   </tr>
 </table>
 <script>refreshcustomerarray();</script>
-<? } ?>
+<?php } ?>

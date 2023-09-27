@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_dealerattachcard <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,10 +7,10 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/dealerattachcard.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/dealer-cardattach.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/dealerattachcard.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/dealer-cardattach.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="23%" valign="top" style="border-right:#1f4f66 1px solid;border-bottom:#1f4f66 1px solid;" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -99,7 +99,7 @@ include("../inc/eventloginsert.php");
                                                 <td width="47%" height="34px;">
                                                 	<select name="dealerid" class="swiftselect" id="dealerid" style="width:180px;" onChange="gettotalcusattachcard();">
                                                         <option value="">ALL</option>
-                                                        <? include('../inc/getdealer.php');?>
+                                                        <?php include('../inc/getdealer.php');?>
                                                     </select>
                                 				          </td>
                                               </tr>
@@ -150,7 +150,7 @@ include("../inc/eventloginsert.php");
                                       <td width="52%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                                       <tr bgcolor="#EDF4FF">
                                             <td align="left" valign="top" bgcolor="#EDF4FF">Date:</td>
-                                            <td align="left" valign="top" bgcolor="#EDF4FF"><input name="currentdate" type="text" class="swifttext" id="currentdate" style="background:#FEFFE6;" size="30" maxlength="40" readonly="readonly"  autocomplete="off" value="<? echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>"/></td>
+                                            <td align="left" valign="top" bgcolor="#EDF4FF"><input name="currentdate" type="text" class="swifttext" id="currentdate" style="background:#FEFFE6;" size="30" maxlength="40" readonly="readonly"  autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>"/></td>
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td align="left" valign="top">Remarks:</td>
@@ -280,4 +280,4 @@ include("../inc/eventloginsert.php");
 gettotalcustomercount();
 //refreshdealerattachcardarray();
 </script>
-<? } ?>
+<?php } ?>

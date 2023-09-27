@@ -8,7 +8,7 @@
     $result = runmysqlquery($strQuery);
     if ($result) 
 	{
-        while($fetch = mysql_fetch_array($result)) 
+        while($fetch = mysqli_fetch_array($result)) 
 		{
             $strXML .= "<set name='" . $fetch['productname'] . "' value='" . $fetch['prdcount'] . "' color='AFD8F8'/>";
         }

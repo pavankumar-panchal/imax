@@ -1,10 +1,10 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 $query = "select * from inv_sms_bill where slno in ('23','24','25','30','31','32','33','38','40');";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$userreference = $fetch['userreference'];
 	$query2 = "select * from inv_smscredits where billref = '".$fetch['slno']."'";

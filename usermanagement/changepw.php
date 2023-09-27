@@ -1,4 +1,4 @@
-<?
+<?php
 include('../inc/eventloginsert.php');
 $userid = imaxgetcookie('userid');
 if(isset($_POST["update"]))
@@ -28,7 +28,7 @@ if(isset($_POST["update"]))
 	}
 }
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -78,7 +78,7 @@ if(isset($_POST["update"]))
                                     </table></td>
                                   </tr>
                                   <tr>
-                                    <td width="71%" height="35" align="left" valign="middle" style="padding-right:15px; "><div id="form-error"><? echo($message); ?></div></td>
+                                    <td width="71%" height="35" align="left" valign="middle" style="padding-right:15px; "><div id="form-error"><?php echo($message); ?></div></td>
                                     <td width="29%" align="right" valign="middle" style="padding-right:15px; "><input name="update" type="submit" class="swiftchoicebutton" id="update" value="Update" />
 &nbsp;&nbsp;&nbsp;
 <input name="clear" type="reset" class="swiftchoicebutton" id="clear" value="Clear" onclick="reset();document.getElementById('form-error').innerHTML = ''" /></td>

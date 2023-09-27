@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "select `productname`, `group`, `productcode` from inv_mas_product where inv_mas_product.productcode BETWEEN 899 AND 905 AND inv_mas_product.productcode NOT IN (901);";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

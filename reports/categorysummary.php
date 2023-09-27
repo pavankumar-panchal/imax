@@ -1,5 +1,5 @@
 
-<?
+<?php
 if($p_updationsummaryreport <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -8,8 +8,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/categorysummary.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/categorysummary.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -50,7 +50,7 @@ include("../inc/eventloginsert.php");
         <td width="23%" align="left" valign="top" bgcolor="#EDF4FF">Region:</td>
         <td width="77%" align="left" valign="top" bgcolor="#EDF4FF"><select name="region" class="swiftselect-mandatory" id="region" style=" width:225px">
             <option value="">ALL</option>
-            <? include('../inc/region.php'); ?>
+            <?php include('../inc/region.php'); ?>
         </select>
           <input type="hidden" name="flag" id="flag" value="true" /></td>
       </tr>
@@ -59,14 +59,14 @@ include("../inc/eventloginsert.php");
         <td valign="top" bgcolor="#EDF4FF" align="left">Branch:</td>
         <td valign="top" bgcolor="#EDF4FF" align="left"><select name="branch" class="swiftselect-mandatory" id="branch" style=" width:225px">
           <option value="">ALL</option>
-          <? include('../inc/branch.php'); ?>
+          <?php include('../inc/branch.php'); ?>
         </select></td>
       </tr>
       <tr bgcolor="#EDF4FF">
         <td valign="top" bgcolor="#EDF4FF" align="left">Current Dealer:</td>
         <td valign="top" bgcolor="#EDF4FF" align="left"><select name="dealerid" class="swiftselect-mandatory" id="dealerid" style=" width:225px">
           <option value="">ALL</option>
-          <? include('../inc/firstdealer.php'); ?>
+          <?php include('../inc/firstdealer.php'); ?>
         </select></td>
       </tr>
     </table></td>
@@ -121,4 +121,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 include('../functions/phpfunctions.php');
 $statecode = $_POST['statecode'];
 $query = "SELECT districtcode,districtname FROM inv_mas_district WHERE statecode = '".$statecode."' order by districtname;";

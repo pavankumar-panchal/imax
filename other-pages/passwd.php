@@ -1,10 +1,10 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 $query = "select slno,`password` as password from inv_mas_users ;";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$count++;
 	$slno  = $fetch['slno'];

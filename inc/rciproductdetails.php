@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT distinct productcode,productname,`group` as productgroup FROM inv_logs_webservices
 left join inv_mas_product on inv_mas_product.productcode = left(inv_logs_webservices.computerid,3) where productcode <> ''
  order by productname;";

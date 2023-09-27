@@ -1,4 +1,4 @@
-<?
+<?php
 	include('../functions/phpfunctions.php');
 	
 	$receiptno = $_POST['receiptno'];

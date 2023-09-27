@@ -1,4 +1,4 @@
-<?
+<?php
 	include('./functions/phpfunctions.php'); 
 	if(imaxgetcookie('userid') <> '' || imaxgetcookie('userid') <> false )
 	{

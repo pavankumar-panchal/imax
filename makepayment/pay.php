@@ -8,7 +8,7 @@ $lastslno = $_POST['onlineslno'];
 //Ensure record numbers are right and recalculate the total of selected records.
 $query = "select * from dealer_online_purchase where onlineinvoiceno = '".$lastslno."' ";
 $result = runmysqlquery($query);
-if(mysql_num_rows($result) == 0)
+if(mysqli_num_rows($result) == 0)
 {
 	$errormessage = "Invalid Entry.";
 	header("Location:../main/invoicing.php?error=".$errormessage);
@@ -16,7 +16,7 @@ if(mysql_num_rows($result) == 0)
 }
 else
 {
-	$userdetails = mysql_fetch_array($result);
+	$userdetails = mysqli_fetch_array($result);
 	$product = $userdetails['products'];
 	$split = explode('#',$product);
 	$quantity = count($split);
@@ -25,7 +25,7 @@ else
 /*-----------------------------Do not edit this piece of code - Begin-----------------------------*/
 $query = "SHOW TABLE STATUS like 'transactions'";
 $result = runicicidbquery($query);
-$row = mysql_fetch_array($result);
+$row = mysqli_fetch_array($result);
 $nextautoincrementid = $row['Auto_increment'];
 
 $merchatid = "00004074";

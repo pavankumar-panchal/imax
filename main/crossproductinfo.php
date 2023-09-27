@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_crossproductsales <> 'yes')
 {
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,10 +7,10 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/crossproductinfo.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/crossproductinfo.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo (rand());?>"></script>
 
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
   <tr>
@@ -181,7 +181,7 @@ include("../inc/eventloginsert.php");
                                                                 <td width="21%" height="10" align="left" valign="top">Region:</td>
                                                                 <td width="79%" height="10" align="left" valign="top"><select name="region2" class="swiftselect" id="region2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/region.php');
 											?>
                                                                   </select>                                                                </td>
@@ -190,7 +190,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left" valign="top" height="10" >State:</td>
                                                                 <td align="left" valign="top" height="10"><select name="state2" class="swiftselect" id="state2" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/state.php'); ?>
+                                                                    <?php include('../inc/state.php'); ?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -203,14 +203,14 @@ include("../inc/eventloginsert.php");
                                                                 <td height="10" align="left"> Dealer:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="currentdealer2" class="swiftselect" id="currentdealer2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/firstdealer.php');?>
+                                                                    <?php include('../inc/firstdealer.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td height="10" align="left"> Branch:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="branch2" class="swiftselect" id="branch2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/branch.php');?>
+                                                                    <?php include('../inc/branch.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -218,7 +218,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left" valign="top"   height="10" ><select name="type2" class="swiftselect" id="type2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/custype.php');?>
+                                                                    <?php include('../inc/custype.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -226,7 +226,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left" valign="top"   height="10" ><select name="category2" class="swiftselect" id="category2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/category.php');?>
+                                                                    <?php include('../inc/category.php');?>
                                                                   </select></td>
                                                               </tr>
                                                             </table></td>
@@ -524,7 +524,7 @@ include("../inc/eventloginsert.php");
                     <tr >
                       <td width="34%" align="left" valign="top" bgcolor="#EDF4FF">Current Status:</td>
                       <td colspan="2" align="left" valign="top" bgcolor="#EDF4FF"><select name="status" class="swiftselect-mandatory" id="status" style="width:180px">
-                          <? 
+                          <?php 
 											include('../inc/statuslist.php');
 							?>
                       </select></td>
@@ -546,7 +546,7 @@ include("../inc/eventloginsert.php");
               <td width="52%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="5">
                   <tr bgcolor="#f7faff">
                     <td width="34%" align="left" valign="top" bgcolor="#f7faff">Followup By:</td>
-                    <td width="66%" align="left" valign="top" bgcolor="#f7faff"  id="displayenteredby"><? $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".imaxgetcookie('userid')."'"); echo($fetch['fullname']); ?></td>
+                    <td width="66%" align="left" valign="top" bgcolor="#f7faff"  id="displayenteredby"><?php $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".imaxgetcookie('userid')."'"); echo($fetch['fullname']); ?></td>
                   </tr>
                   <tr bgcolor="#f7faff">
                     <td align="left" valign="top" bgcolor="#EDF4FF">Remarks:</td>
@@ -556,17 +556,17 @@ include("../inc/eventloginsert.php");
               <td width="48%" valign="top"><table width="100%" border="0" cellpadding="5" cellspacing="0" >
                   <tr bgcolor="#f7faff">
                     <td width="32%" align="left" valign="top" bgcolor="#EDF4FF">Followup Date:</td>
-                    <td width="68%" align="left" valign="top" bgcolor="#EDF4FF"  id="entereddate"><? echo(datetimelocal('d-m-Y')); ?></td>
+                    <td width="68%" align="left" valign="top" bgcolor="#EDF4FF"  id="entereddate"><?php echo(datetimelocal('d-m-Y')); ?></td>
                   </tr>
                   <tr bgcolor="#f7faff">
                     <td align="left" valign="top">Next Followup:</td>
-                    <td align="left" valign="top"><input name="enddate" type="text" class="swifttext" id="DPC_followupdate" size="27" maxlength="10"  autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>"/></td>
+                    <td align="left" valign="top"><input name="enddate" type="text" class="swifttext" id="DPC_followupdate" size="27" maxlength="10"  autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>"/></td>
                   </tr>
                   <tr bgcolor="#edf4ff">
                     <td align="left" valign="top"  bgcolor="#edf4ff">Dealer:</td>
                     <td align="left" valign="top" bgcolor="#edf4ff" ><select name="dealer" class="swiftselect-mandatory" id="dealer" style="width:180px;">
                         <option value="">Make A Selection</option>
-                        <? 
+                        <?php 
 											include('../inc/firstdealer.php');
 											?>
                     </select></td>
@@ -658,6 +658,6 @@ include("../inc/eventloginsert.php");
 <script>
 gettotalcustomercount();
 </script>
-<?
+<?php
 }
 ?>

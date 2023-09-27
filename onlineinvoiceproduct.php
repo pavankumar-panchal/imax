@@ -1,4 +1,4 @@
-<? 
+<?php 
 include('./functions/phpfunctions.php');
 
 //$query = "select * from inv_bill where onlineinvoiceno in ('8','9','10','11','12','13','14','15','16','17','18','23');";
@@ -11,7 +11,7 @@ where inv_bill.onlineinvoiceno in ('1','2','3','4','5','6','7','19','20','21','2
 $result1 = runmysqlquery($query0);
 $count = 0;
 
-	while($fetch1 = mysql_fetch_array($result1))
+	while($fetch1 = mysqli_fetch_array($result1))
 	{
 		$custreference = $fetch1['customerreference'];
 		$firstbillnumber = $fetch1['slno'];

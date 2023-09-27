@@ -1,10 +1,10 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 $query = "select * from 1dealer ;";
 $result12 = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result12))
+while($fetch = mysqli_fetch_array($result12))
 {
 	$count++;
 	$slno = $fetch['slno'];

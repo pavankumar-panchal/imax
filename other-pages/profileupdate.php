@@ -1,10 +1,10 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 $query = "select * from inv_customerreqpending where customerstatus = 'pending' and requestfrom = 'dealer_module';";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$count++;
 	$customerid = $fetch['customerid'];

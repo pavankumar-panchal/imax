@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_suggestedmerging <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,10 +7,10 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/mergecustomerlist.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjsmerge.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/mergecustomerlist.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjsmerge.php?dummy=<?php echo (rand());?>"></script>
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -222,7 +222,7 @@ include("../inc/eventloginsert.php");
                                                                     <tr>
                                                                       <td align="left"><select name="state" class="swiftselect" id="state" onchange="getdistrictmerge('mergedistrictcodedisplay',this.value);" onkeyup="getdistrictmerge('mergedistrictcodedisplay',this.value);"  style="width:200px;" >
                                                                           <option value="">Select A State</option>
-                                                                          <? include('../inc/state.php'); ?>
+                                                                          <?php include('../inc/state.php'); ?>
                                                                         </select></td>
                                                                     </tr>
                                                                   </table></td>
@@ -287,7 +287,7 @@ include("../inc/eventloginsert.php");
                                                                     <tr>
                                                                       <td align="left"><select name="type" class="swiftselect" id="type" style="width:200px">
                                                                           <option value="" selected="selected">Type Selection</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/custype.php');
 											?>
                                                                         </select></td>
@@ -300,7 +300,7 @@ include("../inc/eventloginsert.php");
                                                                     <tr>
                                                                       <td align="left"><select name="category" class="swiftselect" id="category"  style="width:200px">
                                                                           <option value="">Category Selection</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/category.php');
 											?>
                                                                         </select></td>
@@ -313,7 +313,7 @@ include("../inc/eventloginsert.php");
                                                                     <tr>
                                                                       <td align="left"><select name="region" class="swiftselect-mandatory" id="region" style="width:200px">
                                                                           <option value="">Select A Region</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/region.php');
 											?>
                                                                         </select></td>
@@ -326,7 +326,7 @@ include("../inc/eventloginsert.php");
                                                                     <tr>
                                                                       <td align="left"><select name="dealer" class="swiftselect" id="dealer" style="width:180px;">
                                                                           <option value="">Make A Selection</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                                         </select></td>
@@ -339,7 +339,7 @@ include("../inc/eventloginsert.php");
                                                                     <tr>
                                                                       <td align="left"><select name="branch" class="swiftselect-mandatory" id="branch" style="width:200px">
                                                                           <option value="">Select A Branch</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/branch.php');
 											?>
                                                                         </select></td>
@@ -499,4 +499,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? }?>
+<?php }?>

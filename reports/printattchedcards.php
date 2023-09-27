@@ -1,8 +1,8 @@
-<link rel="stylesheet" type="text/css" href="../style/global.css?dummy=<? echo (rand());?>">
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy=<? echo (rand());?>">
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link rel="stylesheet" type="text/css" href="../style/global.css?dummy=<?php echo (rand());?>">
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy=<?php echo (rand());?>">
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 
-<?
+<?php
 include('../functions/phpfunctions.php');
 
 $dealerid = $_POST['lastslno'];

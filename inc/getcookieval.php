@@ -1,6 +1,6 @@
 function cookiecheck()
 {
-<?
+<?php
 include('../functions/phpfunctions.php');
 $userid = imaxgetcookie('userid');
 if(imaxgetcookie('userid') == false)

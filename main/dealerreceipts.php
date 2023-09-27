@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_dealerreceipts <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,12 +7,12 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo(rand());?>"  />
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/dealerreceipts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo(rand());?>" ></script>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo(rand());?>"  />
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/dealerreceipts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo(rand());?>" ></script>
 
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -105,7 +105,7 @@ include("../inc/eventloginsert.php");
                                           </tr>
                                           <tr >
                                             <td valign="top">Receipt  Date:</td>
-                                            <td valign="top"><input name="receiptdate" type="text" class="swifttext" id="DPC_receiptdate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/></td>
+                                            <td valign="top"><input name="receiptdate" type="text" class="swifttext" id="DPC_receiptdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/></td>
                                           </tr>
                                           <tr bgcolor="#EDF4FF">
                                             <td align="left" valign="top" bgcolor="#f7faff"><label>
@@ -341,5 +341,5 @@ include("../inc/eventloginsert.php");
 <script>
 gettotaldealerrcount();
 </script>
-<?
+<?php
  } ?>

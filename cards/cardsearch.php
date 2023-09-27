@@ -1,9 +1,9 @@
-<?
+<?php
 include('../inc/eventloginsert.php');
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/cardsearch.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/cardsearch.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -84,7 +84,7 @@ include('../inc/eventloginsert.php');
    <td width="12%" >In the Scheme:</td>
                                                               <td width="88%" colspan="6"><select name="scheme" class="swiftselect-mandatory" id="scheme" style="width:225px;" >
                                                                 <option value="">ALL</option>
-                                                                <? include('../inc/listscheme.php'); ?>
+                                                                <?php include('../inc/listscheme.php'); ?>
                                                               </select></td>
   </tr>
 </table>

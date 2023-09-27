@@ -3,7 +3,7 @@ function getproduct(divid,schemeid)
 	switch(schemeid)
 	{
 			
-<?
+<?php
 include('../functions/phpfunctions.php');
 	
 	$queryproduct = "SELECT distinct slno FROM inv_mas_scheme ORDER BY schemename;";

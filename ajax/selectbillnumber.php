@@ -1,4 +1,4 @@
-<?
+<?php
 include('../functions/phpfunctions.php');
 $dealerid = $_POST['dealerid'];
 $query = "SELECT slno FROM inv_bill WHERE dealerid = '".$dealerid."' order by slno;";

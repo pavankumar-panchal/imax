@@ -1,4 +1,4 @@
-<?
+<?php
 if(imaxgetcookie('userid') == false) { $url = '../index.php'; header("Location:".$url); }
 if(imaxgetcookie('checkpermission') == false) { $url = '../index.php'; header("Location:".$url); }
 

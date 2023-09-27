@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_transactionsreport <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,8 +7,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/transactionsreport.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/transactionsreport.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -46,13 +46,13 @@ include("../inc/eventloginsert.php");
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td valign="top" align="left">From Date:</td>
-                                            <td valign="top" bgcolor="#f7faff"  align="left"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_surrenderfromdate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" readonly="readonly"/>
+                                            <td valign="top" bgcolor="#f7faff"  align="left"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_surrenderfromdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly"/>
                                               <input type="hidden" name="flag" id="flag" value="true" />
                                               <br /></td>
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td valign="top" bgcolor="#EDF4FF"  align="left">To Date:</td>
-                                            <td valign="top" bgcolor="#EDF4FF"  align="left"><input name="todate" type="text" class="swifttext-mandatory" id="DPC_surrendertodate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" /></td>
+                                            <td valign="top" bgcolor="#EDF4FF"  align="left"><input name="todate" type="text" class="swifttext-mandatory" id="DPC_surrendertodate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" /></td>
                                           </tr>
                                           <tr bgcolor="#edf4ff">
                                             <td colspan="2" valign="top" bgcolor="#F7FAFF" height="12px"></td>
@@ -71,7 +71,7 @@ include("../inc/eventloginsert.php");
                                                         <option value="1">Success</option>
                                                         <option value="2">Unsuccess</option>
                                                        </select>
-                                                        <!--<?/*
+                                                        <!--<?php/*
 														$query = "SELECT distinct(responsemessage) as msg from transactions order by responsemessage;";
 														$result = runicicidbquery($query);
 														while($fetch = mysqli_fetch_array($result))
@@ -147,7 +147,7 @@ include("../inc/eventloginsert.php");
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td colspan="4" valign="top" bgcolor="#f7faff" align="left"><div style="height:327px; overflow:scroll">
-                                                <? include('../inc/product-report.php'); ?>
+                                                <?php include('../inc/product-report.php'); ?>
                                               </div></td>
                                           </tr>
                                           <tr bgcolor="#EDF4FF">
@@ -156,7 +156,7 @@ include("../inc/eventloginsert.php");
                                               <select name="selectproduct" class="swiftselect" id="selectproduct" style="width:140px" >
                                                 <option value="ALL" >ALL</option>
                                                 <option value="NONE" selected="selected">NONE</option>
-                                                <? include('../inc/productgroup.php') ?>
+                                                <?php include('../inc/productgroup.php') ?>
                                               </select>
                                               </strong></td>
                                             <td width="56%" align="left"><a onclick="selectdeselectall('one');"><strong class="resendtext">Go &#8250;&#8250;</strong></a>&nbsp;<strong>OR</strong>&nbsp;<a onclick="selectdeselectall('more');"> <span class="reg-text">Add to selection &#8250;&#8250;</span></a></td>
@@ -187,4 +187,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

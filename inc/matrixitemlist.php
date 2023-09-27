@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT id,productname FROM inv_mas_matrixproduct order by id;";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

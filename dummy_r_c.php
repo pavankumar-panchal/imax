@@ -6,7 +6,7 @@
 	
 	$count=0;
 	
-	while($query_data= mysql_fetch_array($result))
+	while($query_data= mysqli_fetch_array($result))
 	{
 		$query2="UPDATE inv_mas_receipt set reconsilation='" . $query_data["reconsilation"] . "' where slno=". $query_data["receiptno"] ;
 		$result2= runmysqlquery($query2);

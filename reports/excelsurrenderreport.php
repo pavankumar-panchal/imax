@@ -26,7 +26,7 @@
 	</style>
 </head>
 <body>
-<?
+<?php
 ini_set('memory_limit', '2048M');
 
 include('../functions/phpfunctions.php');
@@ -213,7 +213,7 @@ elseif($flag == 'true')
 	</tr>
 	</thead>
 	<tbody>
-	<?php
+	<?phpphp
 	//$j =4;
 	$slno = 1;
 	while ($fetch = mysqli_fetch_array($result)) {
@@ -252,26 +252,26 @@ elseif($flag == 'true')
 		?>
 
 		<tr>
-			<td><?php echo $slno++; ?></td>
-			<td><?php echo $fetch['businessname']; ?></td>
-			<td><?php echo $custid; ?></td>
-			<td><?php echo $fetch['scratchnumber']; ?></td>
-			<td><?php echo $fetch['productname']; ?></td>
-			<td><?php echo $fetch['HDDID']; ?> </td>
-			<td><?php echo $fetch['ETHID']; ?></td>
-			<td><?php echo $fetch['COMPUTERNAME']; ?></td>
-			<td><?php echo $fetch['networkip']; ?></td>
-			<td><?php echo $surrenderdate; ?></td>
-			<td><?php echo $registereddate; ?></td>
-			<td><?php echo $surrenderby; ?></td>
-			<td><?php echo $fetch['forceremarks']; ?></td>
-			<td><?php echo $fetch['refslno']; ?></td>
+			<td><?phpphp echo $slno++; ?></td>
+			<td><?phpphp echo $fetch['businessname']; ?></td>
+			<td><?phpphp echo $custid; ?></td>
+			<td><?phpphp echo $fetch['scratchnumber']; ?></td>
+			<td><?phpphp echo $fetch['productname']; ?></td>
+			<td><?phpphp echo $fetch['HDDID']; ?> </td>
+			<td><?phpphp echo $fetch['ETHID']; ?></td>
+			<td><?phpphp echo $fetch['COMPUTERNAME']; ?></td>
+			<td><?phpphp echo $fetch['networkip']; ?></td>
+			<td><?phpphp echo $surrenderdate; ?></td>
+			<td><?phpphp echo $registereddate; ?></td>
+			<td><?phpphp echo $surrenderby; ?></td>
+			<td><?phpphp echo $fetch['forceremarks']; ?></td>
+			<td><?phpphp echo $fetch['refslno']; ?></td>
 
 		</tr>
-    <?php } ?>
+    <?phpphp } ?>
     </tbody>
 </table>
-<?php
+<?phpphp
 
 $query = 'select slno,username from inv_mas_users where slno = '.$userid.'';
 $fetchres = runmysqlqueryfetch($query);
@@ -293,7 +293,7 @@ $filebasename = "Customer-pinno-surrender-details".$localdate."-".$localtime."-"
 
 	$(document).ready(function() {
 		//alert("passing");
-		var filename="<?php echo $filebasename; ?>";
+		var filename="<?phpphp echo $filebasename; ?>";
 		//alert(filename);
 		$('#example').DataTable({
 			dom: 'Blfrtip',
@@ -329,7 +329,7 @@ $filebasename = "Customer-pinno-surrender-details".$localdate."-".$localtime."-"
 </script>
 
 
-<?php
+<?phpphp
 
 $query1 ="INSERT INTO inv_logs_reports(userid,`date`,`time`,`type`,`data`,system) VALUES('".$userid."','".datetimelocal('Y-m-d')."','".datetimelocal('H-i')."','view_customer_pinno_surrender_report',\"".$query."\",'".$_SERVER['REMOTE_ADDR']."')";
 $result = runmysqlquery($query1);
@@ -341,7 +341,7 @@ $eventresult = runmysqlquery($eventquery);
 <script>
 	function insertdata()
 	{
-		<?php
+		<?phpphp
 		$eventquery = "Insert into inv_logs_event(userid,system,eventtype,eventdatetime,remarks)
 			values('".$userid."','".$_SERVER['REMOTE_ADDR']."','253','".date('Y-m-d').' '.date('H:i:s')."','excel_customer_pinno_surrender_report".'-'.strtolower($fetchres['username'])."')";
 		$eventresult = runmysqlquery($eventquery);
@@ -350,4 +350,4 @@ $eventresult = runmysqlquery($eventquery);
 </script>
 </body>
 </html>
-<?php } ?>
+<?phpphp } ?>

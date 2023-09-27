@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_invoicing <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -18,4 +18,4 @@ else
 
 </body>
 </html>
-<? } ?>
+<?php } ?>

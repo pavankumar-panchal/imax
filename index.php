@@ -1,7 +1,12 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
 include('./functions/browsercheck.php');
 
 if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _browser('safari')) {
+
   include('./functions/phpfunctions.php');
 
   session_start();
@@ -19,7 +24,6 @@ if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _
     else
       $isloggedin = 'false';
   }
-
 
   if ($isloggedin == 'true') {
     header('Location:' . './home/index.php');
@@ -91,12 +95,12 @@ if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _
 
 } else
   $message = '<span class="error-message"> This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above. </span>';
-//echo(" This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above.");
+echo(" This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above.");
 ?>
 
 
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -210,7 +214,8 @@ if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _
                                                         <td align="left" valign="top"><label>
                                                             <input name="username" type="text"
                                                               class="swifttext type_enter" id="username" size="30"
-                                                              maxlength="40" value="<?php echo ($defaultusername); ?>" />
+                                                              maxlength="40"
+                                                              value="<?php echo ($defaultusername); ?>" />
                                                           </label></td>
                                                       </tr>
                                                       <tr>
@@ -306,6 +311,3 @@ if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _
 </body>
 
 </html>
-
-
-

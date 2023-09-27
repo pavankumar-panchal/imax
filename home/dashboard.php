@@ -1,10 +1,10 @@
-<?
+<?php
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link href="../style/shortkey.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/key_shortcut.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/dashboard-shortcut.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link href="../style/shortkey.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/key_shortcut.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/dashboard-shortcut.js?dummy=<?php echo (rand());?>"></script>
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap" >
@@ -26,7 +26,7 @@ include("../inc/eventloginsert.php");
                                             <td class="links-top">&nbsp;</td>
                                           </tr>
                                           <tr>
-                                            <td class="links-mid" align="left"><? include('../inc/quicklinks.php'); ?></td>
+                                            <td class="links-mid" align="left"><?php include('../inc/quicklinks.php'); ?></td>
                                           </tr>
                                           <tr>
                                             <td class="links-btm">&nbsp;</td>
@@ -38,7 +38,7 @@ include("../inc/eventloginsert.php");
                                             <td class="links-top">&nbsp;</td>
                                           </tr>
                                           <tr>
-                                            <td class="links-mid" align="left"><? include('../inc/leftlink-websites.php'); ?></td>
+                                            <td class="links-mid" align="left"><?php include('../inc/leftlink-websites.php'); ?></td>
                                           </tr>
                                           <tr>
                                             <td class="links-btm">&nbsp;</td>
@@ -46,22 +46,22 @@ include("../inc/eventloginsert.php");
                                            <tr>
                                             <td>&nbsp;</td>
                                           </tr>
-                                         <?  if($p_customerpendingrequest == 'yes' || $p_dealerpendingrequest == 'yes') { ?>
+                                         <?php  if($p_customerpendingrequest == 'yes' || $p_dealerpendingrequest == 'yes') { ?>
 
                                           <tr>
                                             <td class="links-top">&nbsp;</td>
                                           </tr>
                                           <tr>
-                                            <td class="links-mid" align="left"><? include('../inc/leftlink-profileupdate.php'); ?></td>
+                                            <td class="links-mid" align="left"><?php include('../inc/leftlink-profileupdate.php'); ?></td>
                                           </tr>
                                           <tr>
                                             <td class="links-btm">&nbsp;</td>
                                           </tr>
-                                          <? } ?>
+                                          <?php } ?>
                                       </table></td>
                                       <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                          <td style="padding-left:30px; font-size:16px; font-family:Tahoma; font-weight:bold">Welcome <? $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".$userid."'"); echo($fetch['fullname']); ?>...</td>
+                                          <td style="padding-left:30px; font-size:16px; font-family:Tahoma; font-weight:bold">Welcome <?php $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".$userid."'"); echo($fetch['fullname']); ?>...</td>
                                         </tr>
                                          <tr>
                                           <td>&nbsp;</td>
@@ -93,7 +93,7 @@ include("../inc/eventloginsert.php");
                                                                 <td width="129" align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">New  Registrations</font></td>
                                                                 <td width="4" align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td width="44" align="left"><div align="right">
-                                                                  <? $query0 = "SELECT COUNT(*) AS newregistration FROM inv_customerproduct WHERE `type` = 'newlicence' and date = curdate();";
+                                                                  <?php $query0 = "SELECT COUNT(*) AS newregistration FROM inv_customerproduct WHERE `type` = 'newlicence' and date = curdate();";
 	$fetch0 = runmysqlqueryfetch($query0); echo($fetch0['newregistration']);
   ?>
                                                                 </div></td>
@@ -103,7 +103,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold" >Re-  Registrations</font></td>
                                                                 <td align="left"> <font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td align="left"><div align="right">
-                                                                  <? $query1 = "SELECT COUNT(*) AS reregistration FROM inv_customerproduct WHERE `type` = 'reregistration' and date = curdate();"; $fetch1 = runmysqlqueryfetch($query1); echo($fetch1['reregistration']); ?>
+                                                                  <?php $query1 = "SELECT COUNT(*) AS reregistration FROM inv_customerproduct WHERE `type` = 'reregistration' and date = curdate();"; $fetch1 = runmysqlqueryfetch($query1); echo($fetch1['reregistration']); ?>
                                                                 </div></td>
                                                                 <td>&nbsp;</td>
                                                               </tr>
@@ -111,7 +111,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">Updation</font></td>
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td align="left"><div align="right">
-                                                                  <? $query2 = "SELECT COUNT(*) AS updation FROM inv_customerproduct WHERE `type` = 'updationlicense' and date = curdate();"; $fetch2 = runmysqlqueryfetch($query2); echo($fetch2['updation']); ?>
+                                                                  <?php $query2 = "SELECT COUNT(*) AS updation FROM inv_customerproduct WHERE `type` = 'updationlicense' and date = curdate();"; $fetch2 = runmysqlqueryfetch($query2); echo($fetch2['updation']); ?>
                                                                 </div></td>
                                                                 <td>&nbsp;</td>
                                                               </tr>
@@ -119,7 +119,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">Total</font></td>
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td align="left"><div align="right">
-                                                                  <?  echo($fetch0['newregistration'] + $fetch1['reregistration'] + $fetch2['updation']); ?>
+                                                                  <?php  echo($fetch0['newregistration'] + $fetch1['reregistration'] + $fetch2['updation']); ?>
                                                                 </div></td>
                                                                 <td>&nbsp;</td>
                                                               </tr>

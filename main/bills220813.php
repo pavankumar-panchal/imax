@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_bills <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,11 +7,11 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/bills.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getschemejs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getproductjs.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/bills.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getschemejs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getproductjs.php?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td valign="top" width="23%" style="border-bottom:#1f4f66 1px solid;border-right:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -60,7 +60,7 @@ include("../inc/eventloginsert.php");
                                 <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
                                 <td width="60%" align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
                                     <option value="">All</option>
-                                    <? 
+                                    <?php 
 											include('../inc/region.php');
 											?>
                                   </select></td>
@@ -151,7 +151,7 @@ include("../inc/eventloginsert.php");
                                                         <input type="hidden" name="billlastslno" id="billlastslno" />
                                                         <input type="hidden" name="taxratehidden" id="taxratehidden" /></td>
                                                     <td width="14%" align="left" valign="top" bgcolor="#F7FAFF">Date:</td>
-                                                    <td width="34%" align="left" valign="top" bgcolor="#F7FAFF"><input name="billdate" type="text" class="swiftselect-readonly" id="billdate" size="30"  autocomplete="off" value="<? echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>" readonly="readonly"/></td>
+                                                    <td width="34%" align="left" valign="top" bgcolor="#F7FAFF"><input name="billdate" type="text" class="swiftselect-readonly" id="billdate" size="30"  autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>" readonly="readonly"/></td>
                                                   </tr>
                                                   <tr>
                                                     <td align="left" valign="top" bgcolor="#F7FAFF">Dealer:</td>
@@ -325,4 +325,4 @@ include("../inc/eventloginsert.php");
 </table>
 <script>refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

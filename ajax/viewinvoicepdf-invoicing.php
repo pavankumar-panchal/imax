@@ -1,4 +1,4 @@
-<? 
+<?php 
 	include('../functions/phpfunctions.php');
 	//echo($_POST['onlineslno'].'here'); exit;
 	if($_POST['onlineslno'] <> '')

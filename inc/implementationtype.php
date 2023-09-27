@@ -1,4 +1,4 @@
-<?
+<?php
 	$userid = imaxgetcookie('dealeruserid');
 	$query = "SELECT * from imp_mas_implementationtype";
 	$result = runmysqlquery($query);

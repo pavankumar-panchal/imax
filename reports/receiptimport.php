@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_importreceipt <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,9 +6,9 @@ if($p_importreceipt <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/receiptimport.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/receiptimport.js?dummy=<?php echo (rand());?>"></script>
 <SCRIPT language="javascript">
 $( document ).ready(function() {
 filter();
@@ -32,14 +32,14 @@ filter();
                             <td  height="10" align="left" valign="top" style="width:180px;">
                             	<select name="region" class="swiftselect" id="region" style="width:180px;" onclick="filter();">
                                     <option value="">ALL</option>
-                                    <? include('../inc/region.php');?>
+                                    <?php include('../inc/region.php');?>
                               	</select>
                             </td>
                             <td height="10" align="right" valign="top" style="padding-right:10px;">Prepared By:</td>
                             <td  height="10" align="left" valign="top" style = "width:60%">
                                 <select name="generatedby" class="swiftselect" id="generatedby" style="width:180px;" onclick="filter();">
                                     <option value="">ALL</option>
-                                    <? include('../inc/generatedby.php');?>
+                                    <?php include('../inc/generatedby.php');?>
                                 </select>
                              </td>
                           </tr>
@@ -118,4 +118,4 @@ filter();
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

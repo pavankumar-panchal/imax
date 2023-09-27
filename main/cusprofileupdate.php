@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_customerpendingrequest <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -8,11 +8,11 @@ else
 {	
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/cusprofileupdate.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictlistjs.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/cusprofileupdate.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictlistjs.php?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" style="text-align:left" >
   <tr>
     <td valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -132,7 +132,7 @@ include("../inc/eventloginsert.php");
                                                             <tr>
                                                               <td><select name="newstate" class="swiftselect-mandatory" id="newstate" onchange="getdistrict('districtcodedisplay',this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);"  style="width:200px;" disabled="disabled">
                                                                   <option value="">Select A State</option>
-                                                                  <? include('../inc/state.php'); ?>
+                                                                  <?php include('../inc/state.php'); ?>
                                                                 </select></td>
                                                             </tr>
                                                             <tr>
@@ -271,7 +271,7 @@ include("../inc/eventloginsert.php");
                                                             <tr>
                                                               <td align="left"><select name="newtype" class="swiftselect" id="newtype" style="width:200px" disabled="disabled">
                                                                   <option value="" selected="selected">Type Selection</option>
-                                                                  <? 
+                                                                  <?php 
 											include('../inc/custype.php');
 											?>
                                                                 </select></td>
@@ -293,7 +293,7 @@ include("../inc/eventloginsert.php");
                                                             <tr>
                                                               <td align="left"><select name="newcategory" class="swiftselect" id="newcategory"  style="width:200px" disabled="disabled">
                                                                   <option value="">Category Selection</option>
-                                                                  <? 
+                                                                  <?php 
 											include('../inc/category.php');
 											?>
                                                                 </select></td>
@@ -662,4 +662,4 @@ include("../inc/eventloginsert.php");
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

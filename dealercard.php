@@ -1,4 +1,4 @@
-<?
+<?php
 include('./functions/phpfunctions.php');
 
 echo "Remove end";
@@ -9,7 +9,7 @@ $result1 = runmysqlquery($query0);
 $count = 0;
 
 
-while($fetch1 = mysql_fetch_array($result1))
+while($fetch1 = mysqli_fetch_array($result1))
 {
 	$scratchlimit = $fetch1['quatity'];
 	$cardarray = explode(',',$fetch1['cardid']);
@@ -17,7 +17,7 @@ while($fetch1 = mysql_fetch_array($result1))
 	{
 		$query7 = "SELECT * from inv_mas_scratchcard where cardid = '".$cardarray[$j]."'";
 		$result16 = runmysqlquery($query7);
-		if(mysql_num_rows($result16) == 0)
+		if(mysqli_num_rows($result16) == 0)
 		{
 			echo('Card ID Doesnt exist!!!');
 			exit;

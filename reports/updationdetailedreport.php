@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_updationdetailedreport <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,8 +7,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/updationdetailedreport.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/updationdetailedreport.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -61,7 +61,7 @@ include("../inc/eventloginsert.php");
                                               <td>Dealer:</td>
                                               <td><select name="dealerid" class="swiftselect-mandatory" id="dealerid" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/firstdealer.php'); ?>
+                                                <?php include('../inc/firstdealer.php'); ?>
                                               </select>
                                                 <input type="hidden" name="flag" id="flag" value="true" /></td>
                                             </tr>
@@ -69,28 +69,28 @@ include("../inc/eventloginsert.php");
                                               <td>Region:</td>
                                               <td><select name="region" class="swiftselect-mandatory" id="region" >
                                                 <option value="">ALL</option>
-                                                <? include('../inc/region.php'); ?>
+                                                <?php include('../inc/region.php'); ?>
                                               </select></td>
                                             </tr>
                                                                           <tr>
                                               <td>Branch:</td>
                                               <td><select name="branch" class="swiftselect-mandatory" id="branch" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/branch.php'); ?>
+                                                <?php include('../inc/branch.php'); ?>
                                               </select></td>
                                             </tr>
                                             <tr>
                                               <td>Type:</td>
                                               <td><select name="type" class="swiftselect-mandatory" id="type" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/custype.php'); ?>
+                                                <?php include('../inc/custype.php'); ?>
                                               </select></td>
                                             </tr>
                                             <tr>
                                               <td>Category:</td>
                                               <td><select name="category" class="swiftselect-mandatory" id="category" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/category.php'); ?>
+                                                <?php include('../inc/category.php'); ?>
                                               </select></td>
                                             </tr>
                                             <tr>
@@ -168,4 +168,4 @@ Customer Category Wise</td>
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

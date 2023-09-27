@@ -1,21 +1,21 @@
-<?
+<?php
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet >
-<link href="../style/shortkey.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../tinymce/jscripts/tiny_mce/tiny_mce.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/customer.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/cus-cardsearch.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/cus-regcardsearch.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/clipboardcopy.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/enter_keyshortcut.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/key_shortcut.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/customer-shortkey.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet >
+<link href="../style/shortkey.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../tinymce/jscripts/tiny_mce/tiny_mce.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/customer.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/cus-cardsearch.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/cus-regcardsearch.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/clipboardcopy.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/enter_keyshortcut.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/key_shortcut.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/customer-shortkey.js?dummy=<?php echo (rand());?>"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
@@ -47,16 +47,16 @@ include("../inc/eventloginsert.php");
 var permissionmail = '';
 var permissioncontactedit = '';
  $(document).ready(function(){
- <? if($permissionarray[5] == 'no'){?>
+ <?php if($permissionarray[5] == 'no'){?>
   permissioncontactedit = 'no';
-  <? } else {?>
+  <?php } else {?>
   permissioncontactedit = 'yes';
-  <? }?>
- <? if($permissionarray[22] == 'no'){?>
+  <?php }?>
+ <?php if($permissionarray[22] == 'no'){?>
   permissionmail = 'no';
-  <? } else {?>
+  <?php } else {?>
   permissionmail = 'yes';
-  <? }?> 
+  <?php }?> 
  });
 </script>
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
@@ -231,7 +231,7 @@ var permissioncontactedit = '';
                                                                 <td width="21%" height="10" align="left" valign="top">Region:</td>
                                                                 <td width="79%" height="10" align="left" valign="top"><select name="region2" class="swiftselect" id="region2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/region.php');
 											?>
                                                                   </select></td>
@@ -240,7 +240,7 @@ var permissioncontactedit = '';
                                                                 <td align="left" valign="top" height="10" >State:</td>
                                                                 <td align="left" valign="top" height="10"><select name="state2" class="swiftselect" id="state2" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/state.php'); ?>
+                                                                    <?php include('../inc/state.php'); ?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -253,14 +253,14 @@ var permissioncontactedit = '';
                                                                 <td height="10" align="left"> Dealer:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="currentdealer2" class="swiftselect" id="currentdealer2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/firstdealer.php');?>
+                                                                    <?php include('../inc/firstdealer.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td height="10" align="left"> Branch:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="branch2" class="swiftselect" id="branch2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/branch.php');?>
+                                                                    <?php include('../inc/branch.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -268,7 +268,7 @@ var permissioncontactedit = '';
                                                                 <td align="left" valign="top"   height="10" ><select name="type2" class="swiftselect" id="type2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/custype.php');?>
+                                                                    <?php include('../inc/custype.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -276,7 +276,7 @@ var permissioncontactedit = '';
                                                                 <td align="left" valign="top"   height="10" ><select name="category2" class="swiftselect" id="category2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/category.php');?>
+                                                                    <?php include('../inc/category.php');?>
                                                                   </select></td>
                                                               </tr>
                                                             </table></td>
@@ -296,7 +296,7 @@ var permissioncontactedit = '';
                                                   </tr>
                                                   <tr>
                                                     <td colspan="4" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8" align="left"><div style="height:230px; overflow:scroll">
-                                                        <? include('../inc/productdetails.php'); ?>
+                                                        <?php include('../inc/productdetails.php'); ?>
                                                       </div></td>
                                                   </tr>
                                                   <tr>
@@ -305,7 +305,7 @@ var permissioncontactedit = '';
                                                       <select name="selectproduct" class="swiftselect" id="selectproduct" style="width:140px" >
                                                         <option value="ALL"  selected="selected">ALL</option>
                                                         <option value="NONE">NONE</option>
-                                                         <? include('../inc/productgroup.php') ?>
+                                                         <?php include('../inc/productgroup.php') ?>
                                                       </select>
                                                       </strong></td>
                                                     <td width="30%" align="left"></td>
@@ -415,7 +415,7 @@ var permissioncontactedit = '';
                                                                       <td width="35%" bgcolor="#edf4ff">State:</td>
                                                                       <td width="65%" bgcolor="#edf4ff"><select name="state" class="swiftselect-mandatory type_enter focus_redclass" id="state" onchange="getdistrict('districtcodedisplay',this.value);getgstcode(this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);getgstcode(this.value);"  style="width:200px;">
                                                                           <option value="">Select A State</option>
-                                                                          <? include('../inc/state.php'); ?>
+                                                                          <?php include('../inc/state.php'); ?>
                                                                         </select></td>
                                                                     </tr>
                                                                     <tr>
@@ -432,7 +432,7 @@ var permissioncontactedit = '';
                                                                       <td bgcolor="#F7FAFF">Region:</td>
                                                                       <td bgcolor="#F7FAFF"><select name="region" class="swiftselect-mandatory type_enter focus_redclass" id="region" style="width:200px;">
                                                                           <option value="">Select A Region</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/region.php');
 											?>
                                                                         </select></td>
@@ -441,7 +441,7 @@ var permissioncontactedit = '';
                                                                       <td bgcolor="#edf4ff">Branch:</td>
                                                                       <td bgcolor="#edf4ff"><select name="branch" class="swiftselect-mandatory type_enter focus_redclass" id="branch" style="width:200px;">
                                                                           <option value="">Select A Branch</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/branch.php');
 											?>
                                                                         </select></td>
@@ -450,7 +450,7 @@ var permissioncontactedit = '';
                                                                       <td bgcolor="#F7FAFF">Current Dealer:</td>
                                                                       <td bgcolor="#F7FAFF"><select name="currentdealer" class="swiftselect-mandatory type_enter focus_redclass" id="currentdealer" style="width:200px;">
                                                                           <option value="">Make A Selection</option>
-                                                                          <? 
+                                                                          <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                                         </select></td>
@@ -471,7 +471,7 @@ var permissioncontactedit = '';
                                                                       <td  bgcolor="#F7FAFF">Type:</td>
                                                                       <td  bgcolor="#F7FAFF"><select name="type" class="swiftselect type_enter focus_redclass" id="type" style="width:200px;" required>
                                                                           <option value="" selected="selected">Type Selection</option>
- <? 
+ <?php 
 											//include('../inc/custype.php');
 
 	$query = "SELECT slno,customertype FROM inv_mas_customertype ORDER BY customertype";
@@ -493,7 +493,7 @@ var permissioncontactedit = '';
                                                                       <td bgcolor="#edf4ff">Category:</td>
                                                                       <td bgcolor="#edf4ff"><select name="category" class="swiftselect type_enter focus_redclass" id="category" style="width:200px" required>
                                                                           <option value="">Category Selection</option>
-                                                                          <? 
+                                                                          <?php 
 											//include('../inc/category.php');
 
 
@@ -810,22 +810,22 @@ var permissioncontactedit = '';
                                                   </div><div id="form-error"></div></td>
                                                 </tr>
                                                 <tr>
-                                                  <? if($permissionarray[22] == 'yes'){ ?>
+                                                  <?php if($permissionarray[22] == 'yes'){ ?>
                                                   <td width="39%" height="40" align="left" valign="middle"><div id="resendmail" ><a   onclick="resendwelcomeemail();"  class="resendtext">Resend welcome Email </a></div></td>
                                                   <td width="1%" align="left" valign="middle">&nbsp;</td>
-                                                  <? } ?>
+                                                  <?php } ?>
                                                   <td width="17%" align="right" valign="middle" id="info_copy_button" ><input type="button" onclick="copyaddress()" name="copyadd" value="Copy Address" class= "swiftchoicebuttondisabled focus_redclass" id="copyadd"> </td>
-                                                  <td width="43%" align="right" valign="middle" ><? if($permissionarray[15] == 'no'){ ?>
+                                                  <td width="43%" align="right" valign="middle" ><?php if($permissionarray[15] == 'no'){ ?>
                                                     <input name="new" type="button" class= "swiftchoicebuttondisabled focus_redclass" id="new" value="New" onclick="newentryforform('permission_no');newentry(); document.getElementById('form-error').innerHTML = '';rowwdelete();" />
-                                                    <? } else {?>
+                                                    <?php } else {?>
                                                     <input name="new" type="button" class= "swiftchoicebutton focus_redclass" id="new" value="New" onclick="newentryforform('permission_yes');newentry(); document.getElementById('form-error').innerHTML = '';cleargrid();rowwdelete();" />
-                                                    <? }?>
+                                                    <?php }?>
                                                     &nbsp;
-                                                    <? if($permissionarray[15] == 'no'){ ?>
+                                                    <?php if($permissionarray[15] == 'no'){ ?>
                                                     <input name="save" type="button" class="swiftchoicebuttondisabled  saveclass focus_redclass" id="save" value="Save" onclick="formsubmit('save');" />
-                                                    <? } else {?>
+                                                    <?php } else {?>
                                                     <input name="save" type="button" class="swiftchoicebutton saveclass focus_redclass" id="save" value="Save" onclick="formsubmit('save');" />
-                                                    <? }?>
+                                                    <?php }?>
                                                     &nbsp;
                                                     <input name="delete" type="button" class="swiftchoicebuttondisabled focus_redclass" id="delete" value="Delete" disabled="disabled" onclick="formsubmit('delete');"/></td>
                                                 </tr>
@@ -1290,7 +1290,7 @@ var permissioncontactedit = '';
                                     </div>
                                     <div id="regresultgrid" style="overflow:auto; display:none; height:150px; width:704px; padding:2px;" align="center">&nbsp;</div>
                                     <div id="tabgroupgridc2" style="overflow:auto; height:auto; width:704px; padding:2px; display:none;" align="center">
-                                      <? if($p_registration == 'yes') { ?>
+                                      <?php if($p_registration == 'yes') { ?>
                                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                           <td><form id="registrationform" name = "registrationform" method="post" action="" onsubmit="return false;">
@@ -1305,16 +1305,16 @@ var permissioncontactedit = '';
                                                           <label>
                                                             <input type="radio" name="registrationfieldradio" id="registrationfieldradio1" value="updationlicense"  onclick="document.getElementById('hiddenregistrationtype').value = 'updationlicense'; validatemakearegistration();  document.getElementById('transferimagespan').style.visibility = 'hidden';  clearregistrationform(); " disabled="disabled" />
                                                             Updation License</label>
-                                                          <? if($p_reregistration == 'yes') { ?>
+                                                          <?php if($p_reregistration == 'yes') { ?>
                                                           <label>
                                                             <input type="radio" name="registrationfieldradio" id="registrationfieldradio2" value="reregistration" onclick="document.getElementById('hiddenregistrationtype').value = 'reregistration'; validatemakearegistration();  document.getElementById('transferimagespan').style.visibility = 'hidden'; clearregistrationform(); " disabled="disabled" />
                                                             Reregistration</label>
-                                                          <? } ?>
-                                                          <? if($p_withouscratchcard == 'yes') { ?>
+                                                          <?php } ?>
+                                                          <?php if($p_withouscratchcard == 'yes') { ?>
                                                           <label>
                                                             <input type="radio" name="registrationfieldradio" id="registrationfieldradio3" value="withoutcard" onclick="document.getElementById('hiddenregistrationtype').value = 'withoutcard';   validatemakearegistration(); clearregistrationform(); document.getElementById('transferimagespan').style.visibility = 'hidden'; " disabled="disabled" />
                                                             Without PIN Number</label>
-                                                          <? } ?>
+                                                          <?php } ?>
                                                           <input name="hiddenregistrationtype" type="hidden" id="hiddenregistrationtype" /></td>
                                                         <td width="4%"><span  ><a onclick="new_cardarray();up_refreshcuscardarray();validatemakearegistration()" style="cursor:pointer; padding-left:5px;" ><img src="../images/refresh-card.gif"   alt="Refresh card" border="0" align="middle" title="Refresh card Details"  height="21" width="25" /></a></span></td>
                                                       </tr>
@@ -1407,7 +1407,7 @@ var permissioncontactedit = '';
                                                   <td align="left" valign="top" >Dealer/Rep:</td>
                                                   <td align="left" valign="top"><select name="delaerrep" class="swiftselect-mandatory" id="delaerrep" style="width:180px;" disabled="disabled">
                                                       <option value="">Make A Selection</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                     </select></td>
@@ -1447,7 +1447,7 @@ var permissioncontactedit = '';
                                             </form></td>
                                         </tr>
                                       </table>
-                                      <? } else { echo("You are not authorised to give the registration"); } ?>
+                                      <?php } else { echo("You are not authorised to give the registration"); } ?>
                                     </div>
                                     <div id="tabgroupgridc4" style="overflow:auto; height:150px; width:704px; padding:2px; display:none;" align="center">No datas found to be displayed.</div>
                                     <div id="tabgroupgridc3" style="overflow:auto; height:auto; width:704px; padding:2px; display:none;" align="center">
@@ -1582,7 +1582,7 @@ var permissioncontactedit = '';
                                                   <td width="5%" valign="top" align="left"><input type="checkbox" name="ttdealercheck" id="ttdealercheck" onclick="dealercheckbox()" /></td>
                                                   <td width="38%" valign="top" align="left"><select name="ttdealerto" class="swiftselect-mandatory" id="ttdealerto" style="width:180px;"  disabled="disabled">
                                                       <option value="">Make A Selection</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                     </select>
@@ -1594,7 +1594,7 @@ var permissioncontactedit = '';
                                                   <td valign="top" align="left"><input type="checkbox" name="ttproductcheck" id="ttproductcheck"  onclick="productcheckbox()"  /></td>
                                                   <td valign="top" align="left"><select name="ttproductto" class="swiftselect-mandatory" id="ttproductto" style="width:180px;" disabled="disabled">
                                                       <option value="">Make A Selection</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/firstproduct.php');
 											?>
                                                     </select>
@@ -1659,38 +1659,38 @@ var permissioncontactedit = '';
                                 <tr>
                                   <td width="140" id="tabgroupgridh5" onclick="gridtabcus5('5','tabgroupgrid','&nbsp; &nbsp;Current Auto Registrations'); displayelement('tabgroupgridc5','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Auto Registration</td>
                                   <td width="2"></td>
-                                  <?php
+                                  <?phpphp
 								  //Added by manju
 								  if(imaxgetcookie('userid')==1)
 								  {
 								  ?>
                                   <td width="140" id="tabgroupgridh6" onclick="gridtabcus5('6','tabgroupgrid','&nbsp; &nbsp;Manual Registration Details'); displayelement('tabgroupgridc6','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Manual Registration</td>
-                                  <?php
+                                  <?phpphp
 								  }
 								  else
 								  {
 									  ?>
 <td width="140" id="tabgroupgridh6" style="cursor:not-allowed" class="grid-tabclass">Manual Registration</td>
-									<?php  
+									<?phpphp  
 									  }
 								  ?>
                                   <td width="2"></td>
                                   <td width="140" id="tabgroupgridh8" onclick="gridtabcus5('8','tabgroupgrid','&nbsp; &nbsp;PIN Number Details'); displayelement('tabgroupgridc8','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Attached PIN Number</td>
                                   <td width="2"></td>
-                                  <?php
+                                  <?phpphp
 								  //Added by Bhavesh Patel
 								  if($p_forcesurrender == 'yes')
 								  {
 								  ?>
                                   <td width="140" id="tabgroupgridh9" onclick="gridtabcus5('9','tabgroupgrid','&nbsp; &nbsp;Force Surrender'); displayelement('tabgroupgridc9','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Force Surrender</td>
                                  
-                                  <?php
+                                  <?phpphp
 								  }
 								  else
 								  {
 									?>
                                    <td width="140"></td>
-								 <?    }
+								 <?php    }
 								  ?>
                                   <td width="2"></td>
                                   <td width="140"></td>
@@ -1718,7 +1718,7 @@ var permissioncontactedit = '';
                                       </table>
                                     </div>
                                     <div id="tabgroupgridc6" style="overflow:auto; height:auto; width:704px; padding:2px; display:none;" align="center">
-                                      <? if($p_registration == 'yes') { ?>
+                                      <?php if($p_registration == 'yes') { ?>
                                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                           <td><form id="autoregistrationform" name = "autoregistrationform" method="post" action="" onsubmit="return false;">
@@ -1823,7 +1823,7 @@ var permissioncontactedit = '';
                                                   <td align="left" valign="top" >Dealer/Rep:</td>
                                                   <td align="left" valign="top"><select name="autodelaerrep" class="swiftselect-mandatory" id="autodelaerrep" style="width:180px;" disabled="disabled">
                                                       <option value="">Make A Selection</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                     </select></td>
@@ -1854,10 +1854,10 @@ var permissioncontactedit = '';
                                             </form></td>
                                         </tr>
                                       </table>
-                                      <? } else { echo("You are not authorised to give the registration"); } ?>
+                                      <?php } else { echo("You are not authorised to give the registration"); } ?>
                                     </div>
                                     <div id="tabgroupgridc9" style="overflow:auto; height:auto; width:704px; padding:2px; display:none;" align="center">
-                                      <? if($p_forcesurrender == 'yes') { ?>
+                                      <?php if($p_forcesurrender == 'yes') { ?>
                                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                           <td><form id="forcesurrender" name ="forcesurrender" method="post" action="" onsubmit="return false;">
@@ -1917,7 +1917,7 @@ var permissioncontactedit = '';
                                             </form></td>
                                         </tr>
                                       </table>
-                                      <? } else { echo("You are not authorised to give the registration"); } ?>
+                                      <?php } else { echo("You are not authorised to give the registration"); } ?>
                                     </div></td>
                                 </tr>
                               </table></td>

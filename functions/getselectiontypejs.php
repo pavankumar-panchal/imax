@@ -1,12 +1,12 @@
 function getselectiontype(type)
 {
-<? include('../functions/phpfunctions.php');?>
+<?php include('../functions/phpfunctions.php');?>
     var form = $('#colorboxeditform');
 	$('#headingname').html('');
 	$("#fieldtype").html('');
 	if(type == 'branch')
 	{
-<?
+<?php
 	$query1 = "SELECT slno, branchname FROM inv_mas_branch ORDER BY branchname;";
 	$result1 = runmysqlquery($query1);
 	echo('branchlist = \'');
@@ -24,7 +24,7 @@ function getselectiontype(type)
 	}
    else if(type == 'currentdealer')
 	{
-<?
+<?php
 	$query2 = "SELECT slno,businessname FROM inv_mas_dealer order by businessname;";
 	$result2 = runmysqlquery($query2);
 	echo('dealerlist = \'');
@@ -43,7 +43,7 @@ function getselectiontype(type)
 	}
     else if(type == 'region')
 	{
-<?
+<?php
 	$query3 = "SELECT slno, category FROM inv_mas_region ORDER BY category;";
 	$result3 = runmysqlquery($query3);
 	echo('regionlist = \'');
@@ -62,7 +62,7 @@ function getselectiontype(type)
 	}
  	else if(type == 'type')
 	{
-<?
+<?php
 	$query3 = "SELECT slno,customertype FROM inv_mas_customertype ORDER BY customertype;";
 	$result3 = runmysqlquery($query3);
 	echo('typelist = \'');
@@ -81,7 +81,7 @@ function getselectiontype(type)
 	}
     else if(type == 'category')
 	{
-<?
+<?php
 	$query4 = "SELECT slno,businesstype FROM inv_mas_customercategory ORDER BY businesstype;";
 	$result4 = runmysqlquery($query4);
 	echo('categorylist = \'');

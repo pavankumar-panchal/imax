@@ -1,4 +1,4 @@
-<?
+<?php
 	$date = datetimelocal('Y-m-d');
 	$time = datetimelocal('H:i:s');
 

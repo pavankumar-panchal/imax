@@ -1,4 +1,4 @@
-<? 
+<?php 
 	include('../functions/phpfunctions.php');
 
 	$lastslno = $_POST['invoicelastslno'];

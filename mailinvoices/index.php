@@ -17,10 +17,10 @@ $to_id=$fetchcrone['to_id'];
 $query1="select * from `inv_invoicenumbers` where left(inv_invoicenumbers.createddate,10) between '2020-06-19' and '2020-07-21' limit '$from_id', '$to_id'";
 //$query1="select * from `inv_invoicenumbers` where invoiceno = 'RSL2020RL001046'  limit $from_id, $to_id";
 $result1 = runmysqlquery($query1);
-$count = mysql_num_rows($result1);
+$count = mysqli_num_rows($result1);
 if($count > 0)
 {
-	while($fetch = mysql_fetch_array($result1))
+	while($fetch = mysqli_fetch_array($result1))
 	{
 			$invoiceno = $fetch['slno'];
 
@@ -45,7 +45,7 @@ if($count > 0)
 			// Fetch Contact Details
 			$querycontactdetails = "select customerid,GROUP_CONCAT(emailid) as emailid from inv_contactdetails where customerid = '".$slno."'  group by customerid ";
 			$resultcontact = runmysqlquery($querycontactdetails);
-			$resultcontactdetails = mysql_fetch_array($resultcontact);
+			$resultcontactdetails = mysqli_fetch_array($resultcontact);
 			//$resultcontactdetails = runmysqlqueryfetch($querycontactdetails);
 			
 			$emailidres = removedoublecomma($resultcontactdetails['emailid']);

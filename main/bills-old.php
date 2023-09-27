@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_bills <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -8,11 +8,11 @@ else
 include("../inc/eventloginsert.php");
 $enabledid = array('146','138','112');
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/bills.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getschemejs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getproductjs.php?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/bills.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getschemejs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getproductjs.php?dummy=<?php echo (rand());?>"></script>
 <script>
  $(document).ready(function () {
   //called when key is pressed in textbox
@@ -74,7 +74,7 @@ $enabledid = array('146','138','112');
                                 <td width="40%" align="left" valign="top"><strong>Region:</strong><br /></td>
                                 <td width="60%" align="left" valign="top"><select name="dealerregion" class="swiftselect-mandatory" id="dealerregion">
                                     <option value="">All</option>
-                                    <? 
+                                    <?php 
 											include('../inc/region.php');
 											?>
                                   </select></td>
@@ -166,7 +166,7 @@ $enabledid = array('146','138','112');
                                                       <input type="hidden" name="billlastslno" id="billlastslno" />
                                                       <input type="hidden" name="taxratehidden" id="taxratehidden" /></td>
                                                     <td width="14%" align="left" valign="top" bgcolor="#F7FAFF">Date:</td>
-                                                    <td width="34%" align="left" valign="top" bgcolor="#F7FAFF"><input name="billdate" type="text" class="swiftselect-readonly" id="billdate" size="30"  autocomplete="off" value="<? echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>" readonly="readonly"/></td>
+                                                    <td width="34%" align="left" valign="top" bgcolor="#F7FAFF"><input name="billdate" type="text" class="swiftselect-readonly" id="billdate" size="30"  autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')." (".datetimelocal('H:i').")"); ?>" readonly="readonly"/></td>
                                                   </tr>
                                                   <tr>
                                                     <td align="left" valign="top" bgcolor="#F7FAFF">Dealer:</td>
@@ -311,14 +311,14 @@ $enabledid = array('146','138','112');
                                                   </table>
                                                 </div></td>
                                             </tr>
-                                            <tr><?php if(in_array($userid, $enabledid, true) ) { ?>
+                                            <tr><?phpphp if(in_array($userid, $enabledid, true) ) { ?>
                                                     <td colspan="4" valign="top" bgcolor="#F7FAFF" style="padding:0">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="3" style="border:1px solid #333333;">
                                                       <tbody id="showdealeritems"> <tr>
                                                           <td width="9%" align="left">Sales Person :</td>
                                                           <td align="left"><select name="dealer" class="swiftselect-mandatory" id="dealer" style="width:220px;">
                                                               <option value="">Select A dealer</option>
-                                                              <? include('../inc/dealer-invoicing.php'); ?>
+                                                              <?php include('../inc/dealer-invoicing.php'); ?>
                                                             </select></td>
                                                         </tr>
                                                         <tr>
@@ -334,7 +334,7 @@ $enabledid = array('146','138','112');
                                                           <td width="9%" align="left">Item Others :</td><input type="hidden" name="getitemid" id="getitemid" value= "">
                                                           <td align="left"><select name="product2" class="swiftselect-mandatory" id="product2" style="width:220px;" onchange= "getItem()" disabled>
                                                               <option value="">Select Item</option>
-                                                              <? include('../inc/services.php'); ?>
+                                                              <?php include('../inc/services.php'); ?>
                                                             </select></td>
                                                         </tr>
                                                         <tr>
@@ -363,7 +363,7 @@ $enabledid = array('146','138','112');
                                                             </table></td>
                                                         </tr>
                                                       </table></td>
-                                                      <?php } ?></tr> 
+                                                      <?phpphp } ?></tr> 
                                                 <tr>
                                               <td >
                                                 <input type="hidden" name="invoicelastslno" id="invoicelastslno"  value=" "/>
@@ -415,4 +415,4 @@ $enabledid = array('146','138','112');
 </table>
 <script>refreshdealerarray();
 </script>
-<? } ?>
+<?php } ?>

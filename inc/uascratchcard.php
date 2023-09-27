@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "select cardid from inv_mas_scratchcard where attached = 'no' order by cardid desc limit 0,10;";
 	$result = runmysqlquery($query);
 	

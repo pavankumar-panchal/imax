@@ -1,11 +1,11 @@
-<? 
+<?php 
 include('../functions/phpfunctions.php');
 
 $query = "select * from inv_customerreqpending where requestfrom = 'support_module' and customerstatus ='processed' 
 and processeddatetime between '2009-12-08 10:43:33' and '2009-12-31 14:42:00' and customerid <> '13457' ;";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysql_fetch_array($result))
+while($fetch = mysqli_fetch_array($result))
 {
 	$count++;
 	$customerid = $fetch['customerid'];

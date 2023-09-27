@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_manageinvoice <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -15,13 +15,13 @@ $enabledcnl = array('146','56','192','123');
 $enablededit = array('146','56','192','138','99','112');
 
 ?>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo(rand());?>"  />
-<link href="../style/main.css?dummy=<? echo(rand());?>" rel=stylesheet >
-<script language="javascript" src="../functions/updateinvoice.js?dummy=<? echo(rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<? echo(rand());?>"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo(rand());?>" ></script>
-<input type="hidden" value="<?php echo $_GET['invoiceno'];?>" id="invoicevalue"/>
-<?php
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo(rand());?>"  />
+<link href="../style/main.css?dummy=<?php echo(rand());?>" rel=stylesheet >
+<script language="javascript" src="../functions/updateinvoice.js?dummy=<?php echo(rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo(rand());?>"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo(rand());?>" ></script>
+<input type="hidden" value="<?phpphp echo $_GET['invoiceno'];?>" id="invoicevalue"/>
+<?phpphp
    $invoicecreated_date = date('Y-m-d');
    $query2 = "SELECT igst_rate,cgst_rate,sgst_rate from gst_rates where from_date <= '".$invoicecreated_date."' AND to_date >= '".$invoicecreated_date."'";
    $fetchrate = runmysqlqueryfetch($query2);
@@ -31,9 +31,9 @@ $enablededit = array('146','56','192','138','99','112');
    $cgst_tax_rate = $fetchrate['cgst_rate'];
    $sgst_tax_rate = $fetchrate['sgst_rate'];
 ?>
-<input type="hidden" value="<?php echo $igst_tax_rate;?>" id="igstrate" name="igstrate"/>
-<input type="hidden" value="<?php echo $cgst_tax_rate;?>" id="cgstrate" name="cgstrate"/>
-<input type="hidden" value="<?php echo $sgst_tax_rate;?>" id="sgstrate" name="sgstrate"/>
+<input type="hidden" value="<?phpphp echo $igst_tax_rate;?>" id="igstrate" name="igstrate"/>
+<input type="hidden" value="<?phpphp echo $cgst_tax_rate;?>" id="cgstrate" name="cgstrate"/>
+<input type="hidden" value="<?phpphp echo $sgst_tax_rate;?>" id="sgstrate" name="sgstrate"/>
 
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
   <tr>
@@ -199,7 +199,7 @@ $enablededit = array('146','56','192','138','99','112');
                                                                 <td width="39%" height="10" align="left" valign="top">Region:</td>
                                                                 <td width="61%" height="10" align="left" valign="top"><select name="region2" class="swiftselect" id="region2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/region.php');
 											?>
                                                                   </select></td>
@@ -208,7 +208,7 @@ $enablededit = array('146','56','192','138','99','112');
                                                                 <td align="left" valign="top" height="10" >State:</td>
                                                                 <td align="left" valign="top" height="10"><select name="state2" class="swiftselect" id="state2" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/state.php'); ?>
+                                                                    <?php include('../inc/state.php'); ?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -221,21 +221,21 @@ $enablededit = array('146','56','192','138','99','112');
                                                                 <td height="10" align="left"> Dealer:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="currentdealer2" class="swiftselect" id="currentdealer2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/firstdealer.php');?>
+                                                                    <?php include('../inc/firstdealer.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td height="10" align="left"> Branch:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="branch2" class="swiftselect" id="branch2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/branch.php');?>
+                                                                    <?php include('../inc/branch.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td height="10" align="left"> Generated by:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="generatedby" class="swiftselect" id="generatedby" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/generatedby.php');?>
+                                                                    <?php include('../inc/generatedby.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -263,13 +263,13 @@ $enablededit = array('146','56','192','138','99','112');
                                                   </tr>
                                                   <tr valign="top" >
                                                     <td width="22%" align="left" ><strong>From Date</strong>: </td>
-                                                    <td width="78%" align="left"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<? echo($fromdate); ?>" readonly="readonly" /></td>
+                                                    <td width="78%" align="left"><input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<?php echo($fromdate); ?>" readonly="readonly" /></td>
                                                   </tr>
                                                   <tr valign="top" >
                                                     <td align="left" ><strong>To Date</strong>:</td>
                                                     <td align="left"><label for="sto"></label>
                                                       <label for="spp">
-                                                        <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<? echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
+                                                        <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
                                                         <br/>
                                                       </label></td>
                                                   </tr>
@@ -283,7 +283,7 @@ $enablededit = array('146','56','192','138','99','112');
                                                   </tr>
                                                   <tr>
                                                     <td colspan="4" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8" align="left"><div style="height:230px; overflow:scroll">
-                                                        <? include('../inc/productdetails.php'); ?>
+                                                        <?php include('../inc/productdetails.php'); ?>
                                                       </div></td>
                                                   </tr>
                                                   <tr>
@@ -292,7 +292,7 @@ $enablededit = array('146','56','192','138','99','112');
                                                       <select name="selectproduct" class="swiftselect" id="selectproduct" style="width:140px" >
                                                         <option value="ALL"  selected="selected">ALL</option>
                                                         <option value="NONE">NONE</option>
-                                                       <? include('../inc/productgroup.php') ?>
+                                                       <?php include('../inc/productgroup.php') ?>
                                                       </select>
                                                       </strong></td>
                                                     <td width="30%" align="left"></td>
@@ -390,14 +390,14 @@ $enablededit = array('146','56','192','138','99','112');
                                                               <option value="4">Others</option>
                                                             </select></td>
                                                           <td width="22%"><div align="center">
-                                                             <?php if(in_array($userid, $enabledcnl, true) ) { ?>
+                                                             <?phpphp if(in_array($userid, $enabledcnl, true) ) { ?>
                                                               <input name="cancelinvoice" type="button" class= "swiftchoicebuttonbignew" id="cancelinvoice" value="Invoice Cancellation" onclick="validaterequest('einvcancel')" />
-                                                            <?php } elseif(in_array($userid, $enabledid, true) ) { ?>
-                                                              <input name="cancelinvoice" type="button" class= "swiftchoicebuttonbignew" id="cancelinvoice" value="Invoice Cancellation" onclick="validaterequest('cancel')" /><? } ?>
+                                                            <?phpphp } elseif(in_array($userid, $enabledid, true) ) { ?>
+                                                              <input name="cancelinvoice" type="button" class= "swiftchoicebuttonbignew" id="cancelinvoice" value="Invoice Cancellation" onclick="validaterequest('cancel')" /><?php } ?>
                                                             </div></td>
                                                           <td width="24%"><div align="left">
-                                                            <?php if(in_array($userid, $enablededit, true) ) { ?>
-                                                              <input name="edit" type="button" class= "swiftchoicebuttonbig" id="edit" value="Invoice Editing" onclick="editform()" /> <? } ?>
+                                                            <?phpphp if(in_array($userid, $enablededit, true) ) { ?>
+                                                              <input name="edit" type="button" class= "swiftchoicebuttonbig" id="edit" value="Invoice Editing" onclick="editform()" /> <?php } ?>
                                                               <input type="hidden" name="lastslno" id="lastslno" value=""  />
                                                               <input type="hidden" name="productcodevalues" id="productcodevalues" value=""  />
                                                               <input type="hidden" name="dealervalue" id="dealervalue" value=""  />
@@ -460,10 +460,10 @@ $enablededit = array('146','56','192','138','99','112');
                                             <tr>
                                               <td align="left" id="form-error1" height="35px"></td>
                                               <td align="right">
-                                              <?php if(in_array($userid, $enabledcnl, true) ) { ?>
+                                              <?phpphp if(in_array($userid, $enabledcnl, true) ) { ?>
                                                 <input type="button" name="cancelbutton" class="swiftchoicebuttonbignew" value="Confirm Cancellation" id="cancelbutton" onclick="formsubmit('einvcancel')"/>
-                                              <?php } elseif(in_array($userid, $enabledid, true) ) { ?>
-                                                <input type="button" name="cancelbutton" class="swiftchoicebuttonbignew" value="Confirm Cancellation" id="cancelbutton" onclick="formsubmit('cancel')"/><? } ?>
+                                              <?phpphp } elseif(in_array($userid, $enabledid, true) ) { ?>
+                                                <input type="button" name="cancelbutton" class="swiftchoicebuttonbignew" value="Confirm Cancellation" id="cancelbutton" onclick="formsubmit('cancel')"/><?php } ?>
                                                 &nbsp;&nbsp;
                                                 <input type="button" value="Close" id="closepreviewbutton2"  onclick="$().colorbox.close();" class="swiftchoicebutton"/></td>
                                             </tr>
@@ -519,5 +519,5 @@ $enablededit = array('146','56','192','138','99','112');
 <script>
 refreshinvoicenoarray();
 </script>
-<? }?>
+<?php }?>
 

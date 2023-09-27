@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_createimplementation <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,17 +7,17 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>" />
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript"  src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/implementation.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/fileupload.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>" />
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript"  src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/implementation.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/fileupload.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
 <div style="left: -1000px; top: 597px;visibility: hidden; z-index:100" id="tooltip1">dummy</div>
-<script language="javascript" src="../functions/tooltip.js?dummy=<? echo (rand());?>"></script>
+<script language="javascript" src="../functions/tooltip.js?dummy=<?php echo (rand());?>"></script>
 <!-- <script language="javascript">
 $(document).ready(function(){
   
@@ -208,7 +208,7 @@ $(document).ready(function(){
                                                                 <td width="35%">Region:</td>
                                                                 <td width="65%"><select name="region2" class="swiftselect" id="region2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/region.php');
 											?>
                                                                   </select></td>
@@ -217,7 +217,7 @@ $(document).ready(function(){
                                                                 <td>State:</td>
                                                                 <td><select name="state2" class="swiftselect" id="state2" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/state.php'); ?>
+                                                                    <?php include('../inc/state.php'); ?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -230,14 +230,14 @@ $(document).ready(function(){
                                                                 <td>Dealer:</td>
                                                                 <td align="left" valign="top"   height="10"><select name="currentdealer2" class="swiftselect" id="currentdealer2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/firstdealer.php');?>
+                                                                    <?php include('../inc/firstdealer.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td>Branch:</td>
                                                                 <td align="left" valign="top"   height="10" ><select name="branch2" class="swiftselect" id="branch2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/branch.php');?>
+                                                                    <?php include('../inc/branch.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -245,7 +245,7 @@ $(document).ready(function(){
                                                                 <td align="left" valign="top"   height="10" ><select name="type2" class="swiftselect" id="type2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/custype.php');?>
+                                                                    <?php include('../inc/custype.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -253,7 +253,7 @@ $(document).ready(function(){
                                                                 <td align="left" valign="top"   height="10" ><select name="category2" class="swiftselect" id="category2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/category.php');?>
+                                                                    <?php include('../inc/category.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               
@@ -424,7 +424,7 @@ $(document).ready(function(){
                                                   <tr>
                                                     <td width="31%"  height="42px;" valign="middle"><select name="dealer" class="swiftselect" id="dealer" style="width:195px;">
                                                         <option value="" selected="selected">Select a Dealer</option>
-                                                        <? 
+                                                        <?php 
 											include('../inc/dealer-invoicing.php');
 											?>
                                                       </select></td>
@@ -474,7 +474,7 @@ $(document).ready(function(){
                                                                     <!-- <td width="80%" bgcolor="#EDF4FF" id="imp_statustype"style="color:#FF0000">Not Available</td> -->
                                                                     <td width="33%"><select name="imp_statustype" class="swiftselect" id="imp_statustype"  style="width:175px;">
                                                                   <option value="" selected="selected">Select Implemetation Type</option>
-                                                                    <? include('../inc/implementationtype.php')?>
+                                                                    <?php include('../inc/implementationtype.php')?>
                                                                 </select></td>
                                                                 <td width="35%">
                                                                 <div id="remarksdiv">
@@ -921,7 +921,7 @@ $(document).ready(function(){
                                                                 <td width="19%">Add-on<strong>: </strong></td>
                                                                 <td width="32%"><select name="addon" class="swiftselect" id="addon" style="width:225px;">
                                                                     <option value="" selected="selected">Select a Product</option>
-                                                                    <? include('../inc/addon.php')?>
+                                                                    <?php include('../inc/addon.php')?>
                                                                   </select></td>
                                                                 <td width="9%">Remarks:</td>
                                                                 <td width="23%"><input name="addon_remarks" type="text" class="swifttextarea" id="addon_remarks"  size="30" maxlength="200"  autocomplete="off"/></td>
@@ -1359,19 +1359,19 @@ $(document).ready(function(){
   </tr>
 </table>
 <div id="fileuploaddiv" style="display:none;">
-  <? include('../inc/fileuploadform.php'); ?>
+  <?php include('../inc/fileuploadform.php'); ?>
 </div>
 <div id="attendance_fileuploaddiv" style="display:none;">
-  <? include('../inc/attendanceuploadform.php'); ?>
+  <?php include('../inc/attendanceuploadform.php'); ?>
 </div>
 <div id="references_fileuploaddiv" style="display:none;">
-  <? include('../inc/referenceuploadform.php'); ?>
+  <?php include('../inc/referenceuploadform.php'); ?>
 </div>
 <div id="sppdata_fileuploaddiv" style="display:none;">
-  <? include('../inc/sppdatauploadform.php'); ?>
+  <?php include('../inc/sppdatauploadform.php'); ?>
 </div>
 <div id="po_fileuploaddiv" style="display:none;">
-  <? include('../inc/pouploadform.php'); ?>
+  <?php include('../inc/pouploadform.php'); ?>
 </div>
 <script>gettotalcustomercount()</script>
-<? } ?>
+<?php } ?>

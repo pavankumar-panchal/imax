@@ -10,18 +10,18 @@ function getdistrictfiltertype(divid,statecode)
 			districtlist = '<select name="district" class="swiftselect" id="district" style="width: 180px;"><option value="">ALL</option></select>';
 			break;
 			
-<?
+<?php
 include('../functions/phpfunctions.php');
 
 $querystate = "SELECT distinct statecode FROM inv_mas_state order by statename;";
 $resultstate = runmysqlquery($querystate);
-while($fetchstate = mysql_fetch_array($resultstate))
+while($fetchstate = mysqli_fetch_array($resultstate))
 {
 	echo('case "'.$fetchstate['statecode'].'": districtlist = \'');
 	$query = "SELECT districtcode,districtname FROM inv_mas_district WHERE statecode = '".$fetchstate['statecode']."' order by districtname;";
 	$result = runmysqlquery($query);
 	echo('<select name="district" class="swiftselect" id="district" style="width:180px;"><option value="">ALL</option>');
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		echo('<option value="'.$fetch['districtcode'].'">'.$fetch['districtname'].'</option>');
 	}
@@ -39,10 +39,10 @@ function checkdistrictlist(districtcode, statecode)
 {
     var fullstatearray = new Array();
 
-<?
+<?php
 		$query1 = "SELECT distinct statecode FROM inv_mas_state order by statename";
 		$result = runmysqlquery($query1);
-		while($fetchstate = mysql_fetch_array($result))
+		while($fetchstate = mysqli_fetch_array($result))
 		{
 			$statecode =$fetchstate['statecode'];
 			echo("\n");
@@ -50,7 +50,7 @@ function checkdistrictlist(districtcode, statecode)
 			$query = "SELECT districtcode FROM inv_mas_district WHERE statecode = '".$statecode."' order by districtname;";
 			$result2 = runmysqlquery($query);
 			$count = 1;
-			while($fetch = mysql_fetch_array($result2))
+			while($fetch = mysqli_fetch_array($result2))
 			{
 				if($count > 1)
 					echo(",");

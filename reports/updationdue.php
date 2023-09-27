@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_updationdetailsreport <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,8 +7,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/updationdue.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/updationdue.js?dummy=<?php echo (rand());?>"></script>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -54,7 +54,7 @@ include("../inc/eventloginsert.php");
                                           <td valign="top" bgcolor="#f7faff" align="left">Region: </td>
                                           <td valign="top" bgcolor="#f7faff" align="left"><select name="region" class="swiftselect-mandatory" id="region" >
                                               <option value="">ALL</option>
-                                              <? include('../inc/region.php'); ?>
+                                              <?php include('../inc/region.php'); ?>
                                           </select></td>
                                         </tr>
                                      
@@ -64,14 +64,14 @@ include("../inc/eventloginsert.php");
                                             <td width="78%" valign="top" bgcolor="#EDF4FF" align="left"><select name="branch" class="swiftselect-mandatory" id="branch" style=" width:225px">
                                               <option value="">ALL</option>
 
-                                              <? include('../inc/branch.php'); ?>
+                                              <?php include('../inc/branch.php'); ?>
                                             </select></td>
                                           </tr>
                                           <tr bgcolor="#f7faff">
                                             <td valign="top" bgcolor="#f7faff" align="left">Dealer:</td>
                                             <td valign="top" bgcolor="#f7faff" align="left"><select name="dealerid" class="swiftselect-mandatory" id="dealerid" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/firstdealer.php'); ?>
+                                                <?php include('../inc/firstdealer.php'); ?>
                                               </select>
                                                 <input type="hidden" name="flag" id="flag" value="true" /></td>
                                           </tr>
@@ -79,21 +79,21 @@ include("../inc/eventloginsert.php");
                                             <td bgcolor="#EDF4FF">State:</td>
                                             <td bgcolor="#EDF4FF"><select name="state2" class="swiftselect-mandatory" id="state2"  style="width:225px;">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/state.php'); ?>
+                                                <?php include('../inc/state.php'); ?>
                                             </select></td>
                                           </tr>
                                           <tr>
                                             <td bgcolor="#f7faff">Type:</td>
                                             <td bgcolor="#f7faff"><select name="type2" class="swiftselect-mandatory" id="type2" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/custype.php'); ?>
+                                                <?php include('../inc/custype.php'); ?>
                                             </select></td>
                                           </tr>
                                           <tr>
                                             <td bgcolor="#f7faff">Category:</td>
                                             <td bgcolor="#f7faff"><select name="category2" class="swiftselect-mandatory" id="category2" style=" width:225px">
                                                 <option value="">ALL</option>
-                                                <? include('../inc/category.php'); ?>
+                                                <?php include('../inc/category.php'); ?>
                                             </select></td>
                                           </tr>
                                         
@@ -219,4 +219,4 @@ None </label>
       </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

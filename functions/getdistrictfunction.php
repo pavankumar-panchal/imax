@@ -10,7 +10,7 @@ function getdistrictfilter(divid,statecode)
 			districtlist = '<select name="district2" class="swiftselect" id="district2" style="width: 180px;"><option value="">ALL</option></select>';
 			break;
 			
-<?
+<?php
 include('../functions/phpfunctions.php');
 
 $querystate = "SELECT distinct statecode FROM inv_mas_state order by statename;";
@@ -39,7 +39,7 @@ function checkdistrictlist(districtcode, statecode)
 {
     var fullstatearray = new Array();
 
-<?
+<?php
 		$query1 = "SELECT distinct statecode FROM inv_mas_state order by statename";
 		$result = runmysqlquery($query1);
 		while($fetchstate = mysqli_fetch_array($result))

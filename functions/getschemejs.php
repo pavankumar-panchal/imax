@@ -4,7 +4,7 @@ function getscheme(divid12,dealerid)
 	switch(dealerid)
 	{
 			
-<?
+<?php
 include('../functions/phpfunctions.php');
 
 	$queryscheme = "SELECT distinct slno as dealerid FROM inv_mas_dealer ORDER BY businessname;";

@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_products <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,8 +7,8 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/products.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/products.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -139,7 +139,7 @@ include("../inc/eventloginsert.php");
                                             <td align="left" valign="top" bgcolor="#EDF4FF">
                                               <select name="financialyear" id="financialyear" class="swiftselect-mandatory" style="width:110px">
                                               <option value="">Select a Year</option>
-                                              <? 
+                                              <?php 
 											include('../inc/financialyear.php');
 											?>
                                       
@@ -314,4 +314,4 @@ include("../inc/eventloginsert.php");
   </tr>
 </table>
 <script>refreshproductarray(); </script>
-<? } ?>
+<?php } ?>

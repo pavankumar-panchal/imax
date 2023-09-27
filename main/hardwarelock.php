@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_hardwarelock <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -7,9 +7,9 @@ else
 {
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/hardwarelock.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<script language="javascript" src="../functions/hardwarelock.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="952" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -102,18 +102,18 @@ include("../inc/eventloginsert.php");
                                                   <td align="left" valign="top" bgcolor="#edf4ff">Dealer:</td>
                                                   <td align="left" valign="top" bgcolor="#edf4ff"><select name="dealer" class="swiftselect-mandatory" id="dealer" style="width:200px;">
                                                       <option value="">Make A Selection</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                     </select></td>
                                                 </tr>
                                                 <tr bgcolor="#f7faff">
                                                   <td align="left" valign="top" bgcolor="#f7faff">Date of Issue:</td>
-                                                  <td align="left" valign="top" bgcolor="#f7faff"><input name="startdate" type="text" class="swifttext-mandatory"  id="DPC_startdate"  style="width:200px" maxlength="10" readonly="readonly"   autocomplete="off"  value="<? echo(datetimelocal('d-m-Y')); ?>" />                                                  </td>
+                                                  <td align="left" valign="top" bgcolor="#f7faff"><input name="startdate" type="text" class="swifttext-mandatory"  id="DPC_startdate"  style="width:200px" maxlength="10" readonly="readonly"   autocomplete="off"  value="<?php echo(datetimelocal('d-m-Y')); ?>" />                                                  </td>
                                                 </tr>
                                                 <tr bgcolor="#f7faff">
                                                   <td align="left" valign="top" bgcolor="#edf4ff">Entered By:</td>
-                                                <td align="left" valign="top" bgcolor="#edf4ff" id="displayenteredby"><? $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".imaxgetcookie('userid')."'"); echo($fetch['fullname']); ?>                                                </tr>
+                                                <td align="left" valign="top" bgcolor="#edf4ff" id="displayenteredby"><?php $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".imaxgetcookie('userid')."'"); echo($fetch['fullname']); ?>                                                </tr>
                                               </table></td>
                                             <td valign="top" width="50%"><table width="100%" height="90" border="0" cellpadding="4" cellspacing="0">
                                                 <tr bgcolor="#EDF4FF">
@@ -149,7 +149,7 @@ include("../inc/eventloginsert.php");
                           <input name="productsearchid" type="hidden" id="productsearchid"  disabled="disabled"/>
                           </span-->
                                                   <select name="productlist" size="5" class="swiftselect" id="productlist" style="width:210px; height:200px;" >
-                                                      <?
+                                                      <?php
 $query = "SELECT productcode,productname FROM inv_mas_product order by productname;";
 $result = runmysqlquery($query);
 $productlistoptions = '';
@@ -271,4 +271,4 @@ echo($productlistoptions);
 <script>
 gettotalcustomercount();
 </script>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start("ob_gzhandler");
 ini_set('memory_limit', '-1');
 include('../inc/ajax-referer-security.php');

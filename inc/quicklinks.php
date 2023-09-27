@@ -10,22 +10,22 @@
             <td >
 <A href="./index.php?a_link=home_dashboard" >Home</A> </td></tr>
             
-          <tr>  <td>    <? if($p_products == 'yes') { ?>
+          <tr>  <td>    <?php if($p_products == 'yes') { ?>
                 <a href="./index.php?a_link=product">Products</a> 
-                <? } ?></td></tr>
+                <?php } ?></td></tr>
           <tr> <td>
-                <? if($p_dealer == 'yes') { ?>
+                <?php if($p_dealer == 'yes') { ?>
                <a href="./index.php?a_link=dealer">Dealer</a> 
-                <? } ?></td></tr>
-                        <tr> <td> <? if($p_bills == 'yes') { ?>
+                <?php } ?></td></tr>
+                        <tr> <td> <?php if($p_bills == 'yes') { ?>
                 <a href="./index.php?a_link=bill">Purchases</a> 
-                <? } ?>
+                <?php } ?>
               </td></tr>
           
-           <tr> <td> <? $auditorid = array('195','196'); if(!in_array($userid, $auditorid, true)) { ?>
+           <tr> <td> <?php $auditorid = array('195','196'); if(!in_array($userid, $auditorid, true)) { ?>
                <a href="./index.php?a_link=customer">Customer </a></td></tr>
             <tr>  <td><a href="./index.php?a_link=customeramc">Customer AMCs </a>
-                <? } ?></td></tr>
+                <?php } ?></td></tr>
        
 </table>
 </td></tr>

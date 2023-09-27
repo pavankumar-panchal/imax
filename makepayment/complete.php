@@ -89,7 +89,7 @@ $result = runicicidbquery($query);
 //Select the values from transation table
 $query = "select * from transactions where id = '".$TxnID."'";
 $result = runicicidbquery($query);
-$fetchresult5 = mysql_fetch_array($result);
+$fetchresult5 = mysqli_fetch_array($result);
 $recordreferencestring = $fetchresult5['recordreference'];
 $amount = $fetchresult5['amount'];
 

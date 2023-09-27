@@ -1,4 +1,4 @@
-<?
+<?php
 		
 		
 	$dbhost = "192.168.170.169"; $dbuser = "manju"; $dbpwd = "cd4017";      $dbname = "relyon_imax";

@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_addinvoice <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -6,17 +6,17 @@ if($p_addinvoice <> 'yes')
 else 
 {
 ?>
-<link href="../style/main.css?dummy=<? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/javascript.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/addinvoices.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript"  src="../functions/getdistrictjs.php?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/enter_keyshortcut.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/key_shortcut.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/customer-shortkey.js?dummy=<? echo (rand());?>"></script>
-<script language="javascript" src="../functions/fileupload.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/javascript.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/addinvoices.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript"  src="../functions/getdistrictjs.php?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/enter_keyshortcut.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/key_shortcut.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/customer-shortkey.js?dummy=<?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/fileupload.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
   <tr>
@@ -214,7 +214,7 @@ else
                                                 <tr>
                                                   <td width="31%"  height="42px;" valign="middle"><select name="dealer" class="swiftselect" id="dealer" style="width:195px;">
                                                       <option value="" selected="selected">Select a Dealer</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/dealer-invoicing.php');
 											?>
                                                     </select></td>
@@ -248,7 +248,7 @@ else
                                                   <td width="15%"><strong>Item</strong>(Software): </td>
                                                   <td width="28%"><select name="product" class="swiftselect" id="product" style="width:195px;">
                                                       <option value="" selected="selected">Select a Item</option>
-                                                      <? 
+                                                      <?php 
 											include('../inc/productforpurchase.php');
 											?>
                                                     </select></td>
@@ -256,7 +256,7 @@ else
                                                   <td width="13%"><strong>Item</strong>(others):</td>
                                                   <td width="28%"><select name="product2" class="swiftselect" id="product2" style="width:195px;">
                                                       <option value="" selected="selected">Select a Item</option>
-                                                      <? 
+                                                      <?php 
 
 											include('../inc/services.php');
 											?>
@@ -658,7 +658,7 @@ else
                                                                                             <tr>
                                                                                               <td width="256" valign="top">Due Date:<br />
                                                                                                 <br />
-                                                                                                <input name="DPC_duedate" type="text" class="swifttext-mandatory" id="DPC_duedate" size="20" maxlength="12" autocomplete="off"   value="<? echo(datetimelocal('d-m-Y')); ?>" readonly="readonly"/></td>
+                                                                                                <input name="DPC_duedate" type="text" class="swifttext-mandatory" id="DPC_duedate" size="20" maxlength="12" autocomplete="off"   value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly"/></td>
                                                                                               <td width="420">Reason:<br />
                                                                                                 <br />
                                                                                                 <input name="remarks" type="text" class="swifttextareanew" id="remarks" maxlength="100" style="width:450px"/></td>
@@ -682,7 +682,7 @@ else
                                                           <td width="32%"><div align="right"><strong>Generated By:</strong></div></td>
                                                           <td><select name="generatedby" class="swiftselect" id="generatedby" style="width:180px;">
                                                                           <option value="">ALL</option>
-                                                                          <? include('../inc/generatedby.php');?>
+                                                                          <?php include('../inc/generatedby.php');?>
                                                                         </select></td>
                                                         </tr>
                                                         <tr>
@@ -963,7 +963,7 @@ else
                                                                                     <td width="33%" bgcolor="#edf4ff">State:</td>
                                                                                     <td width="67%" bgcolor="#edf4ff"><select name="state" class="swiftselect-mandatory type_enter focus_redclass" id="state" onchange="getdistrict('districtcodedisplay',this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);"  style="width:200px;">
                                                                                         <option value="">Select A State</option>
-                                                                                        <? include('../inc/state.php'); ?>
+                                                                                        <?php include('../inc/state.php'); ?>
                                                                                       </select></td>
                                                                                   </tr>
                                                                                   <tr>
@@ -976,7 +976,7 @@ else
                                                                                     <td bgcolor="#edf4ff">Region:</td>
                                                                                     <td bgcolor="#edf4ff"><select name="region" class="swiftselect-mandatory type_enter focus_redclass" id="region" style="width:200px;">
                                                                                         <option value="">Select A Region</option>
-                                                                                        <? 
+                                                                                        <?php 
 											include('../inc/region.php');
 											?>
                                                                                       </select></td>
@@ -985,7 +985,7 @@ else
                                                                                     <td bgcolor="#F7FAFF">Branch:</td>
                                                                                     <td bgcolor="#F7FAFF"><select name="branch" class="swiftselect-mandatory type_enter focus_redclass" id="branch" style="width:200px;">
                                                                                         <option value="">Select A Branch</option>
-                                                                                        <? 
+                                                                                        <?php 
 											include('../inc/branch.php');
 											?>
                                                                                       </select></td>
@@ -994,7 +994,7 @@ else
                                                                                     <td bgcolor="#edf4ff">Current Dealer:</td>
                                                                                     <td bgcolor="#edf4ff"><select name="currentdealer" class="swiftselect-mandatory type_enter focus_redclass" id="currentdealer" style="width:200px;">
                                                                                         <option value="">Make A Selection</option>
-                                                                                        <? 
+                                                                                        <?php 
 											include('../inc/firstdealer.php');
 											?>
                                                                                       </select></td>
@@ -1021,7 +1021,7 @@ else
                                                                                     <td  bgcolor="#edf4ff">Type:</td>
                                                                                     <td  bgcolor="#edf4ff"><select name="type" class="swiftselect-mandatory  type_enter focus_redclass" id="type" style="width:200px">
                                                                                         <option value="" selected="selected">Type Selection</option>
-                                                                                        <? 
+                                                                                        <?php 
 											include('../inc/custype.php');
 											?>
                                                                                       </select></td>
@@ -1030,7 +1030,7 @@ else
                                                                                     <td bgcolor="#F7FAFF">Category:</td>
                                                                                     <td bgcolor="#F7FAFF"><select name="category" class="swiftselect-mandatory type_enter focus_redclass" id="category"  style="width:200px">
                                                                                         <option value="">Category Selection</option>
-                                                                                        <? 
+                                                                                        <?php 
 											include('../inc/category.php');
 											?>
                                                                                       </select></td>
@@ -1156,6 +1156,6 @@ else
 </table>
 <script>gettotalcustomercount();</script>
 <div id="seztaxuploaddiv" style="display:none;">
-  <? include('../inc/seztaxuploaddiv.php'); ?>
+  <?php include('../inc/seztaxuploaddiv.php'); ?>
 </div>
-<? } ?>
+<?php } ?>

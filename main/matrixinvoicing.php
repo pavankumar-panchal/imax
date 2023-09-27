@@ -1,4 +1,4 @@
-<?
+<?php
 if($p_matrixinvoicing <> 'yes') 
 { 
 	$pagelink = getpagelink("unauthorised"); include($pagelink);
@@ -18,13 +18,13 @@ include("../inc/eventloginsert.php");
    $sgst_tax_rate = $fetchrate['sgst_rate'];
    
 ?> 
-<link href="../style/main.css?dummy = <? echo (rand());?>" rel=stylesheet>
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/javascripts.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/matrixinvoicing.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/datepickercontrol.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/fileupload.js?dummy=<? echo (rand());?>"></script>
+<link href="../style/main.css?dummy = <?php echo (rand());?>" rel=stylesheet>
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/javascripts.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/matrixinvoicing.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/datepickercontrol.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/fileupload.js?dummy=<?php echo (rand());?>"></script>
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
@@ -156,7 +156,7 @@ include("../inc/eventloginsert.php");
                                               <div align="left">
                                                 <select name="salesperson" class="swiftselect-mandatory" id="salesperson" style="width:180px;" onchange="getdealerdetails(this);">
                                                   <option value="">Make A Selection</option>
-                                                    <? include('../inc/matrix-dealer-invoicing.php'); ?>
+                                                    <?php include('../inc/matrix-dealer-invoicing.php'); ?>
                                                 </select>
                                               </div>
                                           </td> 
@@ -164,9 +164,9 @@ include("../inc/eventloginsert.php");
                                           
                                     <tr>
                                       <td  width="9%" ><strong>Product Details</strong><input type="hidden" name="productgrid" id="productgrid" value="1">
-                                      <input type="hidden" name="igstrate" id="igstrate" value="<?php echo $igst_tax_rate; ?>"/>
-                                            <input type="hidden" name="cgstrate" id="cgstrate" value="<?php echo $cgst_tax_rate; ?>"/>
-                                            <input type="hidden" name="sgstrate" id="sgstrate" value="<?php echo $sgst_tax_rate; ?>"/>
+                                      <input type="hidden" name="igstrate" id="igstrate" value="<?phpphp echo $igst_tax_rate; ?>"/>
+                                            <input type="hidden" name="cgstrate" id="cgstrate" value="<?phpphp echo $cgst_tax_rate; ?>"/>
+                                            <input type="hidden" name="sgstrate" id="sgstrate" value="<?phpphp echo $sgst_tax_rate; ?>"/>
                                             <input type="hidden" name="state_gst_code"  id="state_gst_code" />
                                             <input type="hidden" name="branch_gstin"  id="branch_gstin" />
                                             <input type="hidden" name="branchhidden" id="branchhidden" />
@@ -195,7 +195,7 @@ include("../inc/eventloginsert.php");
                                               <td width="9%"><select name="producttype[]" class="swiftselect-mandatory producttype" id="producttype1" style="width:140px;" onchange="getproductname(this)">
                                                 <option value="">Select Product Type</option>
                                                 <optgroup label="Hardware">
-                                                 <?php 
+                                                 <?phpphp 
                                                     $query ="select * from inv_mas_matrixproduct where `group` = 'Hardware';";
                                                     $result = runmysqlquery($query);
                                                     while($fetch = mysqli_fetch_array($result))
@@ -205,7 +205,7 @@ include("../inc/eventloginsert.php");
                                                   ?>                                                  
                                                 </optgroup>
                                                 <optgroup label="Software">
-                                                <?php 
+                                                <?phpphp 
                                                   $query ="select * from inv_mas_matrixproduct where `group` = 'Software';";
                                                   $result = runmysqlquery($query);
                                                     while($fetch = mysqli_fetch_array($result))
@@ -444,7 +444,7 @@ include("../inc/eventloginsert.php");
                                                   <br>
                                                   <br>
                                                   <span id="generatedbypreview">
-                                                  <?  echo($dealername); ?>
+                                                  <?php  echo($dealername); ?>
                                                   </span></div></td>
                                             </tr>
                                           </tbody>
@@ -474,6 +474,6 @@ include("../inc/eventloginsert.php");
 gettotalcustomercount();
 </script>
 <div id="seztaxuploaddiv" style="display:none;">
-  <? include('../inc/seztaxuploaddiv.php'); ?>
+  <?php include('../inc/seztaxuploaddiv.php'); ?>
 </div>
-<? } ?>
+<?php } ?>
