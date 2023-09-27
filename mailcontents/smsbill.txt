@@ -1,0 +1,22 @@
+Date: ##DATE##
+ 
+
+ 
+                                                                                     Sub: Purchase of SMS (##QUANTITY## Credits) | Invoice: ##INVOICENO##
+ 
+Dear Customer,
+[##COMPANY##]
+ 
+With respect to SMS credits purchase executed, please find here with the attached invoice. Thereby, your SMS credits have been enhanced by ##QUANTITY## SMS, resulting to current balance of ##TOTALQUANTITY## SMS.
+ 
+To make the payment, please login to Relyon Customer Area, with your customer ID.
+
+ 
+In case of any queries, please feel free to contact us at support@relyonsoft.com
+ 
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+
+ 
+                                                                              This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).

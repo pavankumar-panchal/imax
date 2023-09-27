@@ -1,0 +1,46 @@
+Date: ##DATE##
+ 
+To: 
+##COMPANY##
+##PLACE##
+ 
+                                                                                      Sub:  Profile Update Request has been processed by Relyon.
+
+ 
+Dear ##NAME##,
+ 
+This is with reference to your profile update request placed at Relyon website on ##REQUESTDATE## (##REQUESTTIME##). The update request has been now processed by the administrator and updated information is available at your login.
+
+
+Request date (time): ##REQUESTDATE## (##REQUESTTIME##)
+Processed date (time): ##PROCESSEDDATE## (##PROCESSEDTIME##)
+
+
+The latest information is as under:
+
+
+Contact Information
+Business name: ##COMPANY##
+Contact Person: ##NAME##
+Address: ##ADDRESS##
+Place: ##PLACE##
+District: ##DISTRICT##
+State: ##STATE##
+Pincode: ##PINCODE##
+STD Code: ##STDCODE##
+Phone: ##PHONE##
+Cell: ##CELL##
+Emailid: ##EMAILID##
+Website: ##WEBSITE##
+
+ 
+To update your profile further, please visit www.imax.relyonsoft.net/customer with your customer ID ##CUSTOMERID##.
+
+In case of any queries, please feel free to contact us at dealers@relyonsoft.com.
+ 
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+
+ 
+                                                                              This email is a system generated message. Please do not reply to this message(UM).

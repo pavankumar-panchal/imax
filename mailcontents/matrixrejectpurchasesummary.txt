@@ -1,0 +1,25 @@
+Date: ##DATE##
+ 
+Hi,
+ 
+                                                                                      Sub: Request Rejected
+																					  
+ 
+An invoice has been rejected by "##REJECTEDBY##". The invoice details are as below
+ 
+Invoice Request Summary
+ 
+Request No: ##INVOICEREQUESTNO##
+Requested Date: ##REQUESTEDDATE##
+Requested by: ##CREATEDBY##
+Customer Id: ##CUSTOMERID##
+Company Name: ##COMPANYNAME##
+Sales Person: ##SALESPERSON##
+
+  
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+
+ 
+                                                                              This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).

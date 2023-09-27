@@ -1,0 +1,23 @@
+Date: ##DATE##
+ 
+To: 
+##COMPANY##
+##PLACE##
+  
+Contract No: ##AMCID##
+  
+                                                                                 Sub: New Maintenance Contract Registered for ##PRODUCTNAME##
+  
+Dear ##NAME##,
+   
+A new maintenance contract has been registered for ##PRODUCTNAME##. This contract will be valid from ##STARTDATE## to ##ENDDATE##.
+
+In case of any queries, please feel free to contact us at support@relyonsoft.com.
+ 
+  
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+ 
+ 
+                                                                             This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).

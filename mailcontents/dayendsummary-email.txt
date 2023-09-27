@@ -1,0 +1,28 @@
+											Sub: ##SUBJECT##
+
+Dear ##NAME##,
+
+
+
+1. Sales Figure : (Sales Details)
+
+##BRANCHWISEDETAILS##
+##SALESDETAILS##
+
+
+2. Product wise Sales Figure :
+
+##PRODUCTWISESALES##
+
+##SERVICESSALES##
+
+##ADDLESSGRID##
+
+Regards,
+
+Relyon Softech Ltd, Bangalore
+
+					This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).
+
+
+

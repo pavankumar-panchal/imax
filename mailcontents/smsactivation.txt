@@ -1,0 +1,36 @@
+ 
+																			Sub: SMS Account Activation
+ 
+TO,
+##COMPANYNAME##
+ 
+Dear Customer,
+ 
+Your SMS Account has been created. Please find the details as under: 
+ 
+Username: ##USERNAME##
+
+Password: ##SMSPASSWORD##
+
+From name: ##SMSFROMNAME##
+
+Responsible Person: ##RESPONSIBLEPERSON##
+
+Mobile Number: ##MOBILENO##
+
+Email ID: ##EMAILID##
+
+ 
+This account can be utilized in any of Relyon based SMS sending Software/features like, Saral Communicator, Saral TDS, etc. We request you to keep this account confidential. Any SMS sent through this account will be assumed as your responsibility. (and will be treated under TRAI guidelines, on avoidance of SPAM and unsolicited SMSes) 
+ 
+To purchase SMSes for your account, please visit Relyon Customer Login Area at www.relyonsoft.com
+ 
+In case of any more difficulties, please email us at support@relyonsoft.com.
+ 
+Regards,
+ 
+Relyon Support Department
+www.relyonsoft.com
+																This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).
+
+		

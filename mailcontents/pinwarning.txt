@@ -1,0 +1,23 @@
+											Sub: ##SUBJECT##
+ 
+Hi,
+ 
+  
+Registered: ##REGISTERED##
+UnRegistered: ##UNREGISTERED##
+Total Unused: ##TOTALUNUSED##
+Total Used: ##TOTALUSED##
+Total Blocked: ##TOTALBLOCKED##
+Total Cancelled: ##TOTALCANCELLED##
+ 
+ 
+##LASTPIN##
+ 
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+  
+				This email is a system generated message. Please do not reply to this message(UM).
+
+
+

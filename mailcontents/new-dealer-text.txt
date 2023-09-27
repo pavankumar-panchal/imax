@@ -1,0 +1,48 @@
+Date: ##DATE##
+ 
+To: 																			                                                                           
+##COMPANY##							 										
+##PLACE##
+ 
+Sub: Welcome to Prestigious Relyon Channel Partner Network 
+ 
+Dear ##NAME##,
+ 
+ 
+It is our pleasure to welcome you for Relyon Channel Partner Network. An account has been created in Relyon system for you.
+ 
+Channel Partner ID:
+Henceforth, your account may be referred with a unique identification number “##DEALERID##”.This will also be referred as Dealer ID / Channel Partner ID.  You may quote the same for future references.
+ 
+Dealer login Area:
+We are also proud to present you the login credentials for dealer login area. Your login details are:
+
+Username: ##USERNAME##
+Password "##PASSWORD##
+Website: www.imax.relyonsoft.com/dealer
+ 
+Your contact details:
+As per our records, the contact details of your business are as under. In case of any changes, kindly intimate to dealers@relyonsoft.com or mark a profile update at Dealer Login Area.
+ 
+Contact Information
+Business name: ##COMPANY##
+Contact Person: ##NAME##,
+Address: ##ADDRESS##
+Place: ##PLACE##
+District: ##DISTRICT##
+State: ##STATE##
+Pincode: ##PINCODE##
+STD Code: ##STDCODE##
+Phone: ##PHONE##
+Cell: ##CELL##
+Email: ##EMAILID##
+ 
+In case of any queries, please feel free to contact us at dealers@relyonsoft.com.
+ 
+  
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+
+ 
+                                                      This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).

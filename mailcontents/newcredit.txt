@@ -1,0 +1,22 @@
+Date: ##DATE##
+ 
+To: 
+##COMPANY##
+##PLACE##
+ 
+Ref No: ##CREDITID##
+ 
+                                                                                               Sub: Enhancement of your credit
+
+Dear ##NAME##,
+ 
+Your credit has been enhanced manually by RS. ##AMOUNT## on ##DATE##. This brings with your total credit available in our system to Rs. ##TOTALCREDIT##.
+ 
+In case of any queries, please feel free to contact us at dealers@relyonsoft.com.
+ 
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+
+
+                                                                      This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).

@@ -1,0 +1,35 @@
+Date: ##DATE##
+ 
+To: 
+##COMPANY##
+##PLACE##
+ 
+Customer ID: ##CUSTOMERID##
+ 
+                                                                                                      Sub: Free PIN No for ##NEWPRODUCTNAME## (2010-11)
+																									       Please print and preserve this email for future reference
+
+Dear ##NAME##,
+ 
+This is with reference to your registration availed for ##OLDPRODUCTNAME## on ##DATE##.
+ 
+Under the “Free Updation for New Licenses”, we offer you the Free PIN No for next year update. The information is as below:
+ 
+ 
+2010-11 PIN Number information
+ 
+Product Name: ##NEWPRODUCTNAME##
+PIN No: ##SCRATCHCARDNO##
+(Serial No: ##CARDID##)
+Customer Name: ##COMPANY##
+Representative: ##DEALERNAME##
+ 
+  
+In case of any queries, please feel free to contact us at support@relyonsoft.com.
+ 
+Regards,
+ 
+Relyon Softech Ltd, Bangalore
+ 
+ 
+                                                                             This email is a system generated message. Please do not reply to this message(UM).

@@ -1,0 +1,21 @@
+
+.mceContentBody  {
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#fff;
+}
+.mceContentBody p {
+	font-size:12px;
+}
+
+.mceContentBody p a{
+	color:#F00;
+	text-decoration:none;
+}
+
+
+.mceContentBody p a:hover
+{
+	color: #06F;
+	text-decoration:none;
+	cursor:pointer
+}

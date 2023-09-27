@@ -1,0 +1,20 @@
+											Sub: ##SUBJECT##
+
+Dear ##NAME##,
+
+
+
+1. Collection Details
+
+##RECEIPTDETAILS##
+##BRANCHWISEDETAILS##
+
+
+Regards,
+
+Relyon Softech Ltd, Bangalore
+
+					This email is a system generated message(##EMAILID##). Please do not reply to this message(UM).
+
+
+

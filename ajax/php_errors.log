@@ -1,0 +1,65 @@
+[11-Jan-2014 12:41:31 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.com/user/uploads/SEZ-17784-20130422180517.zip): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[11-Jan-2014 14:28:01 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.com/user/uploads/SEZ-17784-20130422180517.zip): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[11-Jan-2014 14:28:11 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.com/user/uploads/SEZ-17784-20130422180517.zip): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[11-Jan-2014 14:31:02 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.com/user/uploads/SEZ-43193-20130531133400.zip): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[11-Jan-2014 14:50:37 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.com/user/uploads/SEZ-43832-20130712113829.zip): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[13-Jan-2014 11:02:10 Asia/Calcutta] PHP Warning:  file_get_contents(http://imax.relyonsoft.com/user_1/softkey/tempread.php): failed to open stream: HTTP request failed!  in /home/manju/public/imax.relyonsoft.net/public/user/softkey/regfunction.bin on line 21
+[14-Jan-2014 16:44:51 Asia/Calcutta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/manju/public/imax.relyonsoft.net/public/user/pdfbillgeneration/tcpdf.php:5379) in /home/manju/public/imax.relyonsoft.net/public/user/pdfbillgeneration/tcpdf.php on line 5368
+[17-Jan-2014 16:25:46 Asia/Calcutta] PHP Warning:  Division by zero in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 2649
+[18-Jan-2014 10:19:59 Asia/Calcutta] PHP Warning:  Division by zero in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 2649
+[22-Jan-2014 11:00:08 Asia/Calcutta] PHP Warning:  Division by zero in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 2649
+[22-Jan-2014 12:05:56 Asia/Calcutta] PHP Warning:  Division by zero in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 2649
+[22-Jan-2014 13:00:08 Asia/Calcutta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/manju/public/imax.relyonsoft.net/public/user/pdfbillgeneration/tcpdf.php:5379) in /home/manju/public/imax.relyonsoft.net/public/user/pdfbillgeneration/tcpdf.php on line 5368
+[23-Jan-2014 09:30:03 Asia/Calcutta] PHP Warning:  mysqli_query(): Unable to save result set in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 66
+[23-Jan-2014 09:31:34 Asia/Calcutta] PHP Warning:  mysqli_query(): Unable to save result set in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 66
+[23-Jan-2014 09:32:07 Asia/Calcutta] PHP Warning:  mysqli_connect(): Can't connect to MySQL server on '192.168.170.169' (113) in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 11
+[23-Jan-2014 09:32:14 Asia/Calcutta] PHP Warning:  mysqli_connect(): Can't connect to MySQL server on '192.168.170.169' (113) in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 11
+[23-Jan-2014 09:32:23 Asia/Calcutta] PHP Warning:  mysqli_connect(): Can't connect to MySQL server on '192.168.170.169' (113) in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 11
+[23-Jan-2014 10:57:00 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140123-105700-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 10:57:08 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140123-105708-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 10:57:29 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140123-105729-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 10:57:44 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140123-105743-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 10:58:13 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140123-105813-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 11:55:23 Asia/Calcutta] PHP Warning:  Division by zero in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 2649
+[23-Jan-2014 18:15:30 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 18:16:05 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 18:17:56 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 18:18:04 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 18:19:39 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 18:23:28 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[23-Jan-2014 18:37:52 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 15:53:05 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140124-155305-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 15:59:47 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140124-155946-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 16:02:07 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140124-160206-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 16:03:32 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140124-160331-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 16:33:57 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 16:34:15 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 16:36:32 Asia/Calcutta] PHP Warning:  readfile(http://imax.relyonsoft.net/user/filecreated/ReceiptRegister20140124-163632-.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 19:09:24 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
+[24-Jan-2014 19:09:51 Asia/Calcutta] PHP Warning:  readfile(http://...@relyonsoft.com.xls): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/manju/public/imax.relyonsoft.net/public/user/functions/phpfunctions.php on line 579
