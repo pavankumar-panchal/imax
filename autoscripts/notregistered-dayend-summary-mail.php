@@ -26,7 +26,7 @@
 	// Fetch all dealer details 
 	$query = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid from inv_mas_dealer where inv_mas_dealer.disablelogin = 'no'  and inv_mas_dealer.enablebilling = 'yes' order by slno";
 	$result = runmysqlquery($query);
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		
 		$dealerid = $fetch['slno'];
@@ -98,7 +98,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 		$newbillcount61 = 0;
 		$overalltotal = 0;
 		
-		if(mysql_num_rows($result1) > 0)
+		if(mysqli_num_rows($result1) > 0)
 		{
 			$fetch1 = runmysqlqueryfetch($query1);
 			$newbillcount17 = ($fetch1['billcount17'] == '')?'0' : $fetch1['billcount17'];
@@ -107,7 +107,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 		{
 			$newbillcount17 = 0;
 		}
-		if(mysql_num_rows($result2) > 0)
+		if(mysqli_num_rows($result2) > 0)
 		{
 			$fetch2 = runmysqlqueryfetch($query2);
 			$newbillcount815 = ($fetch2['billcount815'] == '')?'0' : $fetch2['billcount815'];
@@ -116,7 +116,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 		{
 			$newbillcount815 = 0;
 		}
-		if(mysql_num_rows($result3) > 0)
+		if(mysqli_num_rows($result3) > 0)
 		{
 			$fetch3 = runmysqlqueryfetch($query3);
 			$newbillcount1630 = ($fetch3['billcount1630'] == '')?'0' : $fetch3['billcount1630'];
@@ -125,7 +125,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 		{
 			$newbillcount1630 = 0;
 		}
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$newbillcount3160 = ($fetch4['billcount3160'] == '')?'0' : $fetch4['billcount3160'];
@@ -134,7 +134,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 		{
 			$newbillcount3160 = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$newbillcount61 = ($fetch5['billcount61'] == '')?'0' : $fetch5['billcount61'];
@@ -231,7 +231,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 	$result6 = runmysqlquery($query6);
 	
 	
-	while($fetch6 = mysql_fetch_array($result6))
+	while($fetch6 = mysqli_fetch_array($result6))
 	{
 		$slno = 0;
 		$newbillcount17 = 0;
@@ -266,7 +266,7 @@ and  inv_invoicenumbers.dealerid = '".$dealerid."'  group by inv_invoicenumbers.
 		//Write the header Row of the table
 		$branchgrid .= '<tr><td width="7%"  align="center" nowrap="nowrap"><strong>Sl No</strong></td><td nowrap="nowrap"  width="14%" align="center"><strong>Dealer Name</strong></td><td nowrap="nowrap" colspan="5" align="center"><strong>Billed  but Not Registered for (Days)</strong></td></tr><tr><td align="center" >&nbsp;</td><td align="center">&nbsp;</td><td align="center" width="15%">1-7</td><td align="center" width="16%">8-15</td><td align="center" width="17%">15-30</td><td align="center" width="16%">31-60</td><td align="center" width="15%">&gt; 61</td></tr>';
 		
-		while($fetch7 = mysql_fetch_array($result7))
+		while($fetch7 = mysqli_fetch_array($result7))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -300,7 +300,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			$result12 = runmysqlquery($query12);
 			
 			
-			if(mysql_num_rows($result8) > 0)
+			if(mysqli_num_rows($result8) > 0)
 			{
 				$fetch8 = runmysqlqueryfetch($query8);
 				$newbillcount17 = ($fetch8['billcount17'] == '')?'0' : $fetch8['billcount17'];
@@ -309,7 +309,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount17 = 0;
 			}
-			if(mysql_num_rows($result9) > 0)
+			if(mysqli_num_rows($result9) > 0)
 			{
 				$fetch9 = runmysqlqueryfetch($query9);
 				$newbillcount815 = ($fetch9['billcount815'] == '')?'0' : $fetch9['billcount815'];
@@ -318,7 +318,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount815 = 0;
 			}
-			if(mysql_num_rows($result10) > 0)
+			if(mysqli_num_rows($result10) > 0)
 			{
 				$fetch10 = runmysqlqueryfetch($query10);
 				$newbillcount1630 = ($fetch10['billcount1630'] == '')?'0' : $fetch10['billcount1630'];
@@ -327,7 +327,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount1630 = 0;
 			}
-			if(mysql_num_rows($result11) > 0)
+			if(mysqli_num_rows($result11) > 0)
 			{
 				$fetch11 = runmysqlqueryfetch($query11);
 				$newbillcount3160 = ($fetch11['billcount3160'] == '')?'0' : $fetch11['billcount3160'];
@@ -336,7 +336,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount3160 = 0;
 			}
-			if(mysql_num_rows($result12) > 0)
+			if(mysqli_num_rows($result12) > 0)
 			{
 				$fetch12 = runmysqlqueryfetch($query12);
 				$newbillcount61 = ($fetch12['billcount61'] == '')?'0' : $fetch12['billcount61'];
@@ -463,7 +463,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 		$totalbillcount3160 = 0;
 		$totalbillcount61 = 0;
 		
-		while($fetch13 = mysql_fetch_array($result13))
+		while($fetch13 = mysqli_fetch_array($result13))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -497,7 +497,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			$result18 = runmysqlquery($query18);
 			
 			
-			if(mysql_num_rows($result14) > 0)
+			if(mysqli_num_rows($result14) > 0)
 			{
 				$fetch14 = runmysqlqueryfetch($query14);
 				$newbillcount17 = ($fetch14['billcount17'] == '')?'0' : $fetch14['billcount17'];
@@ -506,7 +506,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount17 = 0;
 			}
-			if(mysql_num_rows($result15) > 0)
+			if(mysqli_num_rows($result15) > 0)
 			{
 				$fetch15 = runmysqlqueryfetch($query15);
 				$newbillcount815 = ($fetch15['billcount815'] == '')?'0' : $fetch15['billcount815'];
@@ -515,7 +515,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount815 = 0;
 			}
-			if(mysql_num_rows($result16) > 0)
+			if(mysqli_num_rows($result16) > 0)
 			{
 				$fetch16 = runmysqlqueryfetch($query16);
 				$newbillcount1630 = ($fetch16['billcount1630'] == '')?'0' : $fetch16['billcount1630'];
@@ -524,7 +524,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount1630 = 0;
 			}
-			if(mysql_num_rows($result17) > 0)
+			if(mysqli_num_rows($result17) > 0)
 			{
 				$fetch17 = runmysqlqueryfetch($query17);
 				$newbillcount3160 = ($fetch17['billcount3160'] == '')?'0' : $fetch17['billcount3160'];
@@ -533,7 +533,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount3160 = 0;
 			}
-			if(mysql_num_rows($result18) > 0)
+			if(mysqli_num_rows($result18) > 0)
 			{
 				$fetch18 = runmysqlqueryfetch($query18);
 				$newbillcount61 = ($fetch18['billcount61'] == '')?'0' : $fetch18['billcount61'];
@@ -640,7 +640,7 @@ bill61.branchid = inv_mas_branch.slno
 		$billcount3160 = 0;
 		$billcount61 = 0;
 		$slno = 0;
-		while($fetch19 = mysql_fetch_array($result19))
+		while($fetch19 = mysqli_fetch_array($result19))
 		{
 			$slno++;
 			$billcount17 = ($fetch19['billcount17'] == '')? '0' : $fetch19['billcount17'];
@@ -784,7 +784,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			$result24 = runmysqlquery($query24);
 			
 			
-			if(mysql_num_rows($result20) > 0)
+			if(mysqli_num_rows($result20) > 0)
 			{
 				$fetch20 = runmysqlqueryfetch($query20);
 				$newbillcount17 = ($fetch20['billcount17'] == '')?'0' : $fetch20['billcount17'];
@@ -793,7 +793,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount17 = 0;
 			}
-			if(mysql_num_rows($result21) > 0)
+			if(mysqli_num_rows($result21) > 0)
 			{
 				$fetch21 = runmysqlqueryfetch($query21);
 				$newbillcount815 = ($fetch21['billcount815'] == '')?'0' : $fetch21['billcount815'];
@@ -802,7 +802,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount815 = 0;
 			}
-			if(mysql_num_rows($result22) > 0)
+			if(mysqli_num_rows($result22) > 0)
 			{
 				$fetch22 = runmysqlqueryfetch($query22);
 				$newbillcount1630 = ($fetch22['billcount1630'] == '')?'0' : $fetch22['billcount1630'];
@@ -811,7 +811,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount1630 = 0;
 			}
-			if(mysql_num_rows($result23) > 0)
+			if(mysqli_num_rows($result23) > 0)
 			{
 				$fetch23 = runmysqlqueryfetch($query23);
 				$newbillcount3160 = ($fetch23['billcount3160'] == '')?'0' : $fetch23['billcount3160'];
@@ -820,7 +820,7 @@ from inv_invoicenumbers left join inv_dealercard on inv_dealercard.invoiceid = i
 			{
 				$newbillcount3160 = 0;
 			}
-			if(mysql_num_rows($result24) > 0)
+			if(mysqli_num_rows($result24) > 0)
 			{
 				$fetch24 = runmysqlqueryfetch($query24);
 				$newbillcount61 = ($fetch24['billcount61'] == '')?'0' : $fetch24['billcount61'];
@@ -926,7 +926,7 @@ bill61.branchid = inv_mas_branch.slno order by inv_mas_branch.branchname;";
 		$billcount3160 = 0;
 		$billcount61 = 0;
 		$slno = 0;
-		while($fetch25 = mysql_fetch_array($result25))
+		while($fetch25 = mysqli_fetch_array($result25))
 		{
 			$slno++;
 			$billcount17 = ($fetch25['billcount17'] == '')? '0' : $fetch25['billcount17'];

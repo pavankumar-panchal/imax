@@ -76,7 +76,7 @@ $auditorid = array('195','196');
               </UL>
             </li>
             <li class="current"><A>Customers</A>
-              <UL><?phpphp if(!in_array($userid, $auditorid, true)) { ?>
+              <UL><?php if(!in_array($userid, $auditorid, true)) { ?>
                 <li><a href="./index.php?a_link=customer">Customer Master </a> </li>
                 <li><a href="./index.php?a_link=customeramc">Customer AMCs </a> </li>
                 <?php } if($p_hardwarelock == 'yes') { ?>
@@ -132,7 +132,7 @@ $auditorid = array('195','196');
               </UL>
             </li>
             <li class="current"><A>PIN Numbers</A>
-              <UL><?phpphp if(!in_array($userid, $auditorid, true)) { ?>
+              <UL><?php if(!in_array($userid, $auditorid, true)) { ?>
                 <li><a href="./index.php?a_link=cardsearch">PIN number Search</a> </li>
                 <?php } if($p_blockcancel == 'yes') { ?>
                 <li><a  href="./index.php?a_link=blockcancel">Block/Cancel PIN number</a> </li>

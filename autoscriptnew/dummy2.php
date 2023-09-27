@@ -53,7 +53,7 @@ include('../functions/phpfunctions.php');
 		$starttime = date('H:m:s');
 		$result0 = runmysqlquery($query);
 		// For all Search Result 
-		while($fetch0 = mysql_fetch_array($result0))
+		while($fetch0 = mysqli_fetch_array($result0))
 		{
 			// Now insert selected invoice details to temporary table condidering all details of the each invoice
 			

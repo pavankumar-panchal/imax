@@ -84,7 +84,7 @@
 	
 	//echo($query2);exit;
 	
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$serviceamount = 0;
 				if($fetch2['servicedescription'] <> '')
@@ -104,7 +104,7 @@
 	$query2 = "select * from inv_invoicenumbers where ".$monthsdatepiece." and products <> '' and `status` <> 'CANCELLED'";
 	$result2 = runmysqlquery($query2);
 	
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;
@@ -150,7 +150,7 @@
 	$servicegrid .= '<tr ><td nowrap="nowrap"  width = "60%" align="center" ><strong>Service Name</strong/></td><td nowrap="nowrap" align="center" width = "40%"><strong>Total</strong></td></tr>';
 	
 	
-	while($fetch = mysql_fetch_array($res))
+	while($fetch = mysqli_fetch_array($res))
 	{
 		$servicegrid .= '<tr >';
 		$servicegrid .= '<td nowrap="nowrap" class="td-border-grid"  align="left">'.$fetch['servicename'].'</td>';

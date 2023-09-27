@@ -70,16 +70,16 @@ function runmysqlquery($query)
 	global $dbhost,$dbuser,$dbpwd,$dbname;
 
 	//Connect to host
-	$connection = mysql_connect($dbhost, $dbuser, $dbpwd) or die("Cannot connect to Mysql server host");
+	$connection = mysqli_connect($dbhost, $dbuser, $dbpwd) or die("Cannot connect to Mysql server host");
 	
 	//Connect to Database
-	mysql_select_db($dbname) or die("Cannot connect to database");
+	mysqli_select_db($dbname) or die("Cannot connect to database");
 	
 	//Run the query
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($query) or die(mysqli_error());
 	
 	//Close the database connection
-	mysql_close($connection);
+	mysqli_close($connection);
 	
 	//Return the result
 	return $result;
@@ -91,19 +91,19 @@ function runmysqlqueryfetch($query)
 	global $dbhost,$dbuser,$dbpwd,$dbname;
 
 	//Connect to host
-	$connection = mysql_connect($dbhost, $dbuser, $dbpwd) or die("Cannot connect to Mysql server host");
+	$connection = mysqli_connect($dbhost, $dbuser, $dbpwd) or die("Cannot connect to Mysql server host");
 	
 	//Connect to Database
-	mysql_select_db($dbname) or die("Cannot connect to database");
+	mysqli_select_db($dbname) or die("Cannot connect to database");
 	
 	//Run the query
-	$result = mysql_query($query) or die("Query failed run queryfetch function".$query);
+	$result = mysqli_query($query) or die("Query failed run queryfetch function".$query);
 	
 	//Fetch the Query to an array
-	$fetchresult = mysql_fetch_array($result) or die ("Cannot fetch the query result".$query);
+	$fetchresult = mysqli_fetch_array($result) or die ("Cannot fetch the query result".$query);
 	
 	//Close the database connection
-	mysql_close($connection);
+	mysqli_close($connection);
 	
 	//Return the result
 	return $fetchresult;
@@ -116,10 +116,10 @@ function runsppdbquery($query)
 	$sppdbpwd = "56705743";
 	$sppdbname = "relyon_saralpaypack";
 	
-	$connection = mysql_connect($sppdbhost, $sppdbuser, $sppdbpwd) or die("Cannot connect to Mysql server host");
-	mysql_select_db($sppdbname) or die("Cannot connect to database");
-	$result = mysql_query($query) or die(mysql_error());
-	mysql_close($connection);
+	$connection = mysqli_connect($sppdbhost, $sppdbuser, $sppdbpwd) or die("Cannot connect to Mysql server host");
+	mysqli_select_db($sppdbname) or die("Cannot connect to database");
+	$result = mysqli_query($query) or die(mysqli_error());
+	mysqli_close($connection);
 	return $result;
 }
 
@@ -131,10 +131,10 @@ function runicicidbquery($query)
 	$icicidbpwd = "hotelleela28";
 	$icicidbname = "relyon_icici";
 	
-	$connection = mysql_connect($icicidbhost, $icicidbuser, $icicidbpwd) or die("Cannot connect to Mysql server host");
-	mysql_select_db($icicidbname) or die("Cannot connect to database");
-	$result = mysql_query($query) or die(mysql_error());
-	mysql_close($connection);
+	$connection = mysqli_connect($icicidbhost, $icicidbuser, $icicidbpwd) or die("Cannot connect to Mysql server host");
+	mysqli_select_db($icicidbname) or die("Cannot connect to database");
+	$result = mysqli_query($query) or die(mysqli_error());
+	mysqli_close($connection);
 	return $result;
 }
 
@@ -261,19 +261,19 @@ function runmysqlquerydummy($query)
 	global $dbhost,$dbuser,$dbpwd,$dbname;
 
 	//Connect to host
-	$connection = mysql_connect($dbhost, $dbuser, $dbpwd) or die("Cannot connect to Mysql server host");
+	$connection = mysqli_connect($dbhost, $dbuser, $dbpwd) or die("Cannot connect to Mysql server host");
 	
 	//Connect to Database
-	mysql_select_db('relyon_userlogin') or die("Cannot connect to database");
+	mysqli_select_db('relyon_userlogin') or die("Cannot connect to database");
 	
 	//Run the query
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($query) or die(mysqli_error());
 	
 	//Return the result
 	return $result;
 	
 	//Close the database connection
-	mysql_close($connection);
+	mysqli_close($connection);
 }
 */
 

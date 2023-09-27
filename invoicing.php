@@ -33,7 +33,7 @@ switch($switchtype)
 		$result = runmysqlquery($query);
 		$grid = '';
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$customerarray[$count] = $fetch['businessname'].'^'.$fetch['slno'];
 			$count++;
@@ -47,7 +47,7 @@ switch($switchtype)
 		$responsearray3 = array();
 		$query = "SELECT slno,businessname,customerid FROM inv_mas_customer ORDER BY businessname";
 		$result = runmysqlquery($query);
-		$count = mysql_num_rows($result);
+		$count = mysqli_num_rows($result);
 		$responsearray3['count'] = $count;
 		echo(json_encode($responsearray3));
 	}
@@ -68,7 +68,7 @@ switch($switchtype)
 		$cellres = '';
 		$emailidres = '';
 				
-		while($fetchcontactdetails = mysql_fetch_array($resultcontactdetails))
+		while($fetchcontactdetails = mysqli_fetch_array($resultcontactdetails))
 		{
 			$contactperson = $fetchcontactdetails['contactperson'];
 			$phone = $fetchcontactdetails['phone'];
@@ -139,7 +139,7 @@ switch($switchtype)
 			$cellres = '';
 			$emailidres = '';
 					
-			while($fetchcontactdetails = mysql_fetch_array($resultcontactdetails))
+			while($fetchcontactdetails = mysqli_fetch_array($resultcontactdetails))
 			{
 				$contactperson = $fetchcontactdetails['contactperson'];
 				$phone = $fetchcontactdetails['phone'];
@@ -391,7 +391,7 @@ switch($switchtype)
 left join dealer_online_purchase on dealer_online_purchase.onlineinvoiceno = inv_invoicenumbers.slno
 where right(customerid,5) ='".$lastslno."' order by createddate  desc; ";
 		$resultfetch = runmysqlquery($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -417,7 +417,7 @@ where right(customerid,5) = '".$lastslno."' order by createddate  desc LIMIT ".$
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$i_n++;
 			$slno++;
@@ -471,7 +471,7 @@ where right(customerid,5) = '".$lastslno."' order by createddate  desc LIMIT ".$
 		}
 		$grid .= "</table>";
 
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 		$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font><div></div></td></tr></table>';
 		else
@@ -542,7 +542,7 @@ where right(customerid,5) = '".$lastslno."' order by createddate  desc LIMIT ".$
 		$invoiceno = strtolower($_POST['invoiceno']);
 		$query = "select distinct inv_mas_customer.slno,inv_mas_customer.businessname from inv_invoicenumbers left join inv_mas_customer on inv_mas_customer.slno = right(inv_invoicenumbers.customerid,5) where invoiceno like '%".$invoiceno."%' and inv_mas_customer.slno is not null order  by inv_mas_customer.businessname";
 		$result = runmysqlquery($query);
-		if(mysql_num_rows($result) == 0)
+		if(mysqli_num_rows($result) == 0)
 		{
 			echo(json_encode('2#@# Invalid Invoice No'));
 		}
@@ -550,7 +550,7 @@ where right(customerid,5) = '".$lastslno."' order by createddate  desc LIMIT ".$
 		{
 			$grid = '';
 			$count = 1;
-			while($fetch = mysql_fetch_array($result))
+			while($fetch = mysqli_fetch_array($result))
 			{
 				if($count > 1)
 					$grid .='^*^';
@@ -642,7 +642,7 @@ where right(customerid,5) = '".$lastslno."' order by createddate  desc LIMIT ".$
 		//Define array for services
 		$queryservice = "select slno from inv_mas_service where disabled  = 'yes';";
 		$serviceresultfetch = runmysqlquery($queryservice);
-		while($fetchvalue = mysql_fetch_array($serviceresultfetch))
+		while($fetchvalue = mysqli_fetch_array($serviceresultfetch))
 		{
 			$servicearray[] = $fetchvalue['slno'];
 		}*/
@@ -746,7 +746,7 @@ where right(customerid,5) = '".$lastslno."' order by createddate  desc LIMIT ".$
 		$querycontactdetails = "select customerid, GROUP_CONCAT(contactperson) as contactperson,  
 GROUP_CONCAT(phone) as phone, GROUP_CONCAT(cell) as cell, GROUP_CONCAT(emailid) as emailid from inv_contactdetails where customerid = '".$lastslno."'  group by customerid ";
 		$resultcontact = runmysqlquery($querycontactdetails);
-		$resultcontactdetails = mysql_fetch_array($resultcontact);
+		$resultcontactdetails = mysqli_fetch_array($resultcontact);
 		//$resultcontactdetails = runmysqlqueryfetch($querycontactdetails);
 		
 		$contactvalues = removedoublecomma($resultcontactdetails['contactperson']);
@@ -1026,7 +1026,7 @@ left join inv_mas_branch on inv_mas_branch.slno = inv_mas_district.branchid wher
 		$k;
 		$descriptioncount = 0;
 		$k=0;
-		while($carddetailsfetch = mysql_fetch_array($carddetailsresult))
+		while($carddetailsfetch = mysqli_fetch_array($carddetailsresult))
 		{
 			$slno++;
 			if($carddetailsfetch['purchasetype'] == 'new')
@@ -1221,7 +1221,7 @@ left join inv_mas_branch on inv_mas_branch.slno = inv_mas_district.branchid wher
 		$showtype = $_POST['showtype'];
 		$resultcount = "SELECT inv_mas_product.productname as productname FROM inv_customerproduct left join inv_mas_product on left(inv_customerproduct.computerid, 3) = inv_mas_product.productcode left join inv_mas_users on inv_customerproduct.generatedby = inv_mas_users.slno left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  where customerreference = '".$lastslno."' order by `date`  desc,`time` desc ; ";
 		$resultfetch = runmysqlquery($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -1254,7 +1254,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$i_n++;
 			$slno++;
@@ -1280,7 +1280,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  
 		}
 		$grid .= "</table>";
  
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 			$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"  ><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font></td></tr></table>';
 		else

@@ -594,7 +594,7 @@ where inv_customerreqpending.customerstatus = 'pending'  and inv_customerreqpend
 	        	{
 	        		$get_gst_latest_no = "select gst_no from customer_gstin_logs where customer_slno = '".$lastslno."' order by gstin_id desc limit 1";
 	        		$get_gst_result = runmysqlquery($get_gst_latest_no);
-	        		$get_gst_count = mysql_num_rows($get_gst_result);
+	        		$get_gst_count = mysqli_num_rows($get_gst_result);
 	        		if($get_gst_count > 0)
 	        		{
 	        			$get_gst_latest_no = runmysqlqueryfetch($get_gst_latest_no);

@@ -95,7 +95,7 @@ if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _
 
 } else
   $message = '<span class="error-message"> This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above. </span>';
-echo(" This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above.");
+// echo(" This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above.");
 ?>
 
 

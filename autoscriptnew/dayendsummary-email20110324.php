@@ -76,7 +76,7 @@
 	$result2 = runmysqlquery($query2);
 	$count = 0;
 	$totalamount = 0;
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;
@@ -147,7 +147,7 @@
 	$query = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid from inv_mas_dealer  order by slno ";
 	$result = runmysqlquery($query);
 	$cnt = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		
 		$cnt++;
@@ -188,7 +188,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$monthsdatepiece." and
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0;
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['netamount'] == '')?'0' : $fetch4['netamount'];
@@ -197,7 +197,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$monthsdatepiece." and
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['netamount'] == '')?'0' : $fetch5['netamount'];
@@ -483,7 +483,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$monthsdatepiece." and
 	$query4 = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid,branchname,inv_mas_branch.slno as branch from inv_mas_dealer left join inv_mas_branch on inv_mas_branch.slno = inv_mas_dealer.branch where branchhead = 'yes' ";
 	$result4 = runmysqlquery($query4);
 	
-	while($fetch4 = mysql_fetch_array($result4))
+	while($fetch4 = mysqli_fetch_array($result4))
 	{
 		// Select the dealers under Branch head based on Branch 
 		$tdsnew = 0;
@@ -546,7 +546,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$monthsdatepiece." and
 		
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0;
-		while($fetch5 = mysql_fetch_array($result5))
+		while($fetch5 = mysqli_fetch_array($result5))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -563,7 +563,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$todaysdatepiece1." an
 			$query7 = "select inv_invoicenumbers.dealerid,ifnull(sum(inv_invoicenumbers.amount),'0') as netamount from inv_invoicenumbers where inv_invoicenumbers.dealerid = '".$dealerid."'  and ".$monthsdatepiece." and `status` <> 'CANCELLED' group by inv_invoicenumbers.dealerid";
 			$result7 = runmysqlquery($query7); 
 			
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -572,7 +572,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$todaysdatepiece1." an
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['netamount'] == '')?'0' : $fetch7['netamount'];
@@ -901,7 +901,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$todaysdatepiece1." an
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0;
 		
-		while($fetch4 = mysql_fetch_array($result4))
+		while($fetch4 = mysqli_fetch_array($result4))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -920,7 +920,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$todaysdatepiece1." an
 			$result7 = runmysqlquery($query7); 
 			
 			
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -929,7 +929,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$todaysdatepiece1." an
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['netamount'] == '')?'0' : $fetch7['netamount'];
@@ -1161,7 +1161,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0 ;
 		$slno = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$slno++;
 			$tadaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];
@@ -1263,7 +1263,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		$query5 = "select ifnull(sum(inv_invoicenumbers.amount),'0') as netamount from inv_invoicenumbers where inv_invoicenumbers.regionid = '".$regionid."' and ".$monthsdatepiece." and `status` <> 'CANCELLED'"; 
 		
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['netamount'] == '')?'0' : $fetch4['netamount'];
@@ -1272,7 +1272,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['netamount'] == '')?'0' : $fetch5['netamount'];
@@ -1498,7 +1498,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 	$todaynewtotal = 0;
 	$todaymonthtilldatetotal = 0 ;
 	$slno = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		$slno++;
 		$tadaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];

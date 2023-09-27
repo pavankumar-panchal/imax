@@ -138,7 +138,7 @@
 	$count = 0;
 	$totalamount = 0;
 	
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$serviceamount = 0;
 		if($fetch2['servicedescription'] <> '')
@@ -157,7 +157,7 @@
 	
 	$query2 = "select * from inv_invoicenumbers where ".$yeardatepiece." and products <> '' and `status` <> 'CANCELLED'";
 	$result2 = runmysqlquery($query2);
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;
@@ -196,7 +196,7 @@
 	$query32 = "select * from inv_invoicenumbers where ".$yeardatepiece." and offerdescription <> '' and `status` <> 'CANCELLED'";
 	$result32 = runmysqlquery($query32);
 	
-	while($fetch32 = mysql_fetch_array($result32))
+	while($fetch32 = mysqli_fetch_array($result32))
 	{
 		$offeramount = 0;
 		$addlesssplit = explode('*',$fetch32['offerdescription']);
@@ -217,7 +217,7 @@
 	$query = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid from inv_mas_dealer  order by slno ";
 	$result = runmysqlquery($query);
 	$cnt = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		
 		$cnt++;
@@ -262,7 +262,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		$thisyearupdationtotal = 0;
 		$thisyearnewtotal = 0;
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['netamount'] == '')?'0' : $fetch4['netamount'];
@@ -271,7 +271,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['netamount'] == '')?'0' : $fetch5['netamount'];
@@ -279,7 +279,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		else
 			$monthtilldate = 0;
 			
-		if(mysql_num_rows($result6) > 0)
+		if(mysqli_num_rows($result6) > 0)
 		{
 			$fetch6 = runmysqlqueryfetch($query6);
 			$yeartilldate = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -334,7 +334,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query200 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."' and ".$todaysdatepiece." and purchasetype = 'New' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result200 = runmysqlquery($query200);
-			while($fetch200 = mysql_fetch_array($result200))
+			while($fetch200 = mysqli_fetch_array($result200))
 			{
 				if($fetch200['productgroup'] == 'TDS')
 					$tdsnew += $fetch200['amount'];
@@ -363,7 +363,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query201 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."' and ".$todaysdatepiece." and purchasetype = 'Updation' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group; ";
 			$result201 = runmysqlquery($query201);
-			while($fetch201 = mysql_fetch_array($result201))
+			while($fetch201 = mysqli_fetch_array($result201))
 			{
 				if($fetch201['productgroup'] == 'TDS')
 					$tdsupdation += $fetch201['amount'];
@@ -394,7 +394,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query100 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'New' and ".$monthsdatepiece1." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result100 = runmysqlquery($query100);
-			while($fetch201 = mysql_fetch_array($result100))
+			while($fetch201 = mysqli_fetch_array($result100))
 			{
 				if($fetch201['productgroup'] == 'TDS')
 					$thismonthtdsnew += $fetch201['amount'];
@@ -423,7 +423,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query101 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation' and ".$monthsdatepiece1." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 			$result101 = runmysqlquery($query101);
-			while($fetch201 = mysql_fetch_array($result101))
+			while($fetch201 = mysqli_fetch_array($result101))
 			{
 				if($fetch201['productgroup'] == 'TDS')
 					$thismonthtdsupdation += $fetch201['amount'];
@@ -456,7 +456,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query122 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and  purchasetype = 'New' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result122 = runmysqlquery($query122);
-			while($fetch122 = mysql_fetch_array($result122))
+			while($fetch122 = mysqli_fetch_array($result122))
 			{
 				if($fetch122['productgroup'] == 'TDS')
 					$thisyeartdsnew += $fetch122['amount'];
@@ -486,7 +486,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query133 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 			$result133 = runmysqlquery($query133);
-			while($fetch133 = mysql_fetch_array($result133))
+			while($fetch133 = mysqli_fetch_array($result133))
 			{
 				if($fetch133['productgroup'] == 'TDS')
 					$thisyeartdsupdation += $fetch133['amount'];
@@ -617,10 +617,10 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			$servicesresultmonth = runmysqlquery($servicesquerymonth);
 			$serviceamounttoday = 0;$serviceamountmonth =0;$serviceamountyear=0;
 			$servicesresulttoday = runmysqlquery($servicesquerytoday);
-			while($sevicesfetchyear = mysql_fetch_array($servicesresultyear))
+			while($sevicesfetchyear = mysqli_fetch_array($servicesresultyear))
 			{
-				$sevicesfetchmonth = mysql_fetch_array($servicesresultmonth);
-				$sevicesfetchtoday =  mysql_fetch_array($servicesresulttoday);
+				$sevicesfetchmonth = mysqli_fetch_array($servicesresultmonth);
+				$sevicesfetchtoday =  mysqli_fetch_array($servicesresulttoday);
 				$servicegrid .= '<tr>';
 				$servicegrid .= '<td nowrap="nowrap"  align="left">'.$sevicesfetchmonth['servicename'].'</td>';
 				$serviceamounttoday += $sevicesfetchtoday['amount'];
@@ -655,10 +655,10 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			$addlessresultyear = runmysqlquery($addlessqueryyear);
 			$addlessresultmonth = runmysqlquery($addlessquerymonth);
 			$addlessresulttoday = runmysqlquery($addlessquerytoday);
-			$addlessresultyearcount = mysql_num_rows($addlessresultyear);
+			$addlessresultyearcount = mysqli_num_rows($addlessresultyear);
 			$differencetoday = 0;$differencemonth =0;$addlessfetchtodayadd =0;$addlessfetchtodayless=0;$addlessfetchmonthadd =0; $addlessfetchmonthless = 0; $addlessfetchyearadd =0;$addlessfetchyearless=0;$differenceyear=0;
 			$differencevalue = 0;
-			while($addlessfetchyear = mysql_fetch_array($addlessresultyear))
+			while($addlessfetchyear = mysqli_fetch_array($addlessresultyear))
 			{
 								
 				if($addlessresultyearcount == 2)	
@@ -787,7 +787,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 	$query4 = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid,branchname,inv_mas_branch.slno as branch from inv_mas_dealer left join inv_mas_branch on inv_mas_branch.slno = inv_mas_dealer.branch where branchhead = 'yes' ";
 	$result4 = runmysqlquery($query4);
 
-	while($fetch4 = mysql_fetch_array($result4))
+	while($fetch4 = mysqli_fetch_array($result4))
 	{
 		$tdsnew = 0;
 		$tdsupdation = 0;
@@ -878,7 +878,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		$todaynewtotalall = 0;
 		$todaymonthtilldatetotalall = 0;
 		$todayyeartilldatetotalall = 0;
-		while($fetch5 = mysql_fetch_array($result5))
+		while($fetch5 = mysqli_fetch_array($result5))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -898,7 +898,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			$result8 = runmysqlquery($query8); 
 			
 			
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -907,7 +907,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['netamount'] == '')?'0' : $fetch7['netamount'];
@@ -916,7 +916,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			{
 				$monthtilldate = 0;
 			}
-			if(mysql_num_rows($result8) > 0)
+			if(mysqli_num_rows($result8) > 0)
 			{
 				$fetch8 = runmysqlqueryfetch($query8);
 				$yeartilldate = ($fetch8['netamount'] == '')?'0' : $fetch8['netamount'];
@@ -947,7 +947,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		
 			$query2001 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'New' and  ".$todaysdatepiece." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result2001 = runmysqlquery($query2001);
-			while($fetch2001 = mysql_fetch_array($result2001))
+			while($fetch2001 = mysqli_fetch_array($result2001))
 			{
 				if($fetch2001['productgroup'] == 'TDS')
 					$tdsnew += $fetch2001['amount'];
@@ -970,7 +970,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		
 			$query2061 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation' and  ".$todaysdatepiece." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group; ";
 			$result2061 = runmysqlquery($query2061);
-			while($fetch2061 = mysql_fetch_array($result2061))
+			while($fetch2061 = mysqli_fetch_array($result2061))
 			{
 				if($fetch2061['productgroup'] == 'TDS')
 					$tdsupdation += $fetch2061['amount'];
@@ -994,7 +994,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 
 			$query1001 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'New' and  ".$monthsdatepiece1."  group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result1001 = runmysqlquery($query1001);
-			while($fetch1001 = mysql_fetch_array($result1001))
+			while($fetch1001 = mysqli_fetch_array($result1001))
 			{
 				if($fetch1001['productgroup'] == 'TDS')
 					$thismonthtdsnew += $fetch1001['amount'];
@@ -1015,7 +1015,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 
 			$query1061 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation' and  ".$monthsdatepiece1."  group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 			$result1061 = runmysqlquery($query1061);
-			while($fetch1061 = mysql_fetch_array($result1061))
+			while($fetch1061 = mysqli_fetch_array($result1061))
 			{
 				if($fetch1061['productgroup'] == 'TDS')
 					$thismonthtdsupdation += $fetch1061['amount'];
@@ -1039,7 +1039,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 
 			$query1022 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'New' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result1022 = runmysqlquery($query1022);
-			while($fetch1022 = mysql_fetch_array($result1022))
+			while($fetch1022 = mysqli_fetch_array($result1022))
 			{
 				if($fetch1022['productgroup'] == 'TDS')
 					$thisyeartdsnew += $fetch1022['amount'];
@@ -1059,7 +1059,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query1066 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation'  group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 			$result1066 = runmysqlquery($query1066);
-			while($fetch1066 = mysql_fetch_array($result1066))
+			while($fetch1066 = mysqli_fetch_array($result1066))
 			{
 				if($fetch1066['productgroup'] == 'TDS')
 					$thisyeartdsupdation += $fetch1066['amount'];
@@ -1204,10 +1204,10 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		$servicesresultmonth = runmysqlquery($servicesquerymonth);
 		$servicesresulttoday = runmysqlquery($servicesquerytoday);
 		$serviceamounttoday = 0; $serviceamountmonth =0;$serviceamountyear=0;
-		while($sevicesfetchyear = mysql_fetch_array($servicesresultyear))
+		while($sevicesfetchyear = mysqli_fetch_array($servicesresultyear))
 		{
-			$sevicesfetchmonth = mysql_fetch_array($servicesresultmonth);
-			$sevicesfetchtoday =  mysql_fetch_array($servicesresulttoday);
+			$sevicesfetchmonth = mysqli_fetch_array($servicesresultmonth);
+			$sevicesfetchtoday =  mysqli_fetch_array($servicesresulttoday);
 			$servicegrid .= '<tr>';
 			$servicegrid .= '<td nowrap="nowrap"  align="left">'.$sevicesfetchmonth['servicename'].'</td>';
 			$serviceamounttoday += $sevicesfetchtoday['amount'];
@@ -1242,11 +1242,11 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		$addlessresultyear = runmysqlquery($addlessqueryyear);
 		$addlessresultmonth = runmysqlquery($addlessquerymonth);
 		$addlessresulttoday = runmysqlquery($addlessquerytoday);
-		$addlessresultyearcount = mysql_num_rows($addlessresultyear);
-		$addlessfetchmonth = mysql_fetch_array($addlessresultmonth);
+		$addlessresultyearcount = mysqli_num_rows($addlessresultyear);
+		$addlessfetchmonth = mysqli_fetch_array($addlessresultmonth);
 		$differencetoday = 0;$differencemonth =0;$addlessfetchtodayadd =0;$addlessfetchtodayless=0;$addlessfetchmonthadd =0; $addlessfetchmonthless = 0;$addlessfetchyearadd=0; $addlessfetchyearless=0;$differenceyear=0;
 		$differencevalue = 0;
-		while($addlessfetchyear = mysql_fetch_array($addlessresultyear))
+		while($addlessfetchyear = mysqli_fetch_array($addlessresultyear))
 		{
 							
 			if($addlessresultyearcount == 2)	
@@ -1454,7 +1454,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0;
 		$todayyeartilldatetotal = 0;
-		while($fetch4 = mysql_fetch_array($result4))
+		while($fetch4 = mysqli_fetch_array($result4))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -1478,7 +1478,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			$result8 = runmysqlquery($query8); 
 
 
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -1487,7 +1487,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['netamount'] == '')?'0' : $fetch7['netamount'];
@@ -1496,7 +1496,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			{
 				$monthtilldate = 0;
 			}
-			if(mysql_num_rows($result8) > 0)
+			if(mysqli_num_rows($result8) > 0)
 			{
 				$fetch8 = runmysqlqueryfetch($query8);
 				$yeartilldate = ($fetch8['netamount'] == '')?'0' : $fetch8['netamount'];
@@ -1525,7 +1525,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 
 			$query2002 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."' and ".$todaysdatepiece." and purchasetype = 'New' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result2002 = runmysqlquery($query2002);
-			while($fetch2002 = mysql_fetch_array($result2002))
+			while($fetch2002 = mysqli_fetch_array($result2002))
 			{
 				if($fetch2002['productgroup'] == 'TDS')
 					$tdsnew += $fetch2002['amount'];
@@ -1547,7 +1547,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query203 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."' and ".$todaysdatepiece." and purchasetype = 'Updation' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result203 = runmysqlquery($query203);
-			while($fetch203 = mysql_fetch_array($result203))
+			while($fetch203 = mysqli_fetch_array($result203))
 			{
 				if($fetch203['productgroup'] == 'TDS')
 					$tdsupdation += $fetch203['amount'];
@@ -1571,7 +1571,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query1001 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'New'  and ".$monthsdatepiece1." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 			$result1001 = runmysqlquery($query1001);
-			while($fetch1001 = mysql_fetch_array($result1001))
+			while($fetch1001 = mysqli_fetch_array($result1001))
 			{
 				if($fetch1001['productgroup'] == 'TDS')
 					$thismonthtdsnew += $fetch1001['amount'];
@@ -1593,7 +1593,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 
 			$query1011 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation'  and ".$monthsdatepiece1." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result1011 = runmysqlquery($query1011);
-			while($fetch1011 = mysql_fetch_array($result1011))
+			while($fetch1011 = mysqli_fetch_array($result1011))
 			{
 				if($fetch1011['productgroup'] == 'TDS')
 					$thismonthtdsupdation += $fetch1011['amount'];
@@ -1614,7 +1614,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 			
 			$query1055 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'New' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 			$result1055 = runmysqlquery($query1055);
-			while($fetch1055 = mysql_fetch_array($result1055))
+			while($fetch1055 = mysqli_fetch_array($result1055))
 			{
 				if($fetch1055['productgroup'] == 'TDS')
 					$thisyeartdsnew += $fetch1055['amount'];
@@ -1637,7 +1637,7 @@ where inv_invoicenumbers.dealerid = '".$dealerid."' and ".$yeardatepiece." and `
 
 			$query1066 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where dealerid = '".$dealerid."'  and purchasetype = 'Updation'  group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 			$result1066 = runmysqlquery($query1066);
-			while($fetch1066 = mysql_fetch_array($result1066))
+			while($fetch1066 = mysqli_fetch_array($result1066))
 			{
 				if($fetch1066['productgroup'] == 'TDS')
 					$thisyeartdsupdation += $fetch1066['amount'];
@@ -1780,7 +1780,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		$todaymonthtilldatetotal = 0 ;
 		$todayyeartilldatetotal = 0 ;
 		$slno = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$slno++;
 			$tadaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];
@@ -1832,10 +1832,10 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		$servicesresultyear = runmysqlquery($servicesqueryyear);
 		
 		$serviceamounttoday = 0; $serviceamountmonth = 0;$serviceamountyear=0;
-		while($sevicesfetchyear = mysql_fetch_array($servicesresultyear))
+		while($sevicesfetchyear = mysqli_fetch_array($servicesresultyear))
 		{
-			$sevicesfetchmonth = mysql_fetch_array($servicesresultmonth);
-			$sevicesfetchtoday =  mysql_fetch_array($servicesresulttoday);
+			$sevicesfetchmonth = mysqli_fetch_array($servicesresultmonth);
+			$sevicesfetchtoday =  mysqli_fetch_array($servicesresulttoday);
 			$servicegrid .= '<tr>';
 			$servicegrid .= '<td nowrap="nowrap"  align="left">'.$sevicesfetchmonth['servicename'].'</td>';
 			$serviceamounttoday += $sevicesfetchtoday['amount'];
@@ -1869,14 +1869,14 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		  $addlessresulttoday = runmysqlquery($addlessquerytoday);
 		  $addlessresultyear = runmysqlquery($addlessqueryyear);
 		   
-		  $addlessresultyearcount = mysql_num_rows($addlessresultyear);
+		  $addlessresultyearcount = mysqli_num_rows($addlessresultyear);
 		  $differencetoday = 0;$differencemonth =0;$addlessfetchtodayadd =0;$addlessfetchtodayless=0;$addlessfetchmonthadd =0; $addlessfetchmonthless = 0;$addlessfetchyearadd  =0;$addlessfetchyearless=0;$differenceyear=0;
 		  $differencevalue = 0;
-		  while($addlessfetchyear = mysql_fetch_array($addlessresultyear))
+		  while($addlessfetchyear = mysqli_fetch_array($addlessresultyear))
 		  {
 							  
-				$addlessfetchtoday = mysql_fetch_array($addlessresulttoday);
-				$addlessfetchmonth = mysql_fetch_array($addlessresultmonth);
+				$addlessfetchtoday = mysqli_fetch_array($addlessresulttoday);
+				$addlessfetchmonth = mysqli_fetch_array($addlessresultmonth);
 			  if($addlessresultyearcount == 2)	
 			  {	
 				  if($differencevalue == 0)
@@ -2090,7 +2090,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		$query6 = "select ifnull(sum(inv_invoicenumbers.amount),'0') as netamount from inv_invoicenumbers where inv_invoicenumbers.regionid = '".$regionid."' and ".$yeardatepiece." and `status` <> 'CANCELLED'"; 
 		$result6 = runmysqlquery($query6);
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['netamount'] == '')?'0' : $fetch4['netamount'];
@@ -2099,7 +2099,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['netamount'] == '')?'0' : $fetch5['netamount'];
@@ -2108,7 +2108,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		{
 			$monthtilldate = 0;
 		}
-		if(mysql_num_rows($result6) > 0)
+		if(mysqli_num_rows($result6) > 0)
 		{
 			$fetch6 = runmysqlqueryfetch($query6);
 			$yeartilldate = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -2136,7 +2136,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 
 		$query2005 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where regionid = '".$regionid."' and purchasetype = 'New' and  ".$todaysdatepiece." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ; ";
 		$result2005 = runmysqlquery($query2005);
-		while($fetch2005 = mysql_fetch_array($result2005))
+		while($fetch2005 = mysqli_fetch_array($result2005))
 		{
 			if($fetch2005['productgroup'] == 'TDS')
 				$tdsnew += $fetch2005['amount'];
@@ -2158,7 +2158,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		
 		$query2016 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where regionid = '".$regionid."' and purchasetype = 'Updation' and  ".$todaysdatepiece." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group;";
 		$result2016 = runmysqlquery($query2016);
-		while($fetch2016 = mysql_fetch_array($result2016))
+		while($fetch2016 = mysqli_fetch_array($result2016))
 		{
 			if($fetch2016['productgroup'] == 'TDS')
 				$tdsupdation += $fetch2016['amount'];
@@ -2182,7 +2182,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		
 		$query1003 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where regionid = '".$regionid."' and purchasetype = 'New' and  ".$monthsdatepiece1." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 		$result1003 = runmysqlquery($query1003);
-		while($fetch1003 = mysql_fetch_array($result1003))
+		while($fetch1003 = mysqli_fetch_array($result1003))
 		{
 			if($fetch1003['productgroup'] == 'TDS')
 				$thismonthtdsnew += $fetch1003['amount'];
@@ -2209,7 +2209,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		$thismonthsacupdation = 0;*/
 		$query1004 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where regionid = '".$regionid."' and purchasetype = 'Updation' and  ".$monthsdatepiece1." group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 		$result1004 = runmysqlquery($query1004);
-		while($fetch1004 = mysql_fetch_array($result1004))
+		while($fetch1004 = mysqli_fetch_array($result1004))
 		{
 			if($fetch1004['productgroup'] == 'TDS')
 				$thismonthtdsupdation += $fetch1004['amount'];
@@ -2235,7 +2235,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		
 		$query1077 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where regionid = '".$regionid."' and purchasetype = 'New' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 		$result1077 = runmysqlquery($query1077);
-		while($fetch1077 = mysql_fetch_array($result1077))
+		while($fetch1077 = mysqli_fetch_array($result1077))
 		{
 			if($fetch1077['productgroup'] == 'TDS')
 				$thisyeartdsnew += $fetch1077['amount'];
@@ -2256,7 +2256,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 		
 		$query1088 = "select distinct inv_mas_product.group as productgroup, ifnull(invoicedetails.amount,'0') as amount from inv_mas_product left join (select ifnull(sum(amount),'0') as amount, productgroup from invoicedetails where regionid = '".$regionid."' and purchasetype = 'Updation' group by productgroup)as invoicedetails on invoicedetails.productgroup = inv_mas_product.group ;";
 		$result1088 = runmysqlquery($query1088);
-		while($fetch1088 = mysql_fetch_array($result1088))
+		while($fetch1088 = mysqli_fetch_array($result1088))
 		{
 			if($fetch1088['productgroup'] == 'TDS')
 				$thisyeartdsupdation += $fetch1088['amount'];
@@ -2391,7 +2391,7 @@ $thisyearupdationtotal = $thisyeartdsupdation + $thisyearsppupdation + $thisyear
 	$todaynewtotal = 0;
 	$todaymonthtilldatetotal = 0 ;$thisyearsale=0;$todayyeartilldatetotal=0;
 	$slno = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		$slno++;
 		$tadaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];
@@ -2440,10 +2440,10 @@ $thisyearupdationtotal = $thisyeartdsupdation + $thisyearsppupdation + $thisyear
 	$servicesresulttoday = runmysqlquery($servicesquerytoday);
 	$servicesresultmonth = runmysqlquery($servicesquerymonth);
 	$servicesresultyear = runmysqlquery($servicesqueryyear);
-	while($sevicesfetchyear = mysql_fetch_array($servicesresultyear))
+	while($sevicesfetchyear = mysqli_fetch_array($servicesresultyear))
 	{
-		$sevicesfetchmonth = mysql_fetch_array($servicesresultmonth);
-		$sevicesfetchtoday =  mysql_fetch_array($servicesresulttoday);
+		$sevicesfetchmonth = mysqli_fetch_array($servicesresultmonth);
+		$sevicesfetchtoday =  mysqli_fetch_array($servicesresulttoday);
 		$servicegrid .= '<tr>';
 		$servicegrid .= '<td nowrap="nowrap"  align="left">'.$sevicesfetchyear['servicename'].'</td>';
 		$serviceamounttoday += $sevicesfetchtoday['amount'];
@@ -2478,13 +2478,13 @@ $thisyearupdationtotal = $thisyeartdsupdation + $thisyearsppupdation + $thisyear
 	$addlessresultmonth = runmysqlquery($addlessquerymonth);
 	$addlessresulttoday = runmysqlquery($addlessquerytoday);
 	$addlessresultyear = runmysqlquery($addlessqueryyear);
-	$addlessresultyearcount = mysql_num_rows($addlessresultyear);
+	$addlessresultyearcount = mysqli_num_rows($addlessresultyear);
 	$differencetoday = 0;$differencemonth =0;$addlessfetchtodayadd =0;$addlessfetchtodayless=0;$addlessfetchmonthadd =0; $addlessfetchmonthless = 0;
 	$differencevalue = 0;$differenceyear=0; $addlessfetchyearless=0;$addlessfetchyearadd=0;
-	while($addlessfetchyear  = mysql_fetch_array($addlessresultyear))
+	while($addlessfetchyear  = mysqli_fetch_array($addlessresultyear))
 	{
-		$addlessfetchtoday = mysql_fetch_array($addlessresulttoday);
-		$addlessfetchmonth = mysql_fetch_array($addlessresultmonth);
+		$addlessfetchtoday = mysqli_fetch_array($addlessresulttoday);
+		$addlessfetchmonth = mysqli_fetch_array($addlessresultmonth);
 		if($addlessresultyearcount == 2)	
 		{	
 			if($differencevalue == 0)

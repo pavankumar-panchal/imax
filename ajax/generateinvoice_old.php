@@ -234,7 +234,7 @@ function getstartnumbernew($state_info)
 	$k;
 	$descriptioncount = 0;
 	$k=0;
-	while($carddetailsfetch = mysql_fetch_array($carddetailsresult))
+	while($carddetailsfetch = mysqli_fetch_array($carddetailsresult))
 	{
 		$slno++;
 		if($carddetailsfetch['purchasetype'] == 'new')
@@ -328,7 +328,7 @@ LEFT JOIN inv_mas_product ON inv_mas_product.productcode = inv_dealercard.produc
 WHERE inv_dealercard.invoiceid='".$onlineinvoiceno_new."'";
 
 	$result5 = runmysqlquery($query0);
-	while($fetch5 = mysql_fetch_array($result5))
+	while($fetch5 = mysqli_fetch_array($result5))
 	{
 	    $query7 = "SELECT subgroup,count(subgroup) as subgroupcount FROM inv_dealercard LEFT JOIN inv_mas_product ON inv_mas_product.productcode = inv_dealercard.productcode 
                     WHERE inv_dealercard.invoiceid='".$onlineinvoiceno_new."' and subgroup = '".$fetch5['subgroup']."' group by subgroup";

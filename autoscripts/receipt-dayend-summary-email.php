@@ -52,7 +52,7 @@
 	$query = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid from inv_mas_dealer where inv_mas_dealer.disablelogin = 'no' and inv_mas_dealer.enablebilling = 'yes' order by slno";
 	$result = runmysqlquery($query);
 	$cnt = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		$cnt++;
 		$dealerid = $fetch['slno'];
@@ -98,7 +98,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 		$thisyearnewtotal = 0;
 		$thisseenunmatchedtotal = 0;
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['receiptamount'] == '')?'0' : $fetch4['receiptamount'];
@@ -107,7 +107,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['receiptamount'] == '')?'0' : $fetch5['receiptamount'];
@@ -115,7 +115,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 		else
 			$monthtilldate = 0;
 			
-		if(mysql_num_rows($result6) > 0)
+		if(mysqli_num_rows($result6) > 0)
 		{
 			$fetch6 = runmysqlqueryfetch($query6);
 			$yeartilldate = ($fetch6['receiptamount'] == '')?'0' : $fetch6['receiptamount'];
@@ -123,7 +123,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 		else
 			$yeartilldate = 0;
 			
-		if(mysql_num_rows($result7) > 0)
+		if(mysqli_num_rows($result7) > 0)
 		{
 			$fetch7 = runmysqlqueryfetch($query7);
 			$thisseenunmatchedtotal = ($fetch7['receiptamount'] == '')?'0' : $fetch7['receiptamount'];
@@ -200,7 +200,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 	$result4 = runmysqlquery($query4);
 	
 	
-	while($fetch4 = mysql_fetch_array($result4))
+	while($fetch4 = mysqli_fetch_array($result4))
 	{
 		$todaynew = 0;
 		$monthtilldate = 0;
@@ -226,7 +226,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 		//Write the header Row of the table
 		$branchgrid .= '<tr style=" background-color:#b2cffe"><td nowrap="nowrap" width = "10%" align="center">Sl No</td><td nowrap="nowrap" width = "50%" align="center">Name</td><td nowrap="nowrap" width = "20%" align="center">Day Collection</td><td nowrap="nowrap"  width = "20%" align="center">Month to Date</td><td nowrap="nowrap"  width = "20%" align="center">Year to Date</td><td nowrap="nowrap"  align="center" width = "25%">Unmatched</td></tr>';
 		
-		while($fetch5 = mysql_fetch_array($result5))
+		while($fetch5 = mysqli_fetch_array($result5))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -257,7 +257,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			$result9 = runmysqlquery($query9); 
 			
 			
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['receiptamount'] == '')?'0' : $fetch6['receiptamount'];
@@ -266,7 +266,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['receiptamount'] == '')?'0' : $fetch7['receiptamount'];
@@ -275,7 +275,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			{
 				$monthtilldate = 0;
 			}
-			if(mysql_num_rows($result8) > 0)
+			if(mysqli_num_rows($result8) > 0)
 			{
 				$fetch8 = runmysqlqueryfetch($query8);
 				$yeartilldate = ($fetch8['receiptamount'] == '')?'0' : $fetch8['receiptamount'];
@@ -284,7 +284,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			{
 				$yeartilldate = 0;
 			}
-			if(mysql_num_rows($result9) > 0)
+			if(mysqli_num_rows($result9) > 0)
 			{
 				$fetch9 = runmysqlqueryfetch($query9);
 				$notseenunmatched = ($fetch9['receiptamount'] == '')?'0' : $fetch9['receiptamount'];
@@ -395,7 +395,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 		$notseenunmatched = 0;
 		$notseenunmatchedtotalall = 0;
 		
-		while($fetch4 = mysql_fetch_array($result4))
+		while($fetch4 = mysqli_fetch_array($result4))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -430,7 +430,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			$result9 = runmysqlquery($query9); 
 
 
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['receiptamount'] == '')?'0' : $fetch6['receiptamount'];
@@ -439,7 +439,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['receiptamount'] == '')?'0' : $fetch7['receiptamount'];
@@ -448,7 +448,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			{
 				$monthtilldate = 0;
 			}
-			if(mysql_num_rows($result8) > 0)
+			if(mysqli_num_rows($result8) > 0)
 			{
 				$fetch8 = runmysqlqueryfetch($query8);
 				$yeartilldate = ($fetch8['receiptamount'] == '')?'0' : $fetch8['receiptamount'];
@@ -457,7 +457,7 @@ where  inv_invoicenumbers.dealerid = '".$dealerid."' and (inv_mas_receipt.recons
 			{
 				$yeartilldate = 0;
 			}
-			if(mysql_num_rows($result9) > 0)
+			if(mysqli_num_rows($result9) > 0)
 			{
 				$fetch9 = runmysqlqueryfetch($query9);
 				$notseenunmatched = ($fetch9['receiptamount'] == '')?'0' : $fetch9['receiptamount'];
@@ -538,7 +538,7 @@ notseenunmatch.branchid = inv_mas_branch.slno
 		$notseenunmatched = 0;
 		$notseenunmatchedtotalall = 0;
 		$slno = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$slno++;
 			$todaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];
@@ -663,7 +663,7 @@ from inv_mas_receipt left join inv_invoicenumbers on inv_invoicenumbers.slno = i
 from inv_mas_receipt left join inv_invoicenumbers on inv_invoicenumbers.slno = inv_mas_receipt.invoiceno where inv_invoicenumbers.regionid = '".$regionid."' and (inv_mas_receipt.reconsilation = 'notseen' or inv_mas_receipt.reconsilation = 'unmatched') and ".$yeardatepiece." and inv_invoicenumbers.`status` <> 'CANCELLED' and inv_mas_receipt.`status` <> 'CANCELLED'"; 
 		$result7 = runmysqlquery($query7);
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['receiptamount'] == '')?'0' : $fetch4['receiptamount'];
@@ -672,7 +672,7 @@ from inv_mas_receipt left join inv_invoicenumbers on inv_invoicenumbers.slno = i
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['receiptamount'] == '')?'0' : $fetch5['receiptamount'];
@@ -681,7 +681,7 @@ from inv_mas_receipt left join inv_invoicenumbers on inv_invoicenumbers.slno = i
 		{
 			$monthtilldate = 0;
 		}
-		if(mysql_num_rows($result6) > 0)
+		if(mysqli_num_rows($result6) > 0)
 		{
 			$fetch6 = runmysqlqueryfetch($query6);
 			$yeartilldate = ($fetch6['receiptamount'] == '')?'0' : $fetch6['receiptamount'];
@@ -690,7 +690,7 @@ from inv_mas_receipt left join inv_invoicenumbers on inv_invoicenumbers.slno = i
 		{
 			$yeartilldate = 0;
 		}
-		if(mysql_num_rows($result7) > 0)
+		if(mysqli_num_rows($result7) > 0)
 		{
 			$fetch7 = runmysqlqueryfetch($query7);
 			$notseenunmatched = ($fetch7['receiptamount'] == '')?'0' : $fetch7['receiptamount'];
@@ -763,7 +763,7 @@ order by inv_mas_branch.branchname;";
 	$todaynewtotal = 0;
 	$todaymonthtilldatetotal = 0 ;$thisyearsale=0;$todayyeartilldatetotal=0;
 	$slno = 0;$notseenunmatched = 0;$notseenunmatchedtotalall = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		$slno++;
 		$tadaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];

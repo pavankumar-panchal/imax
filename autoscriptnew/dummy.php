@@ -31,7 +31,7 @@ $result = runmysqlquery($query);
 	$result2 = runmysqlquery($query2);
 	$count = 0;
 	$totalamount = 0;
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;
@@ -105,7 +105,7 @@ $result = runmysqlquery($query);
 	$query = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid from inv_mas_dealer  order by slno ";
 	$result = runmysqlquery($query);
 	$cnt = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		
 		$cnt++;
@@ -135,7 +135,7 @@ where invoicedetails.dealerid = '".$dealerid."' and left(invoicedetails.invoiced
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0;
 		
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['netamount'] == '')?'0' : $fetch4['netamount'];
@@ -144,7 +144,7 @@ where invoicedetails.dealerid = '".$dealerid."' and left(invoicedetails.invoiced
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['netamount'] == '')?'0' : $fetch5['netamount'];

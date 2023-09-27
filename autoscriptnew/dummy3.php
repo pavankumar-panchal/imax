@@ -45,7 +45,7 @@
 	$result2 = runmysqlquery($query2);
 	$count = 0;
 	$totalamount = 0;
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;
@@ -148,7 +148,7 @@
 		/*if($regionid == '2')
 		{
 			echo($query5); exit;}*/
-		if(mysql_num_rows($result4) > 0)
+		if(mysqli_num_rows($result4) > 0)
 		{
 			$fetch4 = runmysqlqueryfetch($query4);
 			$todaynew = ($fetch4['netamount'] == '')?'0' : $fetch4['netamount'];
@@ -157,7 +157,7 @@
 		{
 			$todaynew = 0;
 		}
-		if(mysql_num_rows($result5) > 0)
+		if(mysqli_num_rows($result5) > 0)
 		{
 			$fetch5 = runmysqlqueryfetch($query5);
 			$monthtilldate = ($fetch5['netamount'] == '')?'0' : $fetch5['netamount'];
@@ -398,7 +398,7 @@ left join(select branchid,branch,sum(amount) as netamount from inv_invoicenumber
 	$todaynewtotal = 0;
 	$todaymonthtilldatetotal = 0 ;
 	$slno = 0;
-	while($fetch = mysql_fetch_array($result))
+	while($fetch = mysqli_fetch_array($result))
 	{
 		$slno++;
 		$tadaysale = ($fetch['todaysales'] == '')? '0' : $fetch['todaysales'];

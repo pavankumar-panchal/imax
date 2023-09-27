@@ -26,7 +26,7 @@ include("../functions/phpfunctions.php");
 	$result2 = runmysqlquery($query2);
 	$count = 0;
 	$totalamount = 0;
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;

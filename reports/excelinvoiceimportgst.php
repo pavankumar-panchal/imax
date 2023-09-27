@@ -52,9 +52,9 @@ elseif($flag == 'true')
 				$dealerquery = "select * from inv_dealer_invoicenumbers where inv_dealer_invoicenumbers.invoiceno BETWEEN '".$frominvoicenonew."' AND '".$toinvoicenonew."' and (inv_dealer_invoicenumbers.dealerreference!= 'NULL' or inv_dealer_invoicenumbers.dealerreference!='') and invoice_type ='".$frominvoicetype."' and state_info ='".$fromstatetype."' order by inv_dealer_invoicenumbers.slno;";
 			//exit;
 			$dealerresult = runmysqlquery($dealerquery);
-			if(mysql_num_rows($dealerresult) <> 0)
+			if(mysqli_num_rows($dealerresult) <> 0)
 			{
-				while($dealerfetch = mysql_fetch_array($dealerresult))
+				while($dealerfetch = mysqli_fetch_array($dealerresult))
 				{
 					$itemdetail1="";
 					$itemdetail3="";
@@ -266,7 +266,7 @@ elseif($flag == 'true')
 							$productcodesplit[$i]."';";
 							
 							$resultfetch_group_result = runmysqlquery($query_group);
-							$resultfetch_group=mysql_fetch_array($resultfetch_group_result);
+							$resultfetch_group=mysqli_fetch_array($resultfetch_group_result);
 							if($resultfetch_group['subgroup']!="")
 							{
 								$group=$resultfetch_group['subgroup'];	
@@ -384,13 +384,13 @@ elseif($flag == 'true')
 	 
 				//$query = "select * from inv_invoicenumbers where slno = '43';";	
 				$result = runmysqlquery($query);
-				//$fetch = mysql_fetch_array($result);
+				//$fetch = mysqli_fetch_array($result);
 				//var_dump($fetch);
 				//exit;
 		
-				if(mysql_num_rows($result) <> 0)
+				if(mysqli_num_rows($result) <> 0)
 				{
-						while($fetch = mysql_fetch_array($result))
+						while($fetch = mysqli_fetch_array($result))
 						{
 							
 							$itemdetail1="";
@@ -675,7 +675,7 @@ elseif($flag == 'true')
 									else
 										$query_group = "select  inv_mas_matrixproduct.group as subgroup from inv_mas_matrixproduct where id = '".$productcodesplit[$i]."';";
 									$resultfetch_group_result = runmysqlquery($query_group);
-									$resultfetch_group=mysql_fetch_array($resultfetch_group_result);
+									$resultfetch_group=mysqli_fetch_array($resultfetch_group_result);
 									if($resultfetch_group['subgroup']!="")
 									{
 										if($toinvoicetype == "R")
@@ -890,7 +890,7 @@ function contactdetails($customerid)
 	$query1 ="SELECT customerid,contactperson,selectiontype,phone,cell,emailid,slno from inv_contactdetails where customerid = '".substr($customerid,15,5)."'; ";
 	$resultfetch = runmysqlquery($query1);
 	$valuecount = 0;
-	while($fetchres = mysql_fetch_array($resultfetch))
+	while($fetchres = mysqli_fetch_array($resultfetch))
 	{
 		if($valuecount > 0)
 		{

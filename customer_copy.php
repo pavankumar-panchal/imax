@@ -122,7 +122,7 @@ switch($switchtype)
 			
 			$query5 = 'SELECT * from inv_contactdetails WHERE customerid = "'.$lastslno.'"';
 			$result = runmysqlquery($query5);
-			while($fetchres = mysql_fetch_array($result))
+			while($fetchres = mysqli_fetch_array($result))
 			{
 				if($fetchres['selectiontype'] <> '')
 					$appendedtype = ',';
@@ -245,7 +245,7 @@ switch($switchtype)
 				$query11 ="SELECT customerid,contactperson,selectiontype,phone,cell,emailid,slno from inv_contactdetails where customerid = '".$lastslno."'; ";
 				$resultfetch = runmysqlquery($query11);
 				$valuecount1 = 0;$valuecount2 = 0;
-				while($fetchres = mysql_fetch_array($resultfetch))
+				while($fetchres = mysqli_fetch_array($resultfetch))
 				{
 					if($valuecount1 > 0)
 						$oldcontactarray .= '****';
@@ -550,7 +550,7 @@ where inv_customerproduct.customerreference IS NOT NULL and inv_mas_customer.bus
 
 			$searchcustomerlistarray = array();
 			$count = 0;
-			while($fetch = mysql_fetch_array($result))
+			while($fetch = mysqli_fetch_array($result))
 			{
 				$searchcustomerlistarray[$count] = $fetch['businessname'].'^'.$fetch['slno'];
 				$count++;
@@ -569,7 +569,7 @@ where inv_customerproduct.customerreference IS NOT NULL and inv_mas_customer.bus
 		$result = runmysqlquery($query);
 		$grid = '';
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$customerarray[$count] = $fetch['businessname'].'^'.$fetch['slno'];
 			$count++;
@@ -583,7 +583,7 @@ where inv_customerproduct.customerreference IS NOT NULL and inv_mas_customer.bus
 		$responsearray3 = array();
 		$query = "SELECT slno,businessname,customerid FROM inv_mas_customer ORDER BY businessname";
 		$result = runmysqlquery($query);
-		$count = mysql_num_rows($result);
+		$count = mysqli_num_rows($result);
 		$responsearray3['count'] = $count;
 		echo(json_encode($responsearray3));
 	}
@@ -618,7 +618,7 @@ where inv_customerproduct.customerreference IS NOT NULL and inv_mas_customer.bus
 			$query1 ="SELECT customerid,contactperson,selectiontype,phone,cell,emailid,slno from inv_contactdetails where customerid = '".$lastslno."'; ";
 			$resultfetch = runmysqlquery($query1);
 			$valuecount = 0;
-			while($fetchres = mysql_fetch_array($resultfetch))
+			while($fetchres = mysqli_fetch_array($resultfetch))
 			{
 				if($valuecount > 0)
 					$contactarray .= '****';
@@ -673,7 +673,7 @@ on registrations.registrations = groups.group order by groups.group desc"; //ech
 			</td>';
   			$grid .= '</tr>';
 			$i_n = 0;
-			while($fetch2 = mysql_fetch_array($result2))
+			while($fetch2 = mysqli_fetch_array($result2))
 			{
 				$i_n++;
 				$slno++;
@@ -833,7 +833,7 @@ on registrations.registrations = groups.group order by groups.group desc"; //ech
 			$query1 ="SELECT customerid,contactperson,selectiontype,phone,cell,emailid,slno from inv_contactdetails where customerid = '".$lastcustomerid."'; ";
 			$resultfetch = runmysqlquery($query1);
 			$valuecount = 0;
-			while($fetchres = mysql_fetch_array($resultfetch))
+			while($fetchres = mysqli_fetch_array($resultfetch))
 			{
 				if($valuecount > 0)
 					$contactarray .= '****';
@@ -885,7 +885,7 @@ on registrations.registrations = groups.group order by groups.group desc";
 			</td>';
   			$grid .= '</tr>';
 			$i_n = 0;
-			while($fetch2 = mysql_fetch_array($result2))
+			while($fetch2 = mysqli_fetch_array($result2))
 			{
 				$i_n++;
 				$slno++;
@@ -1036,7 +1036,7 @@ on registrations.registrations = groups.group order by groups.group desc";
 			$query1 ="SELECT customerid,contactperson,selectiontype,phone,cell,emailid,slno from inv_contactdetails where customerid = '".$fetch['slno']."'; ";
 			$resultfetch = runmysqlquery($query1);
 			$valuecount = 0;
-			while($fetchres = mysql_fetch_array($resultfetch))
+			while($fetchres = mysqli_fetch_array($resultfetch))
 			{
 				if($valuecount > 0)
 					$contactarray .= '****';
@@ -1091,7 +1091,7 @@ on registrations.registrations = groups.group order by groups.group desc";
 			</td>';
   			$grid .= '</tr>';
 			$i_n = 0;
-			while($fetch2 = mysql_fetch_array($result2))
+			while($fetch2 = mysqli_fetch_array($result2))
 			{
 				$i_n++;
 				$slno++;
@@ -1293,7 +1293,7 @@ on registrations.registrations = groups.group order by groups.group desc";
 		$lastslno = $_POST['lastslno'];
 		$resultcount = "SELECT inv_mas_product.productname as productname FROM inv_customerproduct left join inv_mas_product on left(inv_customerproduct.computerid, 3) = inv_mas_product.productcode left join inv_mas_users on inv_customerproduct.generatedby = inv_mas_users.slno left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  where inv_customerproduct.AUTOREGISTRATIONYN = 'N' and customerreference = '".$lastslno."' order by `date`  desc,`time` desc ; ";
 		$resultfetch = runmysqlquery($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -1324,7 +1324,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_row($result))
+		while($fetch = mysqli_fetch_row($result))
 		{
 			$i_n++;
 			$slno++;
@@ -1350,7 +1350,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  
 		}
 		$grid .= "</table>";
 
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 		$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font><div></div></td></tr></table>';
 		else
@@ -1376,7 +1376,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno  
 		left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno 
 		where inv_customerproduct.AUTOREGISTRATIONYN = 'Y' and customerreference = '".$lastslno."' order by `date`  desc,`time` desc ; ";
 		$resultfetch = runmysqlquery($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -1421,7 +1421,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$i_n++;
 			$slno++;
@@ -1458,7 +1458,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 			$grid .= "</tr>";
 			
 		}
-		/*while($fetch = mysql_fetch_row($result))
+		/*while($fetch = mysqli_fetch_row($result))
 		{
 			$i_n++;
 			$slno++;
@@ -1498,7 +1498,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		}*/
 		$grid .= "</table>";
 
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 		$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font><div></div></td></tr></table>';
 		else
@@ -1615,7 +1615,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 					{
 						$query ="select * from inv_mas_scratchcard where cardid = '".$cardid."' and blocked = 'yes'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2 ^Pin is blocked';
 					}
 					
@@ -1623,7 +1623,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 					{
 						$query ="select * from inv_mas_scratchcard where cardid = '".$cardid."' and attached = 'yes' and blocked = 'no'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2 ^Invalid pin';
 					}
 								
@@ -1632,7 +1632,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						//Card No is not registered
 						$query ="select * from inv_mas_scratchcard where cardid = '".$cardid."' and registered = 'no'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2^ This pin is already registered';
 					}
 					if($errorfound == "")
@@ -1640,12 +1640,12 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						//Product code is the same, attached with Card
 						$query ="select inv_mas_scratchcard.scratchnumber, inv_dealercard.dealerid, inv_dealercard.scheme as cardscheme from inv_mas_scratchcard left join inv_dealercard on inv_mas_scratchcard.cardid = inv_dealercard.cardid where inv_mas_scratchcard.cardid = '".$cardid."' and inv_dealercard.productcode = '".$productcode."'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2^ This Card belongs to a different Product.';
 						//Read the card ID, dealer ID
 						else
 						{
-							$fetch = mysql_fetch_array($result);
+							$fetch = mysqli_fetch_array($result);
 							$scratchnumber = $fetch['scratchnumber'];
 							$cardscheme = $fetch['cardscheme'];
 						}
@@ -1659,14 +1659,14 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						{
 							$query ="select * from inv_mas_scratchcard left join inv_dealercard on inv_mas_scratchcard.cardid = inv_dealercard.cardid where inv_mas_scratchcard.cardid = '".$cardid."' and (inv_dealercard.usagetype = 'singleuser' OR inv_dealercard.usagetype = 'additionallicense')";
 							$result = runmysqlquery($query);
-							if(mysql_num_rows($result) == 0)
+							if(mysqli_num_rows($result) == 0)
 							$errorfound = '2^ This Card belongs to a Multiuser.';
 						}
 						elseif($computeridusagetype == '09')
 						{
 							$query ="select * from inv_mas_scratchcard left join inv_dealercard on inv_mas_scratchcard.cardid = inv_dealercard.cardid where inv_mas_scratchcard.cardid = '".$cardid."' and (inv_dealercard.usagetype = 'multiuser')";
 							$result = runmysqlquery($query);
-							if(mysql_num_rows($result) == 0)
+							if(mysqli_num_rows($result) == 0)
 							$errorfound = '2^ This Card belongs to Single User or Additonal License.';
 						}
 
@@ -1687,11 +1687,11 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						$sendcustomeridpassword = "";
 						$query22 = "Select * from inv_mas_customer where slno ='".$customerid."' and customerid = ''; ";
 						$fetchresult = runmysqlquery($query22);
-						if(mysql_num_rows($fetchresult) <> 0)
+						if(mysqli_num_rows($fetchresult) <> 0)
 						{
 							$query1 = "Select * from inv_customerproduct where customerreference = '".$customerid."'";
 							$result = runmysqlquery($query1);
-							if(mysql_num_rows($result) == 0)
+							if(mysqli_num_rows($result) == 0)
 							{
 								$newcustomerid = generatecustomerid($customerid,$productcode,$delaerrep);
 								$password = generatepwd();
@@ -1793,7 +1793,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 					{
 						$query ="select * from inv_mas_scratchcard where cardid = '".$cardid."' and attached = 'yes' and blocked = 'no'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2 ^Invalid pin';
 					}
 					if($errorfound == "")
@@ -1801,7 +1801,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						//Card No is not registered
 						$query ="select * from inv_mas_scratchcard where cardid = '".$cardid."' and registered = 'no'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2^ This pin is already registered';
 					}
 					if($errorfound == "")
@@ -1809,12 +1809,12 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						//Product code is the same, attached with Card
 						$query ="select inv_mas_scratchcard.scratchnumber, inv_dealercard.dealerid from inv_mas_scratchcard left join inv_dealercard on inv_mas_scratchcard.cardid = inv_dealercard.cardid where inv_mas_scratchcard.cardid = '".$cardid."' and inv_dealercard.productcode = '".$productcode."'";
 						$result = runmysqlquery($query);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						$errorfound = '2^ This Card belongs to a different Product.';
 						//Read the card ID, dealer ID
 						else
 						{
-							$fetch = mysql_fetch_array($result);
+							$fetch = mysqli_fetch_array($result);
 							$scratchnumber = $fetch['scratchnumber'];
 						}
 					}
@@ -1823,11 +1823,11 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						//check if card is attached to the customer
 						$query012 ="select * from inv_dealercard where cardid = '".$cardid."' and (customerreference = '' or customerreference IS NULL);";
 						$result = runmysqlquery($query012);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						{
 							$query013 ="select * from inv_dealercard where cardid = '".$cardid."' and customerreference = '".$customerid."';";
 							$result1 = runmysqlquery($query013);
-							if(mysql_num_rows($result1) == 0)
+							if(mysqli_num_rows($result1) == 0)
 								$errorfound = '2^ This Card belongs to a different Customer';
 						}
 					}
@@ -1840,14 +1840,14 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 						{
 							$query ="select * from inv_mas_scratchcard left join inv_dealercard on inv_mas_scratchcard.cardid = inv_dealercard.cardid where inv_mas_scratchcard.cardid = '".$cardid."' and (inv_dealercard.usagetype = 'singleuser' OR inv_dealercard.usagetype = 'additionallicense')";
 							$result = runmysqlquery($query);
-							if(mysql_num_rows($result) == 0)
+							if(mysqli_num_rows($result) == 0)
 							$errorfound = '2^ This Card belongs to a Multiuser.';
 						}
 						elseif($computeridusagetype == '09')
 						{
 							$query ="select * from inv_mas_scratchcard left join inv_dealercard on inv_mas_scratchcard.cardid = inv_dealercard.cardid where inv_mas_scratchcard.cardid = '".$cardid."' and (inv_dealercard.usagetype = 'multiuser')";
 							$result = runmysqlquery($query);
-							if(mysql_num_rows($result) == 0)
+							if(mysqli_num_rows($result) == 0)
 							$errorfound = '2^ This Card belongs to Single User or Additonal License.';
 						}
 
@@ -1867,11 +1867,11 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 							//If this is the first registration for this customer, generate customerid, update it to customer master and send welcome email
 						$query22 = "Select * from inv_mas_customer where slno ='".$customerid."' and customerid = ''; ";
 						$fetchresult = runmysqlquery($query22);
-						if(mysql_num_rows($fetchresult) <> 0)
+						if(mysqli_num_rows($fetchresult) <> 0)
 						{
 							$query1 = "Select * from inv_customerproduct where customerreference = '".$customerid."'";
 							$result = runmysqlquery($query1);
-							if(mysql_num_rows($result) == 0)
+							if(mysqli_num_rows($result) == 0)
 							{
 								$newcustomerid = generatecustomerid($customerid,$productcode,$delaerrep);
 								$password = generatepwd();
@@ -2004,7 +2004,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 					//Check if product is there in the Product master
 					$query = "SELECT `type` as prdtype FROM inv_mas_product WHERE productcode = '".$computeridedition."'";
 					$result = runmysqlquery($query);
-					if(mysql_num_rows($result) == 0)
+					if(mysqli_num_rows($result) == 0)
 					$errorfound = '2^ The Product code ('.$computeridedition.') is not defined in Product Master.';
 				}
 
@@ -2014,11 +2014,11 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 					$query22 = "Select * from inv_mas_customer where slno ='".$customerid."' and customerid = ''; ";
 
 					$fetchresult = runmysqlquery($query22);
-					if(mysql_num_rows($fetchresult) <> 0)
+					if(mysqli_num_rows($fetchresult) <> 0)
 					{
 						$query1 = "Select * from inv_customerproduct where customerreference = '".$customerid."'";
 						$result = runmysqlquery($query1);
-						if(mysql_num_rows($result) == 0)
+						if(mysqli_num_rows($result) == 0)
 						{
 							$password = generatepwd();
 							$newcustomerid = generatecustomerid($customerid,$computeridedition,$delaerrep);
@@ -2096,7 +2096,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		$result = runmysqlquery($query);
 		$grid .='<select name="searchscratchnumber" class="swiftselect-mandatory" id="searchscratchnumber" onchange ="scratchdetailstoform(document.getElementById(\'searchscratchnumber\').value)">';
 		$grid .= '<option value="">Select A Scratch Card</option>';
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$grid .=	'<option value="'.$fetch['cardid'].'">'.$fetch['scratchnumber'].'</option>';
 		}
@@ -2164,7 +2164,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 	  left join inv_mas_customer on  inv_dealercard.customerreference = inv_mas_customer.slno 
 	  where inv_dealercard.cardid = '".$cardlastslno."'";
 		$results = runmysqlquery($query);
-		$fetch = mysql_fetch_array($results);
+		$fetch = mysqli_fetch_array($results);
 		//$fetch = runmysqlqueryfetch($query);
 		if($fetch['purchasetype'] == '' && $fetch['usagetype'] == ''  && $fetch['attachedto'] == '' && $fetch['dealerid'] == '' && $fetch['productcode'] == '' && $fetch['productname'] == '' && $fetch['registereddate'] == ''&& $fetch['attachdate'] == '' && $fetch['registeredto'] == '' && $fetch['remarks'] == '')
 		{
@@ -2226,7 +2226,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		$result = runmysqlquery($query);
 		$grid = '';
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$cardarray[$count] =  $fetch['scratchnumber'].' | '.$fetch['cardid'].'^'.$fetch['cardid'];
 			$count++;
@@ -2265,7 +2265,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		inv_mas_product.newproduct!= 1";
 		$result = runmysqlquery($query);
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 
 			$newregcardlistarray[$count] =  $fetch['scratchnumber'].' | '.$fetch['cardid'].'^'.$fetch['cardid'];
@@ -2280,7 +2280,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		$newregcardlistarray = array();
 		$query = "select * from inv_mas_scratchcard left join inv_dealercard on inv_dealercard.cardid = inv_mas_scratchcard.cardid where attached = 'yes' and registered = 'no' and blocked = 'no' and inv_dealercard.purchasetype = 'new' and inv_dealercard.customerreference=".$_POST['custslno']." and inv_mas_scratchcard.scratchnumber='".$_POST['pin']."';";
 		$result = runmysqlquery($query);
-		$count = mysql_num_rows($result);
+		$count = mysqli_num_rows($result);
 		if($count==1)
 		{
 			$newregcardlistarray="1^Valid PIN";
@@ -2311,7 +2311,7 @@ left join inv_mas_dealer on inv_customerproduct.dealerid = inv_mas_dealer.slno w
 		inv_mas_product.newproduct = 1 and inv_dealercard.customerreference =".$_POST['custslno'];
 		$result = runmysqlquery($query);
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 
 			$newregcardlistarray[$count] =  $fetch['scratchnumber'].' | '.$fetch['cardid'].'^'.$fetch['cardid'];
@@ -2353,7 +2353,7 @@ where inv_customerproduct.customerreference = '".$lastslno."'";*/
 		$result = runmysqlquery($query);
 		$grid = '';
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$reregcardlistarray[$count] =  $fetch['scratchnumber'].' | '.$fetch['cardid'].'^'.$fetch['cardid'];
 			$count++;
@@ -2376,7 +2376,7 @@ and inv_dealercard.productcode <> 690 and inv_dealercard.productcode <> 643 and 
 		$result = runmysqlquery($query);
 		$grid = '';
 		$count = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$updationcardlist[$count] .=  $fetch['scratchnumber'].' | '.$fetch['cardid'].'^'.$fetch['cardid'];
 			$count++;
@@ -2429,7 +2429,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 		</tr>';
 		$i_n = 0;$slno = 0;
 		$result = runmysqlquery($query);
-		while($fetch = mysql_fetch_row($result))
+		while($fetch = mysqli_fetch_row($result))
 		{
 			$i_n++;$slno++;
 			$color;
@@ -2487,7 +2487,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 		
 		$query2 = "select * from inv_surrenderproduct where refslno = '".$refslno."'";
 		$resultfetch = runmysqlquery($query2);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 
 		$grid = '<table width="100%" cellpadding="3" cellspacing="0" class="table-border-grid">';
 		$grid .= '<tr class="tr-grid-header">
@@ -2542,7 +2542,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 			and getPINNo(inv_customerproduct.cardid)= '".$PIN."' order by inv_surrenderproduct.slno desc";	
 			$result = runmysqlquery($query);
 		
-		while($fetch = mysql_fetch_row($result))
+		while($fetch = mysqli_fetch_row($result))
 		{
 			$i_n++;$slno++;
 			$color;
@@ -2705,7 +2705,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 		$resultcount = "select customerid,registeredname,inv_mas_product.productname,pinnumber,computerid,productversion,operatingsystem,processor,`date`,servicename from inv_logs_webservices 
 		left join inv_mas_product on inv_mas_product.productcode = left(inv_logs_webservices.computerid,3) where right(customerid,5) = '".$lastslno."' order by `date`  desc; ";
 		$resultfetch = runmysqlquery_old($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -2729,7 +2729,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_row($result))
+		while($fetch = mysqli_fetch_row($result))
 		{
 			$i_n++;
 			$slno++;
@@ -2752,7 +2752,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 		}
 		$grid .= "</table>";
 
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 		$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font><div></div></td></tr></table>';
 		else
@@ -2774,7 +2774,7 @@ from inv_dealercard left join inv_mas_scratchcard on inv_dealercard.cardid =inv_
 		$resultcount = "select customerid,businessname,contactperson,description,invoiceno,dealername,createddate,amount,servicetax,netamount,purchasetype
 from inv_invoicenumbers where customerid = '".$customerref."'order by createddate  desc; ";
 		$resultfetch = runmysqlquery($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -2799,7 +2799,7 @@ from inv_invoicenumbers where customerid = '".$customerref."'order by createddat
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$i_n++;
 			$slno++;
@@ -2835,7 +2835,7 @@ from inv_invoicenumbers where customerid = '".$customerref."'order by createddat
 		}
 		$grid .= "</table>";
 
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 		$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font><div></div></td></tr></table>';
 		else
@@ -2885,7 +2885,7 @@ from inv_invoicenumbers where customerid = '".$customerref."'order by createddat
 		$lastslno = $_POST['lastslno'];
 		$resultcount = "select inv_customeralerts.subject,inv_customeralerts.content from inv_customeralerts where customerreference = '".$lastslno."' order by entereddate desc; ";
 		$resultfetch = runmysqlquery($resultcount);
-		$fetchresultcount = mysql_num_rows($resultfetch);
+		$fetchresultcount = mysqli_num_rows($resultfetch);
 		if($showtype == 'all')
 		$limit = 100000;
 		else
@@ -2909,7 +2909,7 @@ from inv_invoicenumbers where customerid = '".$customerref."'order by createddat
 		}
 		
 		$i_n = 0;
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$i_n++;
 			$slno++;
@@ -2928,7 +2928,7 @@ from inv_invoicenumbers where customerid = '".$customerref."'order by createddat
 		}
 		$grid .= "</table>";
 
-		$fetchcount = mysql_num_rows($result);
+		$fetchcount = mysqli_num_rows($result);
 		if($slno >= $fetchresultcount)
 		$linkgrid .='<table width="100%" border="0" cellspacing="0" cellpadding="0" height ="20px"><tr><td bgcolor="#FFFFD2"><font color="#FF4F4F">No More Records</font><div></div></td></tr></table>';
 		else
@@ -2968,7 +2968,7 @@ from inv_invoicenumbers where customerid = '".$customerref."'order by createddat
 		left join inv_mas_customer on  inv_dealercard.customerreference = inv_mas_customer.slno 
 		where inv_dealercard.cardid = '".$PINcardid."'";
 		$results = runmysqlquery($query);
-		$fetch = mysql_fetch_array($results);
+		$fetch = mysqli_fetch_array($results);
 		//$fetch = runmysqlqueryfetch($query);
 		if($fetch['purchasetype'] == '' && $fetch['usagetype'] == ''  && $fetch['attachedto'] == '' && $fetch['dealerid'] == '' && $fetch['productcode'] == '' && $fetch['productname'] == '' && $fetch['registereddate'] == ''&& $fetch['attachdate'] == '' && $fetch['registeredto'] == '' && $fetch['remarks'] == '')
 		{
@@ -3141,7 +3141,7 @@ function surrender($PIN,$lastslno)
 	INNER JOIN inv_surrenderproduct ON inv_surrenderproduct.refslno=inv_customerproduct.slno where inv_customerproduct.customerreference='".$lastslno."' 
 	and getPINNo(inv_customerproduct.cardid)= '".$PIN."'"; 
 		$result = runmysqlquery($query07);
-		$surrendercount = mysql_num_rows($result);
+		$surrendercount = mysqli_num_rows($result);
 		$fetchresult07[0] = $surrendercount;
 		
 		$query08 = "select getPINNo(inv_dealercard.cardid) as Pin,inv_dealercard.usagetype as usagetype 
@@ -3161,7 +3161,7 @@ function surrender($PIN,$lastslno)
 	## Changed By Bhavesh Patel  20.16.13 16:52##
 	$query1 = "select * from inv_customerproduct where customerreference = '".$lastslno."' and getPINNo(inv_customerproduct.cardid)= '".$PIN."' and AUTOREGISTRATIONYN = 'Y' and HDDID <> ''";
 	$result1 = runmysqlquery($query1);
-	$registeredcount = mysql_num_rows($result1);
+	$registeredcount = mysqli_num_rows($result1);
 	$fetchresult07[2] = $registeredcount;
 	return $fetchresult07;
 	

@@ -202,7 +202,7 @@ switch($switchtype)
 			$count2 = mysqli_num_rows($result2);
 			if($count2 > 0)
 			{
-				while($fetch2 = mysql_fetch_array($result2))
+				while($fetch2 = mysqli_fetch_array($result2))
 				{
 					$servicename[] = $fetch2['servicename'];
 				}

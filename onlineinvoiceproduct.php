@@ -38,7 +38,7 @@ $count = 0;
 			
 		$query2 = "SELECT inv_billdetail.productamount from inv_billdetail where inv_billdetail.cusbillnumber = '".$firstbillnumber."';";
 		$result2 = runmysqlquery($query2);
-		while($fetch2 = mysql_fetch_array($result2))
+		while($fetch2 = mysqli_fetch_array($result2))
 		{
 			$amount[] = $fetch2['productamount'];
 		}
@@ -50,7 +50,7 @@ $count = 0;
 		$descriptioncount = 0;
 		$description = '';
 		$servicetaxdesc = 'Service Tax applicable under Service Tax Act: "Taxable Service" category "zzze" (information technology software).';
-		while($fetch = mysql_fetch_array($result))
+		while($fetch = mysqli_fetch_array($result))
 		{
 			$slno++;
 			$k++;

@@ -30,7 +30,7 @@ include("../functions/phpfunctions.php");
 	$result2 = runmysqlquery($query2);
 	$count = 0;
 	$totalamount = 0;
-	while($fetch2 = mysql_fetch_array($result2))
+	while($fetch2 = mysqli_fetch_array($result2))
 	{
 		$count++;
 		$totalamount = 0;
@@ -105,7 +105,7 @@ include("../functions/phpfunctions.php");
 	$query4 = "select inv_mas_dealer.slno,inv_mas_dealer.businessname,inv_mas_dealer.emailid,region from inv_mas_dealer where branchhead = 'yes' ";
 	$result4 = runmysqlquery($query4);
 	
-	while($fetch4 = mysql_fetch_array($result4))
+	while($fetch4 = mysqli_fetch_array($result4))
 	{
 		// Select the dealers under Branch head based on Region 
 		$tdsnew = 0;
@@ -165,7 +165,7 @@ include("../functions/phpfunctions.php");
 		
 		$todaynewtotal = 0;
 		$todaymonthtilldatetotal = 0;
-		while($fetch5 = mysql_fetch_array($result5))
+		while($fetch5 = mysqli_fetch_array($result5))
 		{
 			$slno++;
 			// Consider each dealer and add them to grid .
@@ -183,7 +183,7 @@ where invoicedetails.dealerid = '".$dealerid."' and left(invoicedetails.invoiced
 			$result7 = runmysqlquery($query7); //echo($query5);exit;
 			
 			
-			if(mysql_num_rows($result6) > 0)
+			if(mysqli_num_rows($result6) > 0)
 			{
 				$fetch6 = runmysqlqueryfetch($query6);
 				$todaynew = ($fetch6['netamount'] == '')?'0' : $fetch6['netamount'];
@@ -192,7 +192,7 @@ where invoicedetails.dealerid = '".$dealerid."' and left(invoicedetails.invoiced
 			{
 				$todaynew = 0;
 			}
-			if(mysql_num_rows($result7) > 0)
+			if(mysqli_num_rows($result7) > 0)
 			{
 				$fetch7 = runmysqlqueryfetch($query7);
 				$monthtilldate = ($fetch7['netamount'] == '')?'0' : $fetch7['netamount'];

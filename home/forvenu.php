@@ -135,15 +135,15 @@ if ( isset( $_POST['submit'] ) )
 $result=runmysqlquery($query);
 	$i = 0;
 	echo '<table border="1" cellpadding="3" cellspacing="0" style="border-color:#fff"><tr bgcolor="#666666" style="color:#fff">';
-	while ($i < mysql_num_fields($result))
+	while ($i < mysqli_num_fields($result))
 	{
-		$meta = mysql_fetch_field($result, $i);
+		$meta = mysqli_fetch_field($result, $i);
 		echo '<th>' . $meta->name . '</th>';
 		$i = $i + 1;
 	}
 	echo '</tr>';
 	$i = 0;
-	while ($row = mysql_fetch_row($result)) 
+	while ($row = mysqli_fetch_row($result)) 
 	{
 		if($i%2 == 0)
 			$color = "#edf4ff";
@@ -166,7 +166,7 @@ $result=runmysqlquery($query);
 	}
 	echo '</table>';
 	echo $i;
-	mysql_free_result($result);
+	mysqli_free_result($result);
 }
 
 
