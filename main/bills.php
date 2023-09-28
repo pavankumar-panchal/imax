@@ -312,7 +312,7 @@ $enabledid = array('146','138','112');
                                                   </table>
                                                 </div></td>
                                             </tr>
-                                            <tr><?phpphp if(in_array($userid, $enabledid, true) ) { ?>
+                                            <tr><?php if(in_array($userid, $enabledid, true) ) { ?>
                                                     <td colspan="4" valign="top" bgcolor="#F7FAFF" style="padding:0">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="3" style="border:1px solid #333333;">
                                                       <tbody id="showdealeritems"> <tr>
@@ -371,7 +371,7 @@ $enabledid = array('146','138','112');
                                                             </table></td>
                                                         </tr>
                                                       </table></td>
-                                                      <?phpphp } ?></tr> 
+                                                      <?php } ?></tr> 
                                                 <tr>
                                               <td >
                                                 <input type="hidden" name="invoicelastslno" id="invoicelastslno"  value=" "/>

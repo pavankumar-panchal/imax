@@ -129,7 +129,7 @@ elseif($flag == 'true')
         </tr>
         </thead>
         <tbody>
-        <?phpphp
+        <?php
         $slno = 1;
         while ($fetch = mysqli_fetch_array($result)) {
             //Fetch customer name
@@ -156,29 +156,29 @@ elseif($flag == 'true')
 ?>
 
             <tr>
-                <td><?phpphp echo $slno++; ?></td>
-                <td><?phpphp echo $fetch['pin_serial_number']; ?></td>
-                <td><?phpphp echo $fetch['scratchnumber']; ?></td>
-                <td><?phpphp echo changedateformat(substr($fetch['Date'], 0, 10)); ?></td>
-                <td><?phpphp echo $fetch['from_dealer']; ?> </td>
-                <td><?phpphp echo $todealer; ?> </td>
-                <td><?phpphp echo $fetch['from_product']; ?> </td>
-                <td><?phpphp echo $toproduct; ?> </td>
-                <td><?phpphp echo $fetch['from_usagetype']; ?></td>
-                <td><?phpphp echo $tousagetype; ?></td>
-                <td><?phpphp echo $fetch['from_purchasetype']; ?></td>
-                <td><?phpphp echo $topurchasetype; ?> </td>
-                <td><?phpphp echo $fetch['from_attachcust']; ?> </td>
-                <td><?phpphp echo $toattachcust; ?></td>
-                <td><?phpphp echo $fetch['scheme']; ?></td>
-                <td><?phpphp echo $fetch['region']; ?> </td>
-                <td><?phpphp echo $fetch['remarks']; ?> </td>
-                <td><?phpphp echo $fetch['fullname']; ?> </td>
+                <td><?php echo $slno++; ?></td>
+                <td><?php echo $fetch['pin_serial_number']; ?></td>
+                <td><?php echo $fetch['scratchnumber']; ?></td>
+                <td><?php echo changedateformat(substr($fetch['Date'], 0, 10)); ?></td>
+                <td><?php echo $fetch['from_dealer']; ?> </td>
+                <td><?php echo $todealer; ?> </td>
+                <td><?php echo $fetch['from_product']; ?> </td>
+                <td><?php echo $toproduct; ?> </td>
+                <td><?php echo $fetch['from_usagetype']; ?></td>
+                <td><?php echo $tousagetype; ?></td>
+                <td><?php echo $fetch['from_purchasetype']; ?></td>
+                <td><?php echo $topurchasetype; ?> </td>
+                <td><?php echo $fetch['from_attachcust']; ?> </td>
+                <td><?php echo $toattachcust; ?></td>
+                <td><?php echo $fetch['scheme']; ?></td>
+                <td><?php echo $fetch['region']; ?> </td>
+                <td><?php echo $fetch['remarks']; ?> </td>
+                <td><?php echo $fetch['fullname']; ?> </td>
            </tr>
-        <?phpphp } ?>
+        <?php } ?>
         </tbody>
     </table>
-<?phpphp
+<?php
 
 $queryres = 'select slno,username from inv_mas_users where slno = '.$userid.'';
 $fetchres = runmysqlqueryfetch($queryres);
@@ -201,7 +201,7 @@ $username = $fetchres['username'];
 
         $(document).ready(function() {
             //alert("passing");
-            var filename="<?phpphp echo $filebasename; ?>";
+            var filename="<?php echo $filebasename; ?>";
             //alert(filename);
             $('#example').DataTable({
                 dom: 'Blfrtip',
@@ -235,7 +235,7 @@ $username = $fetchres['username'];
     </script>
 
 
-    <?phpphp
+    <?php
 
     $query1 ="INSERT INTO inv_logs_reports(userid,`date`,`time`,`type`,`data`,system) VALUES('".$userid."','".datetimelocal('Y-m-d')."','".datetimelocal('H-i')."','view_transferredpins_report',\"".$query."\",'".$_SERVER['REMOTE_ADDR']."')";
     $result = runmysqlquery($query1);
@@ -251,7 +251,7 @@ $username = $fetchres['username'];
         //alert("in");
         $.ajax({
             url: 'eventype.php',
-            data: "username=<?php=$username?>",
+            data: "username=<?php $username ?>",
             type: 'POST',
             success:function (status) {
                // alert(status);

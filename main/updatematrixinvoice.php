@@ -21,8 +21,8 @@ $enablededit = array('146','56','192','138','99','112');
 <script language="javascript" src="../functions/updatematrixinvoice.js?dummy=<?php echo(rand());?>"></script>
 <script language="javascript" src="../functions/getdistrictfunction.php?dummy=<?php echo(rand());?>"></script>
 <script language="javascript" src="../functions/colorbox.js?dummy=<?php echo(rand());?>" ></script>
-<input type="hidden" value="<?phpphp echo $_GET['invoiceno'];?>" id="invoicevalue"/>
-<?phpphp
+<input type="hidden" value="<?php echo $_GET['invoiceno'];?>" id="invoicevalue"/>
+<?php
    $invoicecreated_date = date('Y-m-d');
    $query2 = "SELECT igst_rate,cgst_rate,sgst_rate from gst_rates where from_date <= '".$invoicecreated_date."' AND to_date >= '".$invoicecreated_date."'";
    $fetchrate = runmysqlqueryfetch($query2);
@@ -32,9 +32,9 @@ $enablededit = array('146','56','192','138','99','112');
    $cgst_tax_rate = $fetchrate['cgst_rate'];
    $sgst_tax_rate = $fetchrate['sgst_rate'];
 ?>
-<input type="hidden" value="<?phpphp echo $igst_tax_rate;?>" id="igstrate" name="igstrate"/>
-<input type="hidden" value="<?phpphp echo $cgst_tax_rate;?>" id="cgstrate" name="cgstrate"/>
-<input type="hidden" value="<?phpphp echo $sgst_tax_rate;?>" id="sgstrate" name="sgstrate"/>
+<input type="hidden" value="<?php echo $igst_tax_rate;?>" id="igstrate" name="igstrate"/>
+<input type="hidden" value="<?php echo $cgst_tax_rate;?>" id="cgstrate" name="cgstrate"/>
+<input type="hidden" value="<?php echo $sgst_tax_rate;?>" id="sgstrate" name="sgstrate"/>
 
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:left">
   <tr>
@@ -382,14 +382,14 @@ $enablededit = array('146','56','192','138','99','112');
                                                               <option value="4">Others</option>
                                                             </select></td>
                                                           <td width="22%"><div align="center">
-                                                          <?phpphp if(in_array($userid, $enabledcnl, true) ) { ?>
+                                                          <?php if(in_array($userid, $enabledcnl, true) ) { ?>
                                                               <input name="cancelinvoice" type="button" class= "swiftchoicebuttonbignew" id="cancelinvoice" value="Invoice Cancellation" onclick="validaterequest('einvcancel')" />
-                                                            <?phpphp } elseif(in_array($userid, $enabledid, true) ) { ?>
+                                                            <?php } elseif(in_array($userid, $enabledid, true) ) { ?>
                                                               <input name="cancelinvoice" type="button" class= "swiftchoicebuttonbignew" id="cancelinvoice" value="Invoice Cancellation" onclick="validaterequest('cancel')" /><?php } ?>
                                                             </div></td>
                                                           <td width="24%">
                                                             <div align="left">
-                                                            <?phpphp if(in_array($userid, $enablededit, true) ) { ?>
+                                                            <?php if(in_array($userid, $enablededit, true) ) { ?>
                                                               <input name="edit" type="button" class= "swiftchoicebuttonbig" id="edit" value="Invoice Editing" onclick="editform()" />
                                                               <?php } ?>
                                                               <input type="hidden" name="lastslno" id="lastslno" value=""  />
@@ -455,9 +455,9 @@ $enablededit = array('146','56','192','138','99','112');
                                             <tr>
                                               <td align="left" id="form-error1" height="35px"></td>
                                               <td align="right">
-                                              <?phpphp if(in_array($userid, $enabledcnl, true) ) { ?>
+                                              <?php if(in_array($userid, $enabledcnl, true) ) { ?>
                                                 <input type="button" name="cancelbutton" class="swiftchoicebuttonbignew" value="Confirm Cancellation" id="cancelbutton" onclick="formsubmit('einvcancel')"/>
-                                              <?phpphp } elseif(in_array($userid, $enabledid, true) ) { ?>
+                                              <?php } elseif(in_array($userid, $enabledid, true) ) { ?>
                                                 <input type="button" name="cancelbutton" class="swiftchoicebuttonbignew" value="Confirm Cancellation" id="cancelbutton" onclick="formsubmit('cancel')"/><?php } ?>
                                                 &nbsp;&nbsp;
                                                 <input type="button" value="Close" id="closepreviewbutton2"  onclick="$().colorbox.close();" class="swiftchoicebutton"/></td>

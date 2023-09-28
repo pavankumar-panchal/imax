@@ -71,21 +71,21 @@ $auditorid = array('195','196');
                                       <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#FBF3DB" >
                                           <tr>
                                             <td valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="3">
-                                                    <?phpphp if(!in_array($userid, $auditorid, true) ) { ?> <tr>
+                                                    <?php if(!in_array($userid, $auditorid, true) ) { ?> <tr>
 
                                                   <td width="7%" valign="top" ><label for="alltime">All Time</label></td>
                                                   <td width="6%" valign="top" style="border-right:1px solid #d1dceb;" ><input name="alltime" type="checkbox" id="alltime" onclick="disablethedates()" /></td>
 
-                                                </tr><?phpphp } ?>
+                                                </tr><?php } ?>
                                               </table></td>
                                             <td width="37%"  valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3" >
                                                 <tr >
                                                   <td width="22%" align="left" valign="top">From Date: </td><td width="78%" align="left" valign="top">
-                                                    <?phpphp if(in_array($userid, $auditorid, true)) { ?>
+                                                    <?php if(in_array($userid, $auditorid, true)) { ?>
                                                     <input name="fromdate" type="text" class="swifttext-mandatory" id="datepicker" size="30" autocomplete="off"  readonly="readonly" />
-                                                    <?phpphp } else {  ?>
+                                                    <?php } else {  ?>
                                                   <input name="fromdate" type="text" class="swifttext-mandatory" id="DPC_fromdate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>" readonly="readonly" />
-                                                    <?phpphp }   ?>
+                                                    <?php }   ?>
                                                       <input type="hidden" name="flag" id="flag" value="true" />
                                                     <input type="hidden" name="onlineslno" id="onlineslno" value="" />
                                                     <input type="hidden" name="category" id="category" value="<?php echo($pagelink) ?>" />
@@ -104,11 +104,11 @@ $auditorid = array('195','196');
                                                   <td width="22%" align="left" valign="top" >To Date:</td>
                                                   <td width="78%" align="left" valign="top" ><label for="sto"></label>
                                                     <label for="spp">
-                                                        <?phpphp if(in_array($userid, $auditorid, true)) { ?>
+                                                        <?php if(in_array($userid, $auditorid, true)) { ?>
                                                             <input name="todate" type="text" class="swifttext-mandatory" id="datepicker1" size="30" autocomplete="off" readonly="readonly"/>
-                                                        <?phpphp } else {  ?>
+                                                        <?php } else {  ?>
                                                       <input name="todate" type="text" class="swifttext-mandatory" id="DPC_todate" size="30" autocomplete="off" value="<?php echo(datetimelocal('d-m-Y')); ?>"  readonly="readonly"/>
-                                                        <?phpphp }   ?> <br/>
+                                                        <?php }   ?> <br/>
                                                     </label></td>
                                                 </tr>
                                               </table></td>
@@ -368,7 +368,7 @@ $auditorid = array('195','196');
                                         <tr>
                                           <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
-                                                  <?phpphp if(!in_array($userid, $auditorid, true)) { ?>
+                                                  <?php if(!in_array($userid, $auditorid, true)) { ?>
                                                 <td width="140px" align="center" id="tabgroupgridh1" onclick="gridtab6('1','tabgroupgrid','&nbsp; &nbsp;Default'); getinvoicedetails(''); " style="cursor:pointer" class="grid-active-tabclass">Today-All</td>
                                                 <td width="2">&nbsp;</td>
                                                 <td width="140px" align="center" id="tabgroupgridh2" onclick="invoicelistBKG('BKG','');" style="cursor:pointer" class="grid-tabclass">BKG-Today</td>
@@ -378,7 +378,7 @@ $auditorid = array('195','196');
                                                 <td width="140px" align="center" id="tabgroupgridh4" onclick="invoicelistCSD('CSD','');" style="cursor:pointer" class="grid-tabclass">CSD-Today</td>
                                                 <td width="2">&nbsp;</td>
                                                 <!-- <td width="140px" align="center" id="tabgroupgridh5" onclick="invoicelistOnline('Online','');" style="cursor:pointer" class="grid-tabclass">Online-Today</td>
-                                                <td width="2">&nbsp;</td> <?phpphp } ?> -->
+                                                <td width="2">&nbsp;</td> <?php } ?> -->
                                                 <td width="140px" align="center" id="tabgroupgridh6" onclick="gridtab6('6','tabgroupgrid','&nbsp; &nbsp;Search Results'); displayinvoicetotal();" style="cursor:pointer" class="grid-tabclass">Search Result</td>
                                                 <td><div id="gridprocessing"> </div></td>
                                               </tr>
@@ -388,7 +388,7 @@ $auditorid = array('195','196');
                                           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #308ebc; border-top:none;">
                                               <tr class="header-line" >
                                                 <td width="220px"><div id="tabdescription">&nbsp;</div></td>
-                                                <td width="216px" style="text-align:center;"><?phpphp if(!in_array($userid, $auditorid, true)) { ?><span id="tabgroupgridwb1" ></span><span id="tabgroupgridwb2" ></span><span id="tabgroupgridwb3" ></span><span id="tabgroupgridwb4" ></span><span id="tabgroupgridwb5" ></span>
+                                                <td width="216px" style="text-align:center;"><?php if(!in_array($userid, $auditorid, true)) { ?><span id="tabgroupgridwb1" ></span><span id="tabgroupgridwb2" ></span><span id="tabgroupgridwb3" ></span><span id="tabgroupgridwb4" ></span><span id="tabgroupgridwb5" ></span>
                                                      <?php } ?><span id="tabgroupgridwb6" ></span></td>
                                                 <td width="296px" style="padding:0">&nbsp;</td>
                                               </tr>
@@ -397,16 +397,16 @@ $auditorid = array('195','196');
                                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                       <tr>
                                                             <td>
-                                                                <?phpphp if(!in_array($userid, $auditorid, true)) { ?>
+                                                                <?php if(!in_array($userid, $auditorid, true)) { ?>
                                                                       <div id="tabgroupgridc1_1" align="center" ></div><?php } ?></td>
                                                       </tr>
                                                       <tr>
-                                                        <td><?phpphp if(!in_array($userid, $auditorid, true)) { ?><div id="tabgroupgridc1link" align="left" > </div><?php } ?></td>
+                                                        <td><?php if(!in_array($userid, $auditorid, true)) { ?><div id="tabgroupgridc1link" align="left" > </div><?php } ?></td>
                                                       </tr>
                                                     </table>
                                                     <div id="resultgrid" style="overflow:auto; display:none; height:150px; width:704px; padding:2px;" align="center">&nbsp;</div>
                                                   </div>
-                                                    <?phpphp if(!in_array($userid, $auditorid, true)) { ?>   <div id="tabgroupgridc2" style="overflow:auto;height:270px; width:925px; padding:2px; display:none;" align="center">
+                                                    <?php if(!in_array($userid, $auditorid, true)) { ?>   <div id="tabgroupgridc2" style="overflow:auto;height:270px; width:925px; padding:2px; display:none;" align="center">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                       <tr>
                                                         <td colspan="2"><div id="tabgroupgridc2_1" ></div></td>
@@ -473,7 +473,7 @@ $auditorid = array('195','196');
                                   </tr>
                                   <tr>
                                     <td colspan="2" height="10px"></td>
-                                  </tr><?phpphp if(!in_array($userid, $auditorid, true)) { ?>
+                                  </tr><?php if(!in_array($userid, $auditorid, true)) { ?>
                                   <tr>
                                     <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                                         <tr>

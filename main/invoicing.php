@@ -207,9 +207,9 @@ include("../inc/eventloginsert.php");
                                             <input type="hidden" name="customer_gst" id="customer_gst" />
                                             <input type="hidden" name="customer_hidden_id" id="customer_hidden_id" />
                                             <input type="hidden" name="sez_enabled" id="sez_enabled" />
-                                            <input type="hidden" name="igstrate" id="igstrate" value="<?phpphp echo $igst_tax_rate; ?>"/>
-                                            <input type="hidden" name="cgstrate" id="cgstrate" value="<?phpphp echo $cgst_tax_rate; ?>"/>
-                                            <input type="hidden" name="sgstrate" id="sgstrate" value="<?phpphp echo $sgst_tax_rate; ?>"/>
+                                            <input type="hidden" name="igstrate" id="igstrate" value="<?php echo $igst_tax_rate; ?>"/>
+                                            <input type="hidden" name="cgstrate" id="cgstrate" value="<?php echo $cgst_tax_rate; ?>"/>
+                                            <input type="hidden" name="sgstrate" id="sgstrate" value="<?php echo $sgst_tax_rate; ?>"/>
                                             <input type="text" name="upimode" id="upimode" />
                                             <input type="text" name="cardmode" id="cardmode" value="card" />
                                         </tr>
@@ -432,15 +432,15 @@ include("../inc/eventloginsert.php");
 
    
                 <tr id="igsttaxrow">
-                    <td>IGST @ <?phpphp echo $igst_tax_rate; ?> %:</td>
+                    <td>IGST @ <?php echo $igst_tax_rate; ?> %:</td>
                     <td><input name="igsttaxamount" type="text" class="swifttext-readonly" id="igsttaxamount" maxlength="10" autocomplete="off" style="width:100px;text-align:right" disabled="disabled" readonly="readonly"/></td>
                 </tr>
                 <tr id="cgsttaxrow">
-                    <td>CGST @ <?phpphp echo $cgst_tax_rate; ?> %:</td>
+                    <td>CGST @ <?php echo $cgst_tax_rate; ?> %:</td>
                     <td><input name="cgsttaxamount" type="text" class="swifttext-readonly" id="cgsttaxamount" maxlength="10" autocomplete="off" style="width:100px;text-align:right" disabled="disabled" readonly/></td>
                 </tr>
                 <tr id="sgsttaxrow">
-                    <td>SGST @ <?phpphp echo $sgst_tax_rate; ?> %:</td>
+                    <td>SGST @ <?php echo $sgst_tax_rate; ?> %:</td>
                     <td><input name="sgsttaxamount" type="text" class="swifttext-readonly" id="sgsttaxamount" maxlength="10" autocomplete="off" style="width:100px;text-align:right" disabled="disabled" readonly/></td>
                 </tr>
    
