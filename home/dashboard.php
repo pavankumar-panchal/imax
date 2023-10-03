@@ -1,26 +1,32 @@
 <?php
 include("../inc/eventloginsert.php");
 ?>
-<link href="../style/main.css?dummy=<?php echo (rand());?>" rel=stylesheet>
-<link href="../style/shortkey.css?dummy=<?php echo (rand());?>" rel=stylesheet>
-<script language="javascript" src="../functions/key_shortcut.js?dummy=<?php echo (rand());?>"></script>
-<script language="javascript" src="../functions/dashboard-shortcut.js?dummy=<?php echo (rand());?>"></script>
+<link href="../style/main.css?dummy=<?php echo (rand()); ?>" rel=stylesheet>
+<link href="../style/shortkey.css?dummy=<?php echo (rand()); ?>" rel=stylesheet>
+<script language="javascript" src="../functions/key_shortcut.js?dummy=<?php echo (rand()); ?>"></script>
+<script language="javascript" src="../functions/dashboard-shortcut.js?dummy=<?php echo (rand()); ?>"></script>
 <table width="952" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap" >
+    <td width="77%" valign="top" style="border-bottom:#1f4f66 1px solid;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap" >
         <tr>
-          <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="190" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <td height="190" valign="top">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                          <td height="190" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="8">
+                          <td height="190" valign="top">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="8">
                               
                               <tr>
-                                <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <td valign="top">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr >
-                                      <td width="160" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                      <td width="160" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                       <tr><td>&nbsp;</td></tr>
                                           <tr>
                                             <td class="links-top">&nbsp;</td>
@@ -46,22 +52,23 @@ include("../inc/eventloginsert.php");
                                            <tr>
                                             <td>&nbsp;</td>
                                           </tr>
-                                         <?php  if($p_customerpendingrequest == 'yes' || $p_dealerpendingrequest == 'yes') { ?>
+                                         <?php if ($p_customerpendingrequest == 'yes' || $p_dealerpendingrequest == 'yes') { ?>
 
-                                          <tr>
-                                            <td class="links-top">&nbsp;</td>
-                                          </tr>
-                                          <tr>
-                                            <td class="links-mid" align="left"><?php include('../inc/leftlink-profileupdate.php'); ?></td>
-                                          </tr>
-                                          <tr>
-                                            <td class="links-btm">&nbsp;</td>
-                                          </tr>
+                                                            <tr>
+                                                              <td class="links-top">&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="links-mid" align="left"><?php include('../inc/leftlink-profileupdate.php'); ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="links-btm">&nbsp;</td>
+                                                            </tr>
                                           <?php } ?>
                                       </table></td>
                                       <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                          <td style="padding-left:30px; font-size:16px; font-family:Tahoma; font-weight:bold">Welcome <?php $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '".$userid."'"); echo($fetch['fullname']); ?>...</td>
+                                          <td style="padding-left:30px; font-size:16px; font-family:Tahoma; font-weight:bold">Welcome <?php $fetch = runmysqlqueryfetch("SELECT fullname FROM inv_mas_users WHERE slno = '" . $userid . "'");
+                                          echo ($fetch['fullname']); ?>...</td>
                                         </tr>
                                          <tr>
                                           <td>&nbsp;</td>
@@ -94,8 +101,9 @@ include("../inc/eventloginsert.php");
                                                                 <td width="4" align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td width="44" align="left"><div align="right">
                                                                   <?php $query0 = "SELECT COUNT(*) AS newregistration FROM inv_customerproduct WHERE `type` = 'newlicence' and date = curdate();";
-	$fetch0 = runmysqlqueryfetch($query0); echo($fetch0['newregistration']);
-  ?>
+                                                                  $fetch0 = runmysqlqueryfetch($query0);
+                                                                  echo ($fetch0['newregistration']);
+                                                                  ?>
                                                                 </div></td>
                                                                 <td width="57">&nbsp;</td>
                                                               </tr>
@@ -103,7 +111,9 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold" >Re-  Registrations</font></td>
                                                                 <td align="left"> <font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td align="left"><div align="right">
-                                                                  <?php $query1 = "SELECT COUNT(*) AS reregistration FROM inv_customerproduct WHERE `type` = 'reregistration' and date = curdate();"; $fetch1 = runmysqlqueryfetch($query1); echo($fetch1['reregistration']); ?>
+                                                                  <?php $query1 = "SELECT COUNT(*) AS reregistration FROM inv_customerproduct WHERE `type` = 'reregistration' and date = curdate();";
+                                                                  $fetch1 = runmysqlqueryfetch($query1);
+                                                                  echo ($fetch1['reregistration']); ?>
                                                                 </div></td>
                                                                 <td>&nbsp;</td>
                                                               </tr>
@@ -111,7 +121,9 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">Updation</font></td>
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td align="left"><div align="right">
-                                                                  <?php $query2 = "SELECT COUNT(*) AS updation FROM inv_customerproduct WHERE `type` = 'updationlicense' and date = curdate();"; $fetch2 = runmysqlqueryfetch($query2); echo($fetch2['updation']); ?>
+                                                                  <?php $query2 = "SELECT COUNT(*) AS updation FROM inv_customerproduct WHERE `type` = 'updationlicense' and date = curdate();";
+                                                                  $fetch2 = runmysqlqueryfetch($query2);
+                                                                  echo ($fetch2['updation']); ?>
                                                                 </div></td>
                                                                 <td>&nbsp;</td>
                                                               </tr>
@@ -119,7 +131,7 @@ include("../inc/eventloginsert.php");
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">Total</font></td>
                                                                 <td align="left"><font color="#6C3600" style="font-size:11px; font-weight:bold">:</font></td>
                                                                 <td align="left"><div align="right">
-                                                                  <?php  echo($fetch0['newregistration'] + $fetch1['reregistration'] + $fetch2['updation']); ?>
+                                                                  <?php echo ($fetch0['newregistration'] + $fetch1['reregistration'] + $fetch2['updation']); ?>
                                                                 </div></td>
                                                                 <td>&nbsp;</td>
                                                               </tr>
@@ -161,25 +173,29 @@ include("../inc/eventloginsert.php");
                                                       <td colspan="2">&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                      <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                      <td valign="top">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                           <tr>
-                                                            <td class="dashboard-heading"><strong>Region wise All customers:</strong></td>
+                                                            <td class="dashboard-heading">
+                                                              <strong>Region wise All customers:</strong></td>
                                                           </tr>
                                                           <tr>
                                                             <td>&nbsp;</td>
                                                           </tr>
                                                           <tr>
-                                                            <td><div id="RegionstatsDiv" > Chart is Loading... </div>
+                                                            <td>
+                                                              <div id="RegionstatsDiv" > Chart is Loading... </div>
                                                         <script type="text/javascript">	
-		//Instantiate the Chart	
-		var chart_Regionstats = new FusionCharts("../FusionCharts/FCF_Column3D.swf", "Regionstats", "300", "250", "0", "0");
+    //Instantiate the Chart	
+    var chart_Regionstats = new FusionCharts("../FusionCharts/FCF_Column3D.swf", "Regionstats", "300", "250", "0", "0");
       chart_Regionstats.setTransparent("false");
     
-		//Set the dataURL of the chart
-		chart_Regionstats.setDataURL("./regiondata.php")
-		//Finally, render the chart.
-		chart_Regionstats.render("RegionstatsDiv");
-	                                              </script></td>
+    //Set the dataURL of the chart
+    chart_Regionstats.setDataURL("./regiondata.php")
+    //Finally, render the chart.
+    chart_Regionstats.render("RegionstatsDiv");
+                                                </script>
+                                                </td>
                                                           </tr>
 
                                                       </table></td>
@@ -193,15 +209,15 @@ include("../inc/eventloginsert.php");
                                                         <tr>
                                                           <td><div id="activeRegionstatsDiv" > Chart is Loading... </div>
                                                               <script type="text/javascript">	
-		//Instantiate the Chart	
-		var chart_Regionstats = new FusionCharts("../FusionCharts/FCF_Column3D.swf", "Regionstats", "300", "250", "0", "0");
+    //Instantiate the Chart	
+    var chart_Regionstats = new FusionCharts("../FusionCharts/FCF_Column3D.swf", "Regionstats", "300", "250", "0", "0");
       chart_Regionstats.setTransparent("false");
     
-		//Set the dataURL of the chart
-		chart_Regionstats.setDataURL("./activecusregionwise.php")
-		//Finally, render the chart.
-		chart_Regionstats.render("activeRegionstatsDiv");
-	                                                    </script></td>
+    //Set the dataURL of the chart
+    chart_Regionstats.setDataURL("./activecusregionwise.php")
+    //Finally, render the chart.
+    chart_Regionstats.render("activeRegionstatsDiv");
+                                                      </script></td>
                                                         </tr>
                                                       </table></td>
                                                     </tr>

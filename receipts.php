@@ -7,8 +7,7 @@ end();
 $query = "select * from dummy_receipt";
 $result = runmysqlquery($query);
 $count = 0;
-while($fetch = mysqli_fetch_array($result))
-{
+while ($fetch = mysqli_fetch_array($result)) {
 	$invoiceslno1 = $fetch['slno'];
 	$invoiceno = $fetch['invoiceno'];
 	$invoiceamount = '';
@@ -30,16 +29,16 @@ while($fetch = mysqli_fetch_array($result))
 	$receipttime = $fetch['receipttime'];
 	$module = $fetch['module'];
 	$status = $fetch['status'];
-	
+
 	$count++;
-	$query0 = "select slno from inv_invoicenumbers where invoiceno = '".$invoiceno."'";
+	$query0 = "select slno from inv_invoicenumbers where invoiceno = '" . $invoiceno . "'";
 	$fetch0 = runmysqlqueryfetch($query0);
 	$invoiceslno = $fetch0['slno'];
-	
+
 	$query1 = "insert into inv_mas_receipt (slno,invoiceno, invoiceamount, receiptamount, paymentmode, createddate, createdby, createdip, lastmodifieddate, lastmodifiedby, lastmodifiedip, customerreference, chequedate, 	chequeno, chequeamount, drawnon, depositdate, receiptdate, receipttime, module, status)
-	values('".$invoiceslno1."','".$invoiceslno."', '".$invoiceamount."', '".$receiptamount."','".$paymentmode."', '".$createddate."', '1', '99.99.99.99', '".$createddate."', '1', '99.99.99.99', '".$customerreference."', '".$chequedate."', '".$chequeno."', '".$chequeamount."', 	'".$drawnon."', '".$depositdate."', '".$receiptdate."', '00:00:00', 'user_module', 'ACTIVE')";
+	values('" . $invoiceslno1 . "','" . $invoiceslno . "', '" . $invoiceamount . "', '" . $receiptamount . "','" . $paymentmode . "', '" . $createddate . "', '1', '99.99.99.99', '" . $createddate . "', '1', '99.99.99.99', '" . $customerreference . "', '" . $chequedate . "', '" . $chequeno . "', '" . $chequeamount . "', 	'" . $drawnon . "', '" . $depositdate . "', '" . $receiptdate . "', '00:00:00', 'user_module', 'ACTIVE')";
 	$fetch1 = runmysqlquery($query1);
-	echo($count.'^'." DONE <br>\n");
+	echo ($count . '^' . " DONE <br>\n");
 }
 
 ?>

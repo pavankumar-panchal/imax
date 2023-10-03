@@ -1,5 +1,5 @@
-<?php 
+<?php
 
 echo "I am server A <br>";
-	echo phpinfo();
+echo phpinfo();
 ?>

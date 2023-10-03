@@ -1,3 +1,3 @@
 <?php
-$AES_SEC_KEY="relyon";
+$AES_SEC_KEY = "relyon";
 ?>
