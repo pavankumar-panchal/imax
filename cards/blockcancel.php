@@ -176,7 +176,7 @@ $enabledid = array('146');
                           </tr>
                         </table></td>
                     </tr>
-                      <?phpphp if(in_array($userid, $enabledid, true) ) { ?>
+                      <?php if(in_array($userid, $enabledid, true) ) { ?>
                     <tr>
 											<td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #308ebc; border-top:none;">
 													<tr>

@@ -131,7 +131,7 @@ else
                                                       <td bgcolor="#f7faff" valign="top" align="left"><input type="checkbox" name="ttattachedcustcheck" id="ttattachedcustcheck" onclick="attachedcustcheckbox()" /></td>
                                                       <td bgcolor="#f7faff" valign="top" align="left"><input type="text" name="ttattachedcust" class="swifttext-readonly" id="ttattachedcust" size="25"  disabled="disabled" onchange="checkcustomerid();" >
                                                     <input type="hidden" name="tfregisteration" class="swifttext-readonly" id="tfregisteration" size="30" readonly="readonly" >
-                                                      <?phpphp if($userid == '1' || $userid == '146' || $userid =='150' || $userid =='167'  || $userid =='168'){?><span id="ttmoveregisteration"></span><?php ;}?>
+                                                      <?php if($userid == '1' || $userid == '146' || $userid =='150' || $userid =='167'  || $userid =='168'){?><span id="ttmoveregisteration"></span><?php ;}?>
                                                         
                                                         </td>
                                                     </tr>

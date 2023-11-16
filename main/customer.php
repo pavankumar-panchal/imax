@@ -1659,32 +1659,32 @@ var permissioncontactedit = '';
                                 <tr>
                                   <td width="140" id="tabgroupgridh5" onclick="gridtabcus5('5','tabgroupgrid','&nbsp; &nbsp;Current Auto Registrations'); displayelement('tabgroupgridc5','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Auto Registration</td>
                                   <td width="2"></td>
-                                  <?phpphp
+                                  <?php
 								  //Added by manju
 								  if(imaxgetcookie('userid')==1)
 								  {
 								  ?>
                                   <td width="140" id="tabgroupgridh6" onclick="gridtabcus5('6','tabgroupgrid','&nbsp; &nbsp;Manual Registration Details'); displayelement('tabgroupgridc6','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Manual Registration</td>
-                                  <?phpphp
+                                  <?php
 								  }
 								  else
 								  {
 									  ?>
 <td width="140" id="tabgroupgridh6" style="cursor:not-allowed" class="grid-tabclass">Manual Registration</td>
-									<?phpphp  
+									<?php  
 									  }
 								  ?>
                                   <td width="2"></td>
                                   <td width="140" id="tabgroupgridh8" onclick="gridtabcus5('8','tabgroupgrid','&nbsp; &nbsp;PIN Number Details'); displayelement('tabgroupgridc8','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Attached PIN Number</td>
                                   <td width="2"></td>
-                                  <?phpphp
+                                  <?php
 								  //Added by Bhavesh Patel
 								  if($p_forcesurrender == 'yes')
 								  {
 								  ?>
                                   <td width="140" id="tabgroupgridh9" onclick="gridtabcus5('9','tabgroupgrid','&nbsp; &nbsp;Force Surrender'); displayelement('tabgroupgridc9','transferscratchcarddiv');clearcarddetails();" style="cursor:pointer" class="grid-tabclass">Force Surrender</td>
                                  
-                                  <?phpphp
+                                  <?php
 								  }
 								  else
 								  {

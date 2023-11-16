@@ -159,9 +159,9 @@ include("../inc/eventloginsert.php");
                                           
                                     <tr>
                                       <td  width="9%" colspan=7 ><strong>Product Details</strong><input type="hidden" name="productgrid" id="productgrid" value="1">
-                                      <input type="hidden" name="igstrate" id="igstrate" value="<?phpphp echo $igst_tax_rate; ?>"/>
-                                            <input type="hidden" name="cgstrate" id="cgstrate" value="<?phpphp echo $cgst_tax_rate; ?>"/>
-                                            <input type="hidden" name="sgstrate" id="sgstrate" value="<?phpphp echo $sgst_tax_rate; ?>"/>
+                                      <input type="hidden" name="igstrate" id="igstrate" value="<?php echo $igst_tax_rate; ?>"/>
+                                            <input type="hidden" name="cgstrate" id="cgstrate" value="<?php echo $cgst_tax_rate; ?>"/>
+                                            <input type="hidden" name="sgstrate" id="sgstrate" value="<?php echo $sgst_tax_rate; ?>"/>
                                             <input type="hidden" name="state_gst_code"  id="state_gst_code" />
                                             <input type="hidden" name="branch_gstin"  id="branch_gstin" />
                                             <input type="hidden" name="branchhidden" id="branchhidden" />
@@ -205,7 +205,7 @@ include("../inc/eventloginsert.php");
                                               <td width="9%"><select name="producttype[]" class="swiftselect-mandatory producttype" id="producttype1" style="width:140px;" onchange="getproductname(this)">
                                                 <option value="">Select Product Type</option>
                                                 <optgroup label="Hardware">
-                                                 <?phpphp 
+                                                 <?php 
                                                     $query ="select * from inv_mas_matrixproduct where `group` = 'Hardware';";
                                                     $result = runmysqlquery($query);
                                                     while($fetch = mysqli_fetch_array($result))
@@ -215,7 +215,7 @@ include("../inc/eventloginsert.php");
                                                   ?>                                                  
                                                 </optgroup>
                                                 <optgroup label="Software">
-                                                <?phpphp 
+                                                <?php 
                                                   $query ="select * from inv_mas_matrixproduct where `group` = 'Software';";
                                                   $result = runmysqlquery($query);
                                                     while($fetch = mysqli_fetch_array($result))

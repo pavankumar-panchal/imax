@@ -243,33 +243,33 @@ elseif($flag == 'true')
                 ?>
 
                 <tr>
-                    <td><?phpphp echo $slno++; ?></td>
-                    <td><?phpphp echo $fetch['dealername']; ?></td>
-                    <td><?phpphp echo $fetch['cardid']; ?></td>
-                    <td><?phpphp echo $fetch['productname']; ?></td>
-                    <td><?phpphp echo changedateformat(substr($fetch['attcheddate'], 0, 10)); ?></td>
-                    <td><?phpphp echo $fetch['billnumber']; ?> </td>
-                    <td><?phpphp echo $fetch['invoiceno']; ?> </td>
-                    <td><?phpphp echo $registereddate; ?></td>
-                    <td><?phpphp echo $businessname; ?></td>
-                    <td><?phpphp echo $fetch['cusname']; ?></td>
-                    <td><?phpphp echo $fetch['scratchnumber']; ?></td>
-                    <td><?phpphp echo $fetch['Pin Status']; ?></td>
-                    <td><?phpphp echo $fetch['usagetype']; ?> </td>
-                    <td><?phpphp echo $fetch['purchasetype']; ?> </td>
-                    <td><?phpphp echo $fetch['fullname']; ?></td>
-                    <td><?phpphp echo $fetch['scheme']; ?></td>
-                    <td><?phpphp echo $fetch['region']; ?> </td>
-                    <td><?phpphp echo $fetch['state']; ?> </td>
-                    <td><?phpphp echo $fetch['district']; ?> </td>
-                    <td><?phpphp echo $fetch['branch']; ?> </td>
-                    <td><?phpphp echo $fetch['billremarks']; ?></td>
+                    <td><?php echo $slno++; ?></td>
+                    <td><?php echo $fetch['dealername']; ?></td>
+                    <td><?php echo $fetch['cardid']; ?></td>
+                    <td><?php echo $fetch['productname']; ?></td>
+                    <td><?php echo changedateformat(substr($fetch['attcheddate'], 0, 10)); ?></td>
+                    <td><?php echo $fetch['billnumber']; ?> </td>
+                    <td><?php echo $fetch['invoiceno']; ?> </td>
+                    <td><?php echo $registereddate; ?></td>
+                    <td><?php echo $businessname; ?></td>
+                    <td><?php echo $fetch['cusname']; ?></td>
+                    <td><?php echo $fetch['scratchnumber']; ?></td>
+                    <td><?php echo $fetch['Pin Status']; ?></td>
+                    <td><?php echo $fetch['usagetype']; ?> </td>
+                    <td><?php echo $fetch['purchasetype']; ?> </td>
+                    <td><?php echo $fetch['fullname']; ?></td>
+                    <td><?php echo $fetch['scheme']; ?></td>
+                    <td><?php echo $fetch['region']; ?> </td>
+                    <td><?php echo $fetch['state']; ?> </td>
+                    <td><?php echo $fetch['district']; ?> </td>
+                    <td><?php echo $fetch['branch']; ?> </td>
+                    <td><?php echo $fetch['billremarks']; ?></td>
 
                 </tr>
-            <?phpphp } ?>
+            <?php } ?>
         </tbody>
     </table>
-    <?phpphp
+    <?php
 
     $queryres = 'select slno,username from inv_mas_users where slno = '.$userid.'';
     $fetchres = runmysqlqueryfetch($queryres);
@@ -291,7 +291,7 @@ elseif($flag == 'true')
 
         $(document).ready(function() {
             //alert("passing");
-            var filename="<?phpphp echo $filebasename; ?>";
+            var filename="<?php echo $filebasename; ?>";
             //alert(filename);
             $('#example').DataTable({
                 dom: 'Blfrtip',
@@ -327,7 +327,7 @@ elseif($flag == 'true')
     </script>
 
 
-    <?phpphp
+    <?php
 
     $query1 ="INSERT INTO inv_logs_reports(userid,`date`,`time`,`type`,`data`,system) VALUES('".$userid."','".datetimelocal('Y-m-d')."','".datetimelocal('H-i')."','view_newdealerdetails_report',\"".$query."\",'".$_SERVER['REMOTE_ADDR']."')";
     $result = runmysqlquery($query1);
@@ -339,7 +339,7 @@ elseif($flag == 'true')
 <script>
     function insertdata()
     {
-        <?phpphp
+        <?php
         $eventquery = "Insert into inv_logs_event(userid,system,eventtype,eventdatetime,remarks) values('".$userid."','".$_SERVER['REMOTE_ADDR']."','101','".date('Y-m-d').' '.date('H:i:s')."','excel_dealerdetails_report".'-'.strtolower($fetchres['username'])."')";
         $eventresult = runmysqlquery($eventquery);
         ?>
@@ -347,4 +347,4 @@ elseif($flag == 'true')
 </script>
 </body>
 </html>
-<?phpphp } ?>
+<?php } ?>
