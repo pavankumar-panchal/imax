@@ -1,8 +1,4 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set("display_errors", 1);
-
-
 include('./functions/browsercheck.php');
 
 if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _browser('safari')) {
