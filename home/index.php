@@ -1,11 +1,10 @@
 <?php
-
-
 include('../functions/phpfunctions.php');
 include('../inc/sessioncheck.php');
 include('../inc/checkpermission.php');
 include("../inc/FusionCharts.php");
 $userid = imaxgetcookie('userid');
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -81,7 +80,7 @@ $userid = imaxgetcookie('userid');
                                       </p>
                                     </td>
                                     <td width="32%" align="left" class="logindisplay">
-                                      <p align="right">Logged in as:
+                                      <p align="right"> Logged in as:
                                         <?php echo ($fullname);
                                         echo (' [' . $username . ']') ?>
                                       </p>

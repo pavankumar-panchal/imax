@@ -94,8 +94,6 @@ if (_browser('firefox') || _browser('msie', '>= 7.0') || _browser('chrome') || _
 // echo(" This browser will not support this Application. Please use Mozilla Firefox or Google Chrome or Internet Explorer 7.0 and above.");
 ?>
 
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
