@@ -375,6 +375,29 @@ function selectacustomer(input)
 	}
 }
 
+function selectacustomer(input) {
+	var selectbox = $('#customerlist');
+	if (input == "") {
+		getcustomerlist1();
+	} else {
+		$('option', selectbox).remove();
+		var options = selectbox.attr('options');
+		var addedcount = 0;
+		for (var i = 0; i < customerarray.length; i++) {
+			// Check if any part of the name contains the input string
+			if (customerarray[i].toLowerCase().includes(input.toLowerCase())) {
+				var splits = customerarray[i].split("^");
+				options[options.length] = new Option(splits[0], splits[1]);
+				addedcount++;
+				if (addedcount == 100) break;
+			}
+		}
+	}
+}
+
+
+
+
 function customersearch(e)
 { 
 	var KeyID = (window.event) ? event.keyCode : e.keyCode;

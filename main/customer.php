@@ -273,7 +273,7 @@ var permissioncontactedit = '';
                                                               </tr>
                                                               <tr>
                                                                 <td height="10" align="left"> Category:</td>
-                                                                <td align="left" valign="top"   height="10" ><select name="category2" class="swiftselect" id="category2" style="width:180px;">
+                                                                <td align="left" valign="top" height="10" ><select name="category2" class="swiftselect" id="category2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
                                                                     <?php include('../inc/category.php');?>

@@ -113,6 +113,25 @@ function selectauser(input)
 	}
 }
 
+function selectacustomer(input) {
+	var selectbox = $('#userlist');
+	if (input == "") {
+		getuserlist();
+	} else {
+		$('option', selectbox).remove();
+		var options = selectbox.attr('options');
+		var addedcount = 0;
+		for (var i = 0; i < userarray.length; i++) {
+			// Check if any part of the name contains the input string
+			if (userarray[i].toLowerCase().includes(input.toLowerCase())) {
+				var splits = userarray[i].split("^");
+				options[options.length] = new Option(splits[0], splits[1]);
+				addedcount++;
+				if (addedcount == 100) break;
+			}
+		}
+	}
+}
 
 
 

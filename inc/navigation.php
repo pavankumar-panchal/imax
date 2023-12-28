@@ -70,9 +70,7 @@ $auditorid = array('195','196');
                 <?php if($p_districtmapping == 'yes') { ?>
                 <li><a href="./index.php?a_link=districtmapping">District to Dealer</a> </li>
                 <?php } ?>
-                <?php //if($p_smscreditstodealer == 'yes') { ?>
-                <!--<li><a href="./index.php?a_link=smscreditsdealers">SMS Credits to Dealer</a> </li>-->
-                <?php //} ?>
+              
               </UL>
             </li>
             <li class="current"><A>Customers</A>
@@ -266,9 +264,7 @@ $auditorid = array('195','196');
                 <?php if(($p_dealerinvreports == 'yes')) { ?>
                 <li ><a ><span class="sf-menupointer" style="text-align:left">Dealer</span></a>
                   <ul class="sf-menu">
-<!--                    --><?php// if($p_dealerinvreports == 'yes') { ?>
-<!--                    <li><a href="./index.php?a_link=dealerdetails">Dealer Stock Details</a></li>-->
-<!--                    --><?php// } ?>
+
                     <?php if($p_newdealerinvreports == 'yes') { ?>
                     <li><a href="./index.php?a_link=newdealerdetails">Dealer Stock Details</a></li>
                     <?php } ?>
@@ -330,17 +326,7 @@ $auditorid = array('195','196');
                 <li><a href="./index.php?a_link=changepassword">Change Password</a></li>
               </UL>
             </li>
-            <!--<li class="current"><A>Pending Requests</A>
-              <UL>
-             <?php //if($p_customerpendingrequest == 'yes') { ?>
-              	<li><a href="./index.php?a_link=customerprofileupdate">Customer Profile Update</a></li>
-  <?php //} ?>
-                    <?php //if($p_dealerpendingrequest == 'yes') { ?>
-              	<li><a href="./index.php?a_link=dealerprofileupdate">Dealer Profile Update</a></li>
-                  <?php// } ?>
-              </UL>
-             
-           </li>-->
+       
             <li class="current"><A href="../logout.php">Logout</A></li>
           </UL>
           <DIV class="clear"></DIV>

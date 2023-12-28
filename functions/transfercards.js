@@ -119,6 +119,28 @@ function selectacard(input)
 	}
 }
 
+function selectacustomer(input) {
+	var selectbox = $('#cardlist');
+	if (input == "") {
+		getcardlist();
+	} else {
+		$('option', selectbox).remove();
+		var options = selectbox.attr('options');
+		var addedcount = 0;
+		for (var i = 0; i < cardarray.length; i++) {
+			// Check if any part of the name contains the input string
+			if (cardarray[i].toLowerCase().includes(input.toLowerCase())) {
+				var splits = cardarray[i].split("^");
+				options[options.length] = new Option(splits[0], splits[1]);
+				addedcount++;
+				if (addedcount == 100) break;
+			}
+		}
+	}
+}
+
+
+
 function cardsearch(e)
 { 
 	var KeyID = (window.event) ? event.keyCode : e.keyCode;

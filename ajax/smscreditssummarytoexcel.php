@@ -1,4 +1,7 @@
 <?php
+// error_reporting(E_ALL);
+// ini_set('display_errors',1);
+
 
 ini_set('memory_limit', '2048M');
 
@@ -153,7 +156,7 @@ elseif($flag == 'true')
 			$localtime = datetimelocal('His');
 			$filebasename = "SMSCredits".$localdate."-".$localtime."-".strtolower($username).".xls";
 	
-			$query1 ="INSERT INTO inv_logs_reports(userid,`date`,`time`,`type`,`data`,system) VALUES('".$userid."','".datetimelocal('Y-m-d')."','".datetimelocal('H-i')."','excel_SMSCredits_report',\"".$query."\",'".$_SERVER['REMOTE_ADDR']."')";
+			$query1 ="INSERT INTO inv_logs_reports(userid,`date`,`time`,`type`,`data`,system) VALUES('".$userid."','".datetimelocal('Y-m-d')."','".datetimelocal('H:i')."','excel_SMSCredits_report',\"".$query."\",'".$_SERVER['REMOTE_ADDR']."')";
 			$result = runmysqlquery($query1);
 			
 			$eventquery = "Insert into inv_logs_event(userid,system,eventtype,eventdatetime,remarks) values('".$userid."','".$_SERVER['REMOTE_ADDR']."','79','".date('Y-m-d').' '.date('H:i:s')."','excel_SMSCredits_report".'-'.strtolower($username)."')";
